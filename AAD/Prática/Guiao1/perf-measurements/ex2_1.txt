@@ -1,0 +1,1 @@
+I would start by improving the procedures that occupied the most time out of the process. By improving these procedures there is a greater chance that the program would run faster.
