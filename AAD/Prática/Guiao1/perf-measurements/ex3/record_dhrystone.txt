@@ -1,0 +1,34 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles'
+# Event count (approx.): 2252282191
+#
+# Overhead  Command        Shared Object      Symbol                
+# ........  .............  .................  ......................
+#
+    26.53%  dhrystone.out  dhrystone.out      [.] Proc0
+    11.89%  dhrystone.out  dhrystone.out      [.] Proc8
+    10.90%  dhrystone.out  dhrystone.out      [.] Proc1
+     9.97%  dhrystone.out  libc.so.6          [.] __strcmp_avx2
+     9.16%  dhrystone.out  dhrystone.out      [.] Func1
+     7.42%  dhrystone.out  dhrystone.out      [.] Proc7
+     7.15%  dhrystone.out  dhrystone.out      [.] Func2
+     4.20%  dhrystone.out  dhrystone.out      [.] Proc2
+     4.15%  dhrystone.out  dhrystone.out      [.] Proc6
+     2.92%  dhrystone.out  dhrystone.out      [.] Proc3
+     2.59%  dhrystone.out  dhrystone.out      [.] Func3
+     1.54%  dhrystone.out  dhrystone.out      [.] Proc4
+     1.01%  dhrystone.out  dhrystone.out      [.] Proc5
+     0.44%  dhrystone.out  dhrystone.out      [.] 0x00000000000010d4
+     0.08%  dhrystone.out  [kernel.kallsyms]  [k] __handle_mm_fault
+     0.04%  dhrystone.out  [kernel.kallsyms]  [k] zap_pte_range
+     0.00%  perf-exec      [kernel.kallsyms]  [k] end_repeat_nmi
+     0.00%  perf-exec      [kernel.kallsyms]  [k] native_write_msr
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

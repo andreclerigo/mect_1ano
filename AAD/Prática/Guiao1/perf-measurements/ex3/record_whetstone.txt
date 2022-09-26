@@ -1,0 +1,42 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cycles'
+# Event count (approx.): 5804996630
+#
+# Overhead  Command        Shared Object      Symbol                      
+# ........  .............  .................  ............................
+#
+    30.79%  whetstone.out  whetstone.out      [.] main
+    24.31%  whetstone.out  whetstone.out      [.] P3
+    11.80%  whetstone.out  whetstone.out      [.] PA
+     9.46%  whetstone.out  whetstone.out      [.] P0
+     7.20%  whetstone.out  libm.so.6          [.] __ieee754_log_fma
+     5.26%  whetstone.out  libm.so.6          [.] __ieee754_exp_fma
+     2.69%  whetstone.out  libm.so.6          [.] __cos_fma
+     2.16%  whetstone.out  libm.so.6          [.] __atan_fma
+     2.04%  whetstone.out  libm.so.6          [.] __sqrt_finite@GLIBC_2.15
+     1.03%  whetstone.out  libm.so.6          [.] exp@@GLIBC_2.29
+     0.92%  whetstone.out  libm.so.6          [.] __sin_fma
+     0.53%  whetstone.out  libm.so.6          [.] __sqrt
+     0.43%  whetstone.out  libm.so.6          [.] log@@GLIBC_2.29
+     0.22%  whetstone.out  whetstone.out      [.] 0x0000000000001184
+     0.22%  whetstone.out  libm.so.6          [.] 0x000000000000e384
+     0.17%  whetstone.out  libm.so.6          [.] 0x000000000000e2e4
+     0.17%  whetstone.out  whetstone.out      [.] 0x0000000000001134
+     0.15%  whetstone.out  whetstone.out      [.] 0x00000000000011d4
+     0.12%  whetstone.out  whetstone.out      [.] 0x0000000000001180
+     0.10%  whetstone.out  whetstone.out      [.] 0x00000000000011c4
+     0.10%  whetstone.out  whetstone.out      [.] 0x0000000000001174
+     0.07%  whetstone.out  [unknown]          [.] 0000000000000000
+     0.03%  whetstone.out  [kernel.kallsyms]  [k] ext4_inode_block_valid
+     0.02%  whetstone.out  whetstone.out      [.] 0x00000000000011a4
+     0.00%  perf-exec      [kernel.kallsyms]  [k] nmi_restore
+     0.00%  perf-exec      [kernel.kallsyms]  [k] native_write_msr
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

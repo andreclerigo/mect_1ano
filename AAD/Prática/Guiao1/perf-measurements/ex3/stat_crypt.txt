@@ -1,0 +1,5 @@
+./crypt.out Starting...
+Total sector data size: 1073741824
+Total sector numbers data size: 8388608
+The initialization of host data took 9.973e-01 seconds
+The cpu kernel took 6.175e-01 seconds to run (single core)

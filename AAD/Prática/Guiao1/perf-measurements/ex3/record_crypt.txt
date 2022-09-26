@@ -1,0 +1,116 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 6K of event 'cycles'
+# Event count (approx.): 6638751665
+#
+# Overhead  Command    Shared Object      Symbol                                      
+# ........  .........  .................  ............................................
+#
+    38.20%  crypt.out  crypt.out          [.] main
+    36.64%  crypt.out  crypt.out          [.] modify_sector_cpu_kernel
+     2.44%  crypt.out  libc.so.6          [.] __random
+     2.30%  crypt.out  [kernel.kallsyms]  [k] __irqentry_text_end
+     2.15%  crypt.out  [kernel.kallsyms]  [k] error_entry
+     1.90%  crypt.out  [kernel.kallsyms]  [k] irqentry_exit_to_user_mode
+     1.69%  crypt.out  [kernel.kallsyms]  [k] clear_page_erms
+     1.42%  crypt.out  [kernel.kallsyms]  [k] native_irq_return_iret
+     0.91%  crypt.out  [kernel.kallsyms]  [k] sync_regs
+     0.76%  crypt.out  [kernel.kallsyms]  [k] __handle_mm_fault
+     0.64%  crypt.out  [kernel.kallsyms]  [k] release_pages
+     0.51%  crypt.out  [kernel.kallsyms]  [k] rmqueue_bulk
+     0.51%  crypt.out  [kernel.kallsyms]  [k] __pagevec_lru_add_fn
+     0.48%  crypt.out  [kernel.kallsyms]  [k] mem_cgroup_charge_statistics.constprop.0
+     0.43%  crypt.out  [kernel.kallsyms]  [k] zap_pte_range
+     0.42%  crypt.out  libc.so.6          [.] __random_r
+     0.41%  crypt.out  [kernel.kallsyms]  [k] handle_mm_fault
+     0.37%  crypt.out  [kernel.kallsyms]  [k] do_anonymous_page
+     0.33%  crypt.out  [kernel.kallsyms]  [k] __free_one_page
+     0.27%  crypt.out  [kernel.kallsyms]  [k] __mod_lruvec_page_state
+     0.25%  crypt.out  [kernel.kallsyms]  [k] alloc_pages_vma
+     0.24%  crypt.out  [kernel.kallsyms]  [k] get_mem_cgroup_from_mm
+     0.24%  crypt.out  [kernel.kallsyms]  [k] exit_to_user_mode_prepare
+     0.24%  crypt.out  [kernel.kallsyms]  [k] rmqueue
+     0.24%  crypt.out  [kernel.kallsyms]  [k] __alloc_pages
+     0.24%  crypt.out  [kernel.kallsyms]  [k] __mod_node_page_state
+     0.22%  crypt.out  [kernel.kallsyms]  [k] do_user_addr_fault
+     0.22%  crypt.out  [kernel.kallsyms]  [k] cgroup_rstat_updated
+     0.21%  crypt.out  [kernel.kallsyms]  [k] get_page_from_freelist
+     0.21%  crypt.out  [kernel.kallsyms]  [k] handle_pte_fault
+     0.21%  crypt.out  [kernel.kallsyms]  [k] __mod_memcg_lruvec_state
+     0.19%  crypt.out  [kernel.kallsyms]  [k] __mod_zone_page_state
+     0.19%  crypt.out  [kernel.kallsyms]  [k] page_remove_rmap
+     0.18%  crypt.out  [kernel.kallsyms]  [k] free_pcppages_bulk
+     0.17%  crypt.out  [kernel.kallsyms]  [k] down_read_trylock
+     0.16%  crypt.out  [kernel.kallsyms]  [k] __cgroup_throttle_swaprate
+     0.15%  crypt.out  [kernel.kallsyms]  [k] try_charge_memcg
+     0.15%  crypt.out  [kernel.kallsyms]  [k] __next_zones_zonelist
+     0.13%  crypt.out  [kernel.kallsyms]  [k] asm_exc_page_fault
+     0.13%  crypt.out  [kernel.kallsyms]  [k] page_mapping
+     0.13%  crypt.out  [kernel.kallsyms]  [k] free_swap_cache
+     0.12%  crypt.out  [kernel.kallsyms]  [k] vmacache_find
+     0.12%  crypt.out  libc.so.6          [.] rand
+     0.12%  crypt.out  [kernel.kallsyms]  [k] up_read
+     0.12%  crypt.out  [kernel.kallsyms]  [k] __mod_lruvec_state
+     0.12%  crypt.out  [kernel.kallsyms]  [k] free_pcp_prepare
+     0.10%  crypt.out  [kernel.kallsyms]  [k] __count_memcg_events
+     0.10%  crypt.out  [kernel.kallsyms]  [k] exc_page_fault
+     0.10%  crypt.out  [kernel.kallsyms]  [k] free_unref_page_commit.constprop.0
+     0.09%  crypt.out  [kernel.kallsyms]  [k] lru_cache_add
+     0.09%  crypt.out  [kernel.kallsyms]  [k] find_vma
+     0.09%  crypt.out  [kernel.kallsyms]  [k] pmd_val
+     0.09%  crypt.out  [kernel.kallsyms]  [k] _raw_spin_lock
+     0.09%  crypt.out  [kernel.kallsyms]  [k] rcu_read_unlock_strict
+     0.09%  crypt.out  [kernel.kallsyms]  [k] free_unref_page_list
+     0.09%  crypt.out  [kernel.kallsyms]  [k] uncharge_page
+     0.08%  crypt.out  [kernel.kallsyms]  [k] pud_val
+     0.07%  crypt.out  [kernel.kallsyms]  [k] __page_set_anon_rmap
+     0.07%  crypt.out  [kernel.kallsyms]  [k] pmd_pfn
+     0.07%  crypt.out  [kernel.kallsyms]  [k] unlock_page_memcg
+     0.06%  crypt.out  [kernel.kallsyms]  [k] add_mm_counter_fast
+     0.06%  crypt.out  crypt.out          [.] 0x0000000000001134
+     0.06%  crypt.out  [kernel.kallsyms]  [k] charge_memcg
+     0.06%  crypt.out  [kernel.kallsyms]  [k] lru_cache_add_inactive_or_unevictable
+     0.06%  crypt.out  [kernel.kallsyms]  [k] error_return
+     0.04%  crypt.out  [kernel.kallsyms]  [k] arch_local_irq_enable
+     0.04%  crypt.out  [kernel.kallsyms]  [k] should_fail_alloc_page
+     0.04%  crypt.out  [kernel.kallsyms]  [k] pmd_page_vaddr
+     0.04%  crypt.out  [kernel.kallsyms]  [k] page_counter_try_charge
+     0.04%  crypt.out  [kernel.kallsyms]  [k] __pagevec_lru_add
+     0.04%  crypt.out  [kernel.kallsyms]  [k] mem_cgroup_update_lru_size
+     0.04%  crypt.out  [kernel.kallsyms]  [k] page_add_new_anon_rmap
+     0.04%  crypt.out  [kernel.kallsyms]  [k] kernel_init_free_pages.part.0
+     0.04%  crypt.out  [kernel.kallsyms]  [k] lock_page_memcg
+     0.04%  crypt.out  [kernel.kallsyms]  [k] __tlb_remove_page_size
+     0.04%  crypt.out  [kernel.kallsyms]  [k] __mem_cgroup_uncharge_list
+     0.04%  crypt.out  [kernel.kallsyms]  [k] native_set_pte
+     0.04%  crypt.out  [kernel.kallsyms]  [k] __cond_resched
+     0.03%  crypt.out  [kernel.kallsyms]  [k] __radix_tree_lookup
+     0.03%  crypt.out  [kernel.kallsyms]  [k] policy_nodemask
+     0.03%  crypt.out  [kernel.kallsyms]  [k] pfn_pte
+     0.03%  crypt.out  [kernel.kallsyms]  [k] pgd_none
+     0.03%  crypt.out  [kernel.kallsyms]  [k] irqentry_exit
+     0.03%  crypt.out  [kernel.kallsyms]  [k] rcu_all_qs
+     0.03%  crypt.out  [kernel.kallsyms]  [k] _find_first_bit
+     0.03%  crypt.out  [kernel.kallsyms]  [k] vm_normal_page
+     0.01%  crypt.out  [kernel.kallsyms]  [k] __mem_cgroup_charge
+     0.01%  crypt.out  [kernel.kallsyms]  [k] _nv033087rm
+     0.01%  crypt.out  [kernel.kallsyms]  [k] _raw_spin_lock_irqsave
+     0.01%  crypt.out  [kernel.kallsyms]  [k] irqentry_enter_from_user_mode
+     0.01%  crypt.out  [kernel.kallsyms]  [k] mem_cgroup_from_task
+     0.01%  crypt.out  [kernel.kallsyms]  [k] fpregs_assert_state_consistent
+     0.01%  crypt.out  [kernel.kallsyms]  [k] uncharge_batch
+     0.01%  crypt.out  [kernel.kallsyms]  [k] queued_spin_unlock
+     0.01%  crypt.out  [kernel.kallsyms]  [k] set_pte
+     0.01%  crypt.out  [kernel.kallsyms]  [k] free_pages_and_swap_cache
+     0.00%  perf-exec  [kernel.kallsyms]  [k] nmi_restore
+     0.00%  crypt.out  [kernel.kallsyms]  [k] end_repeat_nmi
+     0.00%  perf-exec  [kernel.kallsyms]  [k] native_write_msr
+     0.00%  crypt.out  [kernel.kallsyms]  [k] native_write_msr
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

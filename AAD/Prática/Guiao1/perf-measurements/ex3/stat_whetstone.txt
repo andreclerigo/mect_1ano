@@ -1,0 +1,2 @@
+Loops: 100000, Iterations: 1, Duration: 1.501448 sec.
+C Converted Double Precision Whetstones: 6660.2 MWIPS

@@ -1,1 +1,1 @@
-I would start by improving the procedures that occupied the most time out of the process. By improving these procedures there is a greater chance that the program would run faster.
+Eu começaria por otimizar os procedimentos/funções que ocuparam a maior parte do processo. Deste modo, a otimização teria uma maior probabilidade de causar maior impacto no tempo de execução do programa.

@@ -1,0 +1,2 @@
+Dhrystone(1.1) time for 10000000 passes = 0.562045
+This machine benchmarks at 17792169 dhrystones/second
