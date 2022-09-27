@@ -1,0 +1,20 @@
+2.1)
+Eu começaria por otimizar os procedimentos/funções que ocuparam a maior parte do processo. Deste modo, a otimização teria uma maior probabilidade de causar maior impacto no tempo de execução do programa.
+
+No dhry_gprof começaria por otimizar a Proc1 e Proc8 porque são as funções que ocupam a maior parte do processo. Não iria otimizar a Proc0 porque essa funcção apenas chama as outras N vezes.
+
+No whet_grpof começaria por otimizar a P3, PA, P0, porque a main também só chama estas funções e por isto não pode ser otimizada.
+
+2.2)
+
+====== Dhrystone ======
+Assumindo que apenas melhorarmos a Proc0 (função com maior ocupação do tempo de execucção do programa) e também supondo que conseguimos melhorar a mesma num fator de 2.
+Temos que Fenhance = 0,1818, Speedup Enchance = 2
+Speedup Overall = 1 / ( (1-0,1818) + 0,1818/2 ) = 1,10
+
+====== Whettone ======
+Assumindo que apenas melhorarmos a P3 (função com maior ocupação do tempo de execucção do programa) e também supondo que conseguimos melhorar a mesma num fator de 2.
+Temos que Fenhance = 0,1868, Speedup Enchance = 2
+Speedup Overall = 1 / ( (1-0,1868) + 0,1868/2 ) = 1,10
+
+

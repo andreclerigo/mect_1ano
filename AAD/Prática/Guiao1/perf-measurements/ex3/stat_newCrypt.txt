@@ -1,5 +1,27 @@
 ./newCrypt.out Starting...
 Total sector data size: 1073741824
 Total sector numbers data size: 8388608
-The initialization of host data took 9.989e-01 seconds
-The cpu kernel took 2.596e+00 seconds to run (single core)
+The initialization of host data took 2.906e+00 seconds
+The cpu kernel took 7.461e+00 seconds to run (single core)
+
+ Performance counter stats for './newCrypt.out':
+
+          10499,99 msec task-clock                #    1,000 CPUs utilized          
+                36      context-switches          #    3,429 /sec                   
+                 5      cpu-migrations            #    0,476 /sec                   
+            264259      page-faults               #   25,168 K/sec                  
+       14533247342      cycles                    #    1,384 GHz                      (62,50%)
+       11729658164      instructions              #    0,81  insn per cycle           (75,01%)
+         816100794      branches                  #   77,724 M/sec                    (75,01%)
+           2539761      branch-misses             #    0,31% of all branches          (75,01%)
+        5787733595      L1-dcache-loads           #  551,213 M/sec                    (75,01%)
+         571867818      L1-dcache-load-misses     #    9,88% of all L1-dcache accesses  (75,02%)
+         493767228      LLC-loads                 #   47,025 M/sec                    (49,98%)
+           6182904      LLC-load-misses           #    1,25% of all LL-cache accesses  (49,97%)
+
+      10,502501746 seconds time elapsed
+
+       9,609214000 seconds user
+       0,892112000 seconds sys
+
+

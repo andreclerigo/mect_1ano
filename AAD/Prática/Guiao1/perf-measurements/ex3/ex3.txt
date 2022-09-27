@@ -1,0 +1,1 @@
+Quanto maior page-faults, branch-misses e LLC-load-misses pior a performance do programa

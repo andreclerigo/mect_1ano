@@ -1,5 +1,27 @@
 ./crypt.out Starting...
 Total sector data size: 1073741824
 Total sector numbers data size: 8388608
-The initialization of host data took 9.973e-01 seconds
-The cpu kernel took 6.175e-01 seconds to run (single core)
+The initialization of host data took 2.913e+00 seconds
+The cpu kernel took 1.741e+00 seconds to run (single core)
+
+ Performance counter stats for './crypt.out':
+
+           4785,83 msec task-clock                #    1,000 CPUs utilized          
+                27      context-switches          #    5,642 /sec                   
+                 1      cpu-migrations            #    0,209 /sec                   
+            264259      page-faults               #   55,217 K/sec                  
+        6557584813      cycles                    #    1,370 GHz                      (62,39%)
+       11713491605      instructions              #    1,79  insn per cycle           (74,93%)
+         813912676      branches                  #  170,067 M/sec                    (74,94%)
+           2498675      branch-misses             #    0,31% of all branches          (75,03%)
+        5793806855      L1-dcache-loads           #    1,211 G/sec                    (75,10%)
+          38898239      L1-dcache-load-misses     #    0,67% of all L1-dcache accesses  (75,10%)
+           1304998      LLC-loads                 #  272,679 K/sec                    (49,96%)
+            641759      LLC-load-misses           #   49,18% of all LL-cache accesses  (49,87%)
+
+       4,787518959 seconds time elapsed
+
+       3,839114000 seconds user
+       0,947781000 seconds sys
+
+

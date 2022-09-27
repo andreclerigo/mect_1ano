@@ -1,2 +1,24 @@
-Dhrystone(1.1) time for 10000000 passes = 0.562045
-This machine benchmarks at 17792169 dhrystones/second
+Dhrystone(1.1) time for 10000000 passes = 1.651941
+This machine benchmarks at 6053484 dhrystones/second
+
+ Performance counter stats for './dhrystone.out':
+
+           1672,95 msec task-clock                #    0,999 CPUs utilized          
+                 4      context-switches          #    2,391 /sec                   
+                 0      cpu-migrations            #    0,000 /sec                   
+                66      page-faults               #   39,451 /sec                   
+        2259847951      cycles                    #    1,351 GHz                      (62,38%)
+        5793009338      instructions              #    2,56  insn per cycle           (75,05%)
+         753229542      branches                  #  450,240 M/sec                    (75,13%)
+             94880      branch-misses             #    0,01% of all branches          (75,13%)
+        2089264953      L1-dcache-loads           #    1,249 G/sec                    (75,14%)
+             50278      L1-dcache-load-misses     #    0,00% of all L1-dcache accesses  (75,14%)
+              5404      LLC-loads                 #    3,230 K/sec                    (49,73%)
+              1640      LLC-load-misses           #   30,35% of all LL-cache accesses  (49,73%)
+
+       1,673985796 seconds time elapsed
+
+       1,674159000 seconds user
+       0,000000000 seconds sys
+
+

@@ -1,2 +1,24 @@
-Loops: 100000, Iterations: 1, Duration: 1.501448 sec.
-C Converted Double Precision Whetstones: 6660.2 MWIPS
+Loops: 100000, Iterations: 1, Duration: 4.201946 sec.
+C Converted Double Precision Whetstones: 2379.8 MWIPS
+
+ Performance counter stats for './whetstone.out':
+
+           4203,21 msec task-clock                #    1,000 CPUs utilized          
+                20      context-switches          #    4,758 /sec                   
+                 0      cpu-migrations            #    0,000 /sec                   
+                76      page-faults               #   18,081 /sec                   
+        5796387208      cycles                    #    1,379 GHz                      (62,40%)
+       11782221358      instructions              #    2,03  insn per cycle           (74,95%)
+        1170762062      branches                  #  278,540 M/sec                    (75,05%)
+             79310      branch-misses             #    0,01% of all branches          (75,07%)
+        4492154209      L1-dcache-loads           #    1,069 G/sec                    (75,07%)
+            102685      L1-dcache-load-misses     #    0,00% of all L1-dcache accesses  (75,07%)
+             21458      LLC-loads                 #    5,105 K/sec                    (49,88%)
+              1881      LLC-load-misses           #    8,77% of all LL-cache accesses  (49,86%)
+
+       4,204916614 seconds time elapsed
+
+       4,204296000 seconds user
+       0,000000000 seconds sys
+
+
