@@ -1,0 +1,6 @@
+1.1) Se escolhessemos o processador baseado na performance de SPEC, iriamos escolher o processador Itanium 2 pois a média geométrica de SPEC(itanium)/SPEC(opteron) é > 1.
+
+1.2) Usando média geométrica ponderada, iremos escolher o processador Opteron, pois o valor de média geométrica ponderada de SPEC(itanium)/SPEC(opteron) é < 1.
+
+1.3) O speed up será de 1/0,88 que é 1,14
+
