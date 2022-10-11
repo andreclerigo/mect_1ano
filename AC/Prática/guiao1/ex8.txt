@@ -1,0 +1,23 @@
+Router2(config)#access-list 104 permit tcp host 192.1.1.100 host 192.0.1.100 eq 6622
+Router2(config)#class-map match-all EF2
+Router2(config-cmap)#match access-group 104
+
+Router2(config)#policy-map SETDSCP
+Router2(config-pmap)#class EF2
+Router2(config-pmap-c)#set ip dscp 47
+
+Router1(config)#class-map match-all DATABASE
+Router1(config-cmap)#match ip dscp 47
+Router1(config)#policy-map EDGE
+Router1(config-pmap)#class DATABASE
+Router1(config-pmap)#priority percent 15
+interface f0/0
+Router1(config-if)#service-policy output EDGE
+
+Router2(config)#class-map match-all DATABASE
+Router2(config-cmap)#match ip dscp 47
+Router2(config)#policy-map EDGE
+Router2(config-pmap)#class DATABASE
+Router2(config-pmap)#priority percent 15
+interface f0/0
+Router2(config-if)#service-policy output EDGE
