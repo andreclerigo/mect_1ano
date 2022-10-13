@@ -1,0 +1,26 @@
+a)
+1:0.00s
+2:0.10s
+3:0.21s
+4:0.31s
+5:0.42s
+6:0.52s
+7:0.63s
+8:0.73s
+9:0.83s
+
+Diffs: 0.1; 0.11; 0.1; 0.11; 0.1; 0.11; 0.1; 0.1
+
+Media= 0.104s (periodicidade) which checks out in fixed parameters 
+
+b)
+Fixed parameters: 
+	timestamp: wtv
+	beacon interval: 0,104448s (verified in the previous ex)
+Tagged parameters:
+	SSID: ComMoveis.331.2400
+	Supported Rates: 1(B), 2(B), 5.5(B), 6, 9, 11(B), 12, 18 Mbit/s
+	DS Parameter set: Current Channel: 7
+	HT Capabilities: 802.11n D1.10
+	Extended Supported Rates: 24, 36, 48, 54 Mbit/s
+	HT Information: 802.11n D1.10

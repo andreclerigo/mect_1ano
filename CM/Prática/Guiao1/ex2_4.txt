@@ -1,0 +1,3 @@
+1) Quando estamos no canal 3 conseguimos capturar beacons da rede ComMoveis com SSID ComMoveis330.2400, enquanto que quando estamos no canal 7 apenas capturamos os beacons de SSID ComMoveis331.2400
+
+2) Ao colocar-nos no channel 5, conseguimos capturar beacons de SSID de ambos os lados 

@@ -1,0 +1,1 @@
+Observam-se os beacons em várias frequências porque existe um overlap no scan de canais, por exemplo, quando se analisa o canal 5 podemos apanhar Beacons do canais 4 e 6 (adjacentes).
