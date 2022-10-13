@@ -11,7 +11,7 @@ fprintf('The probability of a data frame of 100 Bytes to be received without err
 %% 2.b)
 p = 10^-3;
 bytes = 1000;
-one_error = nchoosek(bytes*bits, 1) * p * (1-p)^(bytes*bits);
+one_error = nchoosek(bytes*bits, 1) * p * (1-p)^(bytes*bits - 1);
 fprintf('The probability of a data frame of 1000 Bytes to be received with exactly one error is: %.4f%%\n', 100*one_error);
 
 %% 2.c)
