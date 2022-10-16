@@ -1,0 +1,1 @@
+6) As redes do AS200 não fazem parte da routing table dos Routers A e B, porque os Routers do AS200 não estão a redistribuir as suas redes internas

@@ -1,0 +1,1 @@
+4) Como o Router 3 só tem OSPF configurado (e não BGP), a conectividade com a AS100 não existe, vistos que, as redes dentro deste AS não são "classfull", existe subnneting

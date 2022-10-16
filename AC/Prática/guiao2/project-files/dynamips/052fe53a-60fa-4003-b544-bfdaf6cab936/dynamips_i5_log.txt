@@ -1,0 +1,82 @@
+Oct 13 14:24:54.053 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Oct 13 14:24:54.053 HYPERVISOR: Started on IP = localhost, TCP port = 38883.
+Oct 13 14:24:54.058 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 13 14:24:54.058 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips 
+Oct 13 14:24:54.058 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips
+Oct 13 14:24:54.059 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips/3630c650-1631-4651-a084-f9787c814c51 
+Oct 13 14:24:54.059 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips/3630c650-1631-4651-a084-f9787c814c51
+Oct 13 14:24:54.059 HYPERVISOR: exec_cmd: vm create R2 2 c7200 
+Oct 13 14:24:54.060 VM: VM R2 created.
+Oct 13 14:24:54.061 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5004 
+Oct 13 14:24:54.061 HYPERVISOR: exec_cmd: c7200 get_mac_addr R2 
+Oct 13 14:24:54.061 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:24:54.062 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-FE 
+Oct 13 14:24:54.063 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Oct 13 14:24:54.064 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:24:54.065 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x6318e57c 
+Oct 13 14:24:54.066 HYPERVISOR: exec_cmd: vm set_ios R2 /home/andre/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.bin 
+Oct 13 14:24:54.067 HYPERVISOR: exec_cmd: c7200 set_mac_addr R2 ca02.f7c2.0000 
+Oct 13 14:24:54.068 HYPERVISOR: exec_cmd: vm set_nvram R2 512 
+Oct 13 14:24:54.069 HYPERVISOR: exec_cmd: vm set_ram R2 512 
+Oct 13 14:24:54.070 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:24:54.070 HYPERVISOR: exec_cmd: vm slot_remove_binding R2 0 0 
+Oct 13 14:24:54.071 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:24:54.071 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-2FE 
+Oct 13 14:24:54.072 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:24:54.073 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 PA-2FE-TX 
+Oct 13 14:24:54.073 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:24:54.074 HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 PA-2FE-TX 
+Oct 13 14:24:54.075 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:24:54.075 HYPERVISOR: exec_cmd: vm slot_add_binding R2 3 0 PA-2FE-TX 
+Oct 13 14:24:55.050 HYPERVISOR: exec_cmd: nio create_udp udp-b6182c75-6b05-462d-b5e4-6a98848c8f3e 10006 127.0.0.1 10007 
+Oct 13 14:24:55.270 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-b6182c75-6b05-462d-b5e4-6a98848c8f3e 
+Oct 13 14:24:55.271 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:24:56.178 HYPERVISOR: exec_cmd: nio create_udp udp-dd54ef58-c10f-4df5-b226-df28e4f3a6bd 10022 127.0.0.1 10023 
+Oct 13 14:24:56.181 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 1 udp-dd54ef58-c10f-4df5-b226-df28e4f3a6bd 
+Oct 13 14:24:56.182 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:24:57.743 HYPERVISOR: exec_cmd: nio create_udp udp-b96aa4e8-4233-44b9-8f45-ba38ec7138a6 10050 127.0.0.1 10051 
+Oct 13 14:24:57.747 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 1 0 udp-b96aa4e8-4233-44b9-8f45-ba38ec7138a6 
+Oct 13 14:24:57.748 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:25:11.228 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Oct 13 14:25:11.229 HYPERVISOR: exec_cmd: vm set_ghost_file R2 /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.bin-512.ghost 
+Oct 13 14:25:11.230 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:25:11.232 HYPERVISOR: exec_cmd: vm set_config R2 configs/i2_startup-config.cfg configs/i2_private-config.cfg 
+Oct 13 14:25:11.232 HYPERVISOR: exec_cmd: vm start R2 
+Oct 13 14:25:41.453 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 14:26:11.456 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 14:26:41.458 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 14:27:30.151 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:27:30.152 HYPERVISOR: exec_cmd: vm stop R2 
+Oct 13 14:27:30.262 VM: VM R2 shutdown.
+Oct 13 14:27:30.263 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 14:29:30.134 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Oct 13 14:29:30.134 HYPERVISOR: exec_cmd: vm set_ghost_file R2 /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.bin-512.ghost 
+Oct 13 14:29:30.135 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:29:30.136 HYPERVISOR: exec_cmd: vm set_config R2 configs/i2_startup-config.cfg configs/i2_private-config.cfg 
+Oct 13 14:29:30.136 HYPERVISOR: exec_cmd: vm start R2 
+Oct 13 14:30:00.375 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 14:30:30.378 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 14:37:00.407 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 14:57:47.178 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:57:47.179 HYPERVISOR: exec_cmd: vm stop R2 
+Oct 13 14:57:47.291 VM: VM R2 shutdown.
+Oct 13 14:57:47.292 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 14:58:50.477 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Oct 13 14:58:50.478 HYPERVISOR: exec_cmd: vm set_ghost_file R2 /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.bin-512.ghost 
+Oct 13 14:58:50.479 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 14:58:50.481 HYPERVISOR: exec_cmd: vm set_config R2 configs/i2_startup-config.cfg configs/i2_private-config.cfg 
+Oct 13 14:58:50.481 HYPERVISOR: exec_cmd: vm start R2 
+Oct 13 14:59:20.689 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 15:01:56.027 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 15:01:56.028 HYPERVISOR: exec_cmd: vm stop R2 
+Oct 13 15:01:56.223 VM: VM R2 shutdown.
+Oct 13 15:01:56.224 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 15:02:03.170 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 15:02:03.173 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 15:02:03.560 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 13 15:02:03.561 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 13 15:02:03.564 HYPERVISOR: exec_cmd: vm delete R2 
+Oct 13 15:02:03.564 VM: VM R2 destroyed.
+Oct 13 15:02:03.565 HYPERVISOR: exec_cmd: hypervisor stop 
+Oct 13 15:02:03.957 HYPERVISOR: Stopped.
+Oct 13 15:02:03.957 GENERAL: reset done.

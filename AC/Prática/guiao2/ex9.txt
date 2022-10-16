@@ -1,0 +1,1 @@
+9) As rotas que usavam OSPF usam agora IBGP
