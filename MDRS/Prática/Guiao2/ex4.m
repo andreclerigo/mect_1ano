@@ -58,21 +58,21 @@ xlabel("{\lambda} (pps)")
 grid on;
 
 %% 4.f)
-capacitys = [10*10^6 20*10^6 100*10^6];
+capacities = [10*10^6 20*10^6 100*10^6];
 y1 = 100:2000;
 y2 = 200:4000;
 y3 = 1000:20000;
 
-x1 = (y1 ./ (capacitys(1) / (avg_bytes * 8))) * 100;
-x2 = (y2 ./ (capacitys(2) / (avg_bytes * 8))) * 100;
-x3 = (y3 ./ (capacitys(3) / (avg_bytes * 8))) * 100;
+x1 = (y1 ./ (capacities(1) / (avg_bytes * 8))) * 100;
+x2 = (y2 ./ (capacities(2) / (avg_bytes * 8))) * 100;
+x3 = (y3 ./ (capacities(3) / (avg_bytes * 8))) * 100;
 
-S1 = (x .* 8) ./ capacitys(1);
-S12 = (x .* 8) ./ capacitys(1);
-S2 = (x .* 8) ./ capacitys(2);
-S22 = (x .* 8) ./ capacitys(2);
-S3 = (x .* 8) ./ capacitys(3);
-S32 = (x .* 8) ./ capacitys(3);
+S1 = (x .* 8) ./ capacities(1);
+S12 = (x .* 8) ./ capacities(1);
+S2 = (x .* 8) ./ capacities(2);
+S22 = (x .* 8) ./ capacities(2);
+S3 = (x .* 8) ./ capacities(3);
+S32 = (x .* 8) ./ capacities(3);
 
 for i = 1:length(x)
     if i == 1
@@ -112,7 +112,7 @@ wq3 = y3 .* sum(S32) ./ (2.*(1 - y3 .* sum(S3)));
 
 avg_times = zeros(1, 3);
 for i=1:3
-    avg_times(i) = (avg_bytes * 8) / capacitys(i);
+    avg_times(i) = (avg_bytes * 8) / capacities(i);
 end
 
 sys1 = wq1 + avg_times(1) + delay;
