@@ -1,0 +1,1 @@
+15) Com o Tunel configurado, o pacote vai para o R2 passando pelo R3, estabelecendo conectividade.

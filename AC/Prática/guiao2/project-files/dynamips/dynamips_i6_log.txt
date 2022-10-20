@@ -1,0 +1,48 @@
+Oct 20 16:16:56.903 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Oct 20 16:16:56.903 HYPERVISOR: Started on IP = localhost, TCP port = 43381.
+Oct 20 16:16:56.910 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 20 16:16:56.910 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips 
+Oct 20 16:16:56.911 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips
+Oct 20 16:16:56.911 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips/489c3457-c151-4eab-b389-8946532585f2 
+Oct 20 16:16:56.911 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips/489c3457-c151-4eab-b389-8946532585f2
+Oct 20 16:16:56.912 HYPERVISOR: exec_cmd: vm create R3 3 c7200 
+Oct 20 16:16:56.912 VM: VM R3 created.
+Oct 20 16:16:56.913 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5005 
+Oct 20 16:16:56.913 HYPERVISOR: exec_cmd: c7200 get_mac_addr R3 
+Oct 20 16:16:56.913 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:16:56.914 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 0 C7200-IO-FE 
+Oct 20 16:16:56.915 HYPERVISOR: exec_cmd: vm set_disk0 R3 0 
+Oct 20 16:16:56.916 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:16:56.916 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x6318e57c 
+Oct 20 16:16:56.917 HYPERVISOR: exec_cmd: vm set_ios R3 /home/andre/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.bin 
+Oct 20 16:16:56.918 HYPERVISOR: exec_cmd: c7200 set_mac_addr R3 ca03.f7d2.0000 
+Oct 20 16:16:56.919 HYPERVISOR: exec_cmd: vm set_nvram R3 512 
+Oct 20 16:16:56.919 HYPERVISOR: exec_cmd: vm set_ram R3 512 
+Oct 20 16:16:56.920 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:16:56.920 HYPERVISOR: exec_cmd: vm slot_remove_binding R3 0 0 
+Oct 20 16:16:56.921 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:16:56.921 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 0 C7200-IO-2FE 
+Oct 20 16:16:56.922 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:16:56.922 HYPERVISOR: exec_cmd: vm slot_add_binding R3 1 0 PA-2FE-TX 
+Oct 20 16:16:56.923 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:16:56.923 HYPERVISOR: exec_cmd: vm slot_add_binding R3 2 0 PA-2FE-TX 
+Oct 20 16:16:56.924 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:16:56.924 HYPERVISOR: exec_cmd: vm slot_add_binding R3 3 0 PA-2FE-TX 
+Oct 20 16:16:57.818 HYPERVISOR: exec_cmd: nio create_udp udp-ba2d0ede-85db-490e-94d5-c069eec23a70 10006 127.0.0.1 10007 
+Oct 20 16:16:58.036 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 0 udp-ba2d0ede-85db-490e-94d5-c069eec23a70 
+Oct 20 16:16:58.037 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:16:58.184 HYPERVISOR: exec_cmd: nio create_udp udp-77e1992b-5f4e-497b-9c4c-7ec246a33d7f 10010 127.0.0.1 10011 
+Oct 20 16:16:58.187 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 1 udp-77e1992b-5f4e-497b-9c4c-7ec246a33d7f 
+Oct 20 16:16:58.188 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:19:12.525 HYPERVISOR: exec_cmd: vm set_ghost_status R3 2 
+Oct 20 16:19:12.527 HYPERVISOR: exec_cmd: vm set_ghost_file R3 /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.bin-512.ghost 
+Oct 20 16:19:12.528 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 16:19:12.530 HYPERVISOR: exec_cmd: vm set_config R3 configs/i3_startup-config.cfg configs/i3_private-config.cfg 
+Oct 20 16:19:12.531 HYPERVISOR: exec_cmd: vm start R3 
+Oct 20 16:19:42.777 HYPERVISOR: exec_cmd: vm extract_config R3 
+Oct 20 16:20:12.778 HYPERVISOR: exec_cmd: vm extract_config R3 
+Oct 20 16:20:42.779 HYPERVISOR: exec_cmd: vm extract_config R3 
+Oct 20 17:16:39.888 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 20 17:16:39.888 HYPERVISOR: exec_cmd: vm stop R3 
+Oct 20 17:16:39.988 VM: VM R3 shutdown.
+Oct 20 17:16:39.988 HYPERVISOR: exec_cmd: vm extract_config R3 

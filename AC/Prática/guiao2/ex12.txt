@@ -1,0 +1,1 @@
+12) Fica a preferir a comunidade 2 porque tem uma prefrência maior (111), assim que o a interface dessa comunidade é desligada, o link da comunidade 1 é 22 fica menos preferível que o local preference default, logo o R2 vai para a rede 192.3.1.0/24 "à volta" pelo 192.2.0.1

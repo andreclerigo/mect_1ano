@@ -1,0 +1,1 @@
+13) O Router 3 não conhece a rede então por rota de omissão manda para o Router 1, o Router 1 conhece essa rede por BGP pelo Router 2, por isso manda para esse (que passa pelo Router 3) e fica num loop
