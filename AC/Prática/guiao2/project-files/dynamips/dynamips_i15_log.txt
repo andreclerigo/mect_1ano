@@ -1,9 +1,0 @@
-Oct 20 16:16:57.301 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
-Oct 20 16:16:57.301 HYPERVISOR: Started on IP = localhost, TCP port = 44985.
-Oct 20 16:16:57.307 HYPERVISOR: exec_cmd: hypervisor version 
-Oct 20 16:16:57.308 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips 
-Oct 20 16:16:57.308 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips
-Oct 20 16:16:57.308 HYPERVISOR: exec_cmd: ethsw create Switch10 
-Oct 20 16:17:00.501 HYPERVISOR: exec_cmd: nio create_udp udp-2917d682-238e-4920-87f5-37d421884a1c 10053 127.0.0.1 10052 
-Oct 20 16:17:00.502 HYPERVISOR: exec_cmd: ethsw add_nio Switch10 udp-2917d682-238e-4920-87f5-37d421884a1c 
-Oct 20 16:17:00.515 HYPERVISOR: exec_cmd: ethsw set_access_port Switch10 udp-2917d682-238e-4920-87f5-37d421884a1c 1 

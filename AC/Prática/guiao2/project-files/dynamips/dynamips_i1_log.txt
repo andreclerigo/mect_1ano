@@ -1,6 +1,0 @@
-Oct 20 16:16:56.541 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
-Oct 20 16:16:56.541 HYPERVISOR: Started on IP = localhost, TCP port = 51031.
-Oct 20 16:16:56.547 HYPERVISOR: exec_cmd: hypervisor version 
-Oct 20 16:16:56.547 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips 
-Oct 20 16:16:56.547 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao2/project-files/dynamips
-Oct 20 16:16:56.548 HYPERVISOR: exec_cmd: ethsw create Switch1 
