@@ -1,0 +1,2 @@
+Request - Flag DS Status (0x01)
+Reply - Flag DS Status(0x10)

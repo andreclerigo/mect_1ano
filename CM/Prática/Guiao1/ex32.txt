@@ -1,0 +1,19 @@
+iperf3 -c 10.0.1.2 -p 5202 -i 1 -R
+Connecting to host 10.0.1.2, port 5202
+Reverse mode, remote host 10.0.1.2 is sending
+[  5] local 10.0.1.108 port 41396 connected to 10.0.1.2 port 5202
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  22.6 KBytes   185 Kbits/sec                  
+[  5]   1.00-2.00   sec  0.00 Bytes  0.00 bits/sec                  
+[  5]   2.00-3.00   sec   761 KBytes  6.23 Mbits/sec                  
+[  5]   3.00-4.00   sec  1.08 MBytes  9.05 Mbits/sec                  
+[  5]   4.00-5.00   sec  1.71 MBytes  14.4 Mbits/sec                  
+[  5]   5.00-6.00   sec  1.60 MBytes  13.4 Mbits/sec                  
+[  5]   6.00-7.00   sec  1.75 MBytes  14.7 Mbits/sec                  
+[  5]   7.00-8.00   sec  1.69 MBytes  14.1 Mbits/sec                  
+[  5]   8.00-9.00   sec  1.19 MBytes  9.99 Mbits/sec                  
+[  5]   9.00-10.00  sec   882 KBytes  7.23 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-15.26  sec  11.5 MBytes  6.32 Mbits/sec   18             sender
+[  5]   0.00-10.00  sec  10.6 MBytes  8.93 Mbits/sec                  receiver

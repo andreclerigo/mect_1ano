@@ -1,0 +1,1 @@
+Os pacotes tem o seguinte caminho STA -> AP -> STB e STB -> AP -> STA, dependendo se o pacote é caputado de STx para AP (Flag DS Status 0x01) ou de AP para STx (Flag DS Status 0x10), podemos também verificar que podemos capturar o mesmo pacote 2vezes, uma quando vai da estação para o AP e outra quando vai do AP para a estação

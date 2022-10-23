@@ -1,0 +1,2 @@
+Os pacotes ARP são encapsulados pelo protocolo IEEE 802.11, o tipo de Trama é Data(2) e Subtrama é Quality Of Service Data (8).
+Os pacotes ICMP são encapsulados em IPv4 e subsquentemente pelo protocolo IEEE 802.11, sendo as tramas e subtramas iguais às anteriores.
