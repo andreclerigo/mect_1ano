@@ -1,0 +1,61 @@
+Nov 03 13:23:01.646 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Nov 03 13:23:01.646 HYPERVISOR: Started on IP = localhost, TCP port = 35595.
+Nov 03 13:23:01.652 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 03 13:23:01.652 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips 
+Nov 03 13:23:01.652 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips
+Nov 03 13:23:01.653 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips/321f9c5c-2bee-469f-83af-d9bd9c8ad73d 
+Nov 03 13:23:01.653 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips/321f9c5c-2bee-469f-83af-d9bd9c8ad73d
+Nov 03 13:23:01.654 HYPERVISOR: exec_cmd: vm create RB 4 c7200 
+Nov 03 13:23:01.654 VM: VM RB created.
+Nov 03 13:23:01.655 HYPERVISOR: exec_cmd: vm set_con_tcp_port RB 5003 
+Nov 03 13:23:01.656 HYPERVISOR: exec_cmd: c7200 get_mac_addr RB 
+Nov 03 13:23:01.656 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:01.657 HYPERVISOR: exec_cmd: vm slot_add_binding RB 0 0 C7200-IO-FE 
+Nov 03 13:23:01.658 HYPERVISOR: exec_cmd: vm set_disk0 RB 0 
+Nov 03 13:23:01.659 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:01.660 HYPERVISOR: exec_cmd: vm set_idle_pc RB 0x6318e57c 
+Nov 03 13:23:01.661 HYPERVISOR: exec_cmd: vm set_ios RB /home/andre/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.bin 
+Nov 03 13:23:01.662 HYPERVISOR: exec_cmd: c7200 set_mac_addr RB ca04.eb9d.0000 
+Nov 03 13:23:01.662 HYPERVISOR: exec_cmd: vm set_nvram RB 512 
+Nov 03 13:23:01.663 HYPERVISOR: exec_cmd: vm set_ram RB 512 
+Nov 03 13:23:01.664 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:01.665 HYPERVISOR: exec_cmd: vm slot_remove_binding RB 0 0 
+Nov 03 13:23:01.666 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:01.666 HYPERVISOR: exec_cmd: vm slot_add_binding RB 0 0 C7200-IO-2FE 
+Nov 03 13:23:01.667 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:01.668 HYPERVISOR: exec_cmd: vm slot_add_binding RB 1 0 PA-2FE-TX 
+Nov 03 13:23:01.669 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:01.669 HYPERVISOR: exec_cmd: vm slot_add_binding RB 2 0 PA-2FE-TX 
+Nov 03 13:23:01.670 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:01.671 HYPERVISOR: exec_cmd: vm slot_add_binding RB 3 0 PA-2FE-TX 
+Nov 03 13:23:04.029 HYPERVISOR: exec_cmd: nio create_udp udp-a9cdd8ae-3372-4e4b-b40c-aa6e562963c4 10030 127.0.0.1 10031 
+Nov 03 13:23:04.242 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RB 1 0 udp-a9cdd8ae-3372-4e4b-b40c-aa6e562963c4 
+Nov 03 13:23:04.243 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:04.444 HYPERVISOR: exec_cmd: nio create_udp udp-e2c83283-b9e1-483b-a211-8ee808f13893 10034 127.0.0.1 10035 
+Nov 03 13:23:04.448 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RB 1 1 udp-e2c83283-b9e1-483b-a211-8ee808f13893 
+Nov 03 13:23:04.449 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:04.735 HYPERVISOR: exec_cmd: nio create_udp udp-d7348077-bffa-458d-b79a-f685e41da793 10042 127.0.0.1 10043 
+Nov 03 13:23:04.738 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RB 0 0 udp-d7348077-bffa-458d-b79a-f685e41da793 
+Nov 03 13:23:04.738 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:23:04.843 HYPERVISOR: exec_cmd: nio create_udp udp-f8e5fec2-9109-44b2-9e40-84ed8d8af0a4 10046 127.0.0.1 10047 
+Nov 03 13:23:04.846 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RB 0 1 udp-f8e5fec2-9109-44b2-9e40-84ed8d8af0a4 
+Nov 03 13:23:04.847 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:45:57.547 HYPERVISOR: exec_cmd: vm set_ghost_status RB 2 
+Nov 03 13:45:57.547 HYPERVISOR: exec_cmd: vm set_ghost_file RB /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.bin-512.ghost 
+Nov 03 13:45:57.548 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 13:45:57.555 HYPERVISOR: exec_cmd: vm set_config RB configs/i4_startup-config.cfg configs/i4_private-config.cfg 
+Nov 03 13:45:57.556 HYPERVISOR: exec_cmd: vm start RB 
+Nov 03 13:46:27.786 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 13:48:57.791 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 13:52:27.798 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 13:55:27.807 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 14:00:57.820 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 14:15:27.855 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 14:26:57.882 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 14:57:57.959 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 15:20:28.026 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 15:24:28.043 HYPERVISOR: exec_cmd: vm extract_config RB 
+Nov 03 15:47:37.476 HYPERVISOR: exec_cmd: vm get_status RB 
+Nov 03 15:47:37.481 HYPERVISOR: exec_cmd: vm stop RB 
+Nov 03 15:47:37.709 VM: VM RB shutdown.
+Nov 03 15:47:37.710 HYPERVISOR: exec_cmd: vm extract_config RB 

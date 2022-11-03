@@ -1,0 +1,1 @@
+Os tuneis dinâmicos encontram um path alternativo e continuam up, aqueles que não eram dinâmicos e usam paths estáticos ficaram sem funciona (Protocol Down) quando o link está em baixo.

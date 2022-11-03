@@ -1,0 +1,24 @@
+Nov 03 13:23:02.007 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Nov 03 13:23:02.008 HYPERVISOR: Started on IP = localhost, TCP port = 52423.
+Nov 03 13:23:02.013 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 03 13:23:02.014 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips 
+Nov 03 13:23:02.014 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips
+Nov 03 13:23:02.014 HYPERVISOR: exec_cmd: ethsw create Switch4 
+Nov 03 13:23:03.061 HYPERVISOR: exec_cmd: nio create_udp udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 10009 127.0.0.1 10008 
+Nov 03 13:23:03.062 HYPERVISOR: exec_cmd: ethsw add_nio Switch4 udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 
+Nov 03 13:23:03.069 HYPERVISOR: exec_cmd: ethsw set_access_port Switch4 udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 1 
+Nov 03 13:23:03.389 HYPERVISOR: exec_cmd: nio create_udp udp-af02dd65-02c8-4301-8699-79d1f8b36a7e 10013 127.0.0.1 10012 
+Nov 03 13:23:03.390 HYPERVISOR: exec_cmd: ethsw add_nio Switch4 udp-af02dd65-02c8-4301-8699-79d1f8b36a7e 
+Nov 03 13:23:03.391 HYPERVISOR: exec_cmd: ethsw set_access_port Switch4 udp-af02dd65-02c8-4301-8699-79d1f8b36a7e 1 
+Nov 03 13:49:52.746 HYPERVISOR: exec_cmd: nio bind_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 capture 
+Nov 03 13:49:52.746 HYPERVISOR: exec_cmd: nio setup_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 en10mb /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/captures/RA_FastEthernet11_to_Switch4_Ethernet0.pcap 
+Nov 03 13:51:22.523 HYPERVISOR: exec_cmd: nio unbind_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 
+Nov 03 13:53:20.837 HYPERVISOR: exec_cmd: nio bind_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 capture 
+Nov 03 13:53:20.837 HYPERVISOR: exec_cmd: nio setup_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 en10mb /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/captures/RA_FastEthernet11_to_Switch4_Ethernet0.pcap 
+Nov 03 14:45:54.405 HYPERVISOR: exec_cmd: nio unbind_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 
+Nov 03 14:58:23.304 HYPERVISOR: exec_cmd: nio bind_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 capture 
+Nov 03 14:58:23.305 HYPERVISOR: exec_cmd: nio setup_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 en10mb /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/captures/RA_FastEthernet11_to_Switch4_Ethernet0.pcap 
+Nov 03 15:08:27.110 HYPERVISOR: exec_cmd: nio unbind_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 
+Nov 03 15:10:23.547 HYPERVISOR: exec_cmd: nio bind_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 capture 
+Nov 03 15:10:23.547 HYPERVISOR: exec_cmd: nio setup_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 en10mb /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/captures/RA_FastEthernet11_to_Switch4_Ethernet0.pcap 
+Nov 03 15:12:34.183 HYPERVISOR: exec_cmd: nio unbind_filter udp-e756fbb5-62ec-4e67-9f2d-3f81b04f1d9d 2 
