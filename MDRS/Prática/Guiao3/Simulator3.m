@@ -50,7 +50,7 @@ EventList = [ARRIVAL, tmp, GeneratePacketSize(), tmp, DATA];
 
 % Initializing VoIP packets
 for i = 1:n
-    tmp = unifrnd(0.016, 0.024);  %packet arrivals is unif distrib between 16 ms and 24 ms
+    tmp = unifrnd(0, 0.02);              %packet arrivals is unif distrib between 0 ms and 20 ms
     EventList = [EventList; ARRIVAL, tmp, randi([110, 130]), tmp, VOIP];
 end
 

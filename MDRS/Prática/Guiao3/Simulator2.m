@@ -68,10 +68,11 @@ while TRANSMITTEDPACKETS<P               % Stopping criterium
                 if Clock - ArrivalInstant > MAXDELAY
                     MAXDELAY= Clock - ArrivalInstant;
                 end
-            else
+                TRANSMITTEDPACKETS= TRANSMITTEDPACKETS + 1;
+            else                            % Failure
                 LOSTPACKETS = LOSTPACKETS + 1;
             end
-            TRANSMITTEDPACKETS= TRANSMITTEDPACKETS + 1;
+            
             if QUEUEOCCUPATION > 0
                 EventList = [EventList; DEPARTURE, Clock + 8*QUEUE(1,1)/(C*10^6), QUEUE(1,1), QUEUE(1,2)];
                 QUEUEOCCUPATION= QUEUEOCCUPATION - QUEUE(1,1);
