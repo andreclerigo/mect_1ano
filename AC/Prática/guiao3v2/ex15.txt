@@ -1,0 +1,1 @@
+Não existe conectividade porque o R1 não conhece a rede que está encapsulada pela VPN-1

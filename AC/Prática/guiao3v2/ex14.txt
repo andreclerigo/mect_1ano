@@ -1,0 +1,1 @@
+Não existe a conectividade porque o PC1 não conhece a rede do R1

@@ -1,0 +1,1 @@
+Agora o R1 já conhece a rede do PC1 porque foi distribuida por OSPF

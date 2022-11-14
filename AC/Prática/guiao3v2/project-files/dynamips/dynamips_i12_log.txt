@@ -1,0 +1,24 @@
+Nov 10 13:18:04.195 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Nov 10 13:18:04.195 HYPERVISOR: Started on IP = localhost, TCP port = 42019.
+Nov 10 13:18:04.201 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 10 13:18:04.201 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips 
+Nov 10 13:18:04.201 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips
+Nov 10 13:18:04.202 HYPERVISOR: exec_cmd: ethsw create Switch8 
+Nov 10 13:18:07.662 HYPERVISOR: exec_cmd: nio create_udp udp-2f0d1876-b4a8-4d6f-aaf8-b7dc62754029 10041 127.0.0.1 10040 
+Nov 10 13:18:07.662 HYPERVISOR: exec_cmd: ethsw add_nio Switch8 udp-2f0d1876-b4a8-4d6f-aaf8-b7dc62754029 
+Nov 10 13:18:07.671 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-2f0d1876-b4a8-4d6f-aaf8-b7dc62754029 1 
+Nov 10 13:20:43.825 HYPERVISOR: exec_cmd: nio create_udp udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 10059 127.0.0.1 10058 
+Nov 10 13:20:43.825 HYPERVISOR: exec_cmd: ethsw add_nio Switch8 udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 
+Nov 10 13:20:43.831 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 1 
+Nov 10 13:21:32.020 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-2f0d1876-b4a8-4d6f-aaf8-b7dc62754029 1 
+Nov 10 13:21:32.021 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 1 
+Nov 10 13:21:32.240 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-2f0d1876-b4a8-4d6f-aaf8-b7dc62754029 1 
+Nov 10 13:21:32.241 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 1 
+Nov 10 13:21:36.799 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-2f0d1876-b4a8-4d6f-aaf8-b7dc62754029 1 
+Nov 10 13:21:36.800 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 1 
+Nov 10 13:21:53.339 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-2f0d1876-b4a8-4d6f-aaf8-b7dc62754029 1 
+Nov 10 13:21:53.340 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 1 
+Nov 10 13:21:53.567 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-2f0d1876-b4a8-4d6f-aaf8-b7dc62754029 1 
+Nov 10 13:21:53.569 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 1 
+Nov 10 13:23:05.674 HYPERVISOR: exec_cmd: ethsw remove_nio Switch8 udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 
+Nov 10 13:23:05.677 HYPERVISOR: exec_cmd: nio delete udp-27199fea-f0fc-41c8-bc5d-e6569c5d4a98 

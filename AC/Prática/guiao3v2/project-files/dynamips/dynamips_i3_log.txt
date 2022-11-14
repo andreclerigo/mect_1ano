@@ -1,0 +1,57 @@
+Nov 10 13:18:03.598 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Nov 10 13:18:03.598 HYPERVISOR: Started on IP = localhost, TCP port = 51221.
+Nov 10 13:18:03.603 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 10 13:18:03.604 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips 
+Nov 10 13:18:03.604 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips
+Nov 10 13:18:03.604 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips/7234ca7d-d070-4538-9738-89afce6527c7 
+Nov 10 13:18:03.604 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips/7234ca7d-d070-4538-9738-89afce6527c7
+Nov 10 13:18:03.605 HYPERVISOR: exec_cmd: vm create RA 3 c7200 
+Nov 10 13:18:03.605 VM: VM RA created.
+Nov 10 13:18:03.606 HYPERVISOR: exec_cmd: vm set_con_tcp_port RA 5002 
+Nov 10 13:18:03.607 HYPERVISOR: exec_cmd: c7200 get_mac_addr RA 
+Nov 10 13:18:03.607 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:03.608 HYPERVISOR: exec_cmd: vm slot_add_binding RA 0 0 C7200-IO-FE 
+Nov 10 13:18:03.609 HYPERVISOR: exec_cmd: vm set_disk0 RA 0 
+Nov 10 13:18:03.610 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:03.610 HYPERVISOR: exec_cmd: vm set_idle_pc RA 0x6318e57c 
+Nov 10 13:18:03.612 HYPERVISOR: exec_cmd: vm set_ios RA /home/andre/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.bin 
+Nov 10 13:18:03.612 HYPERVISOR: exec_cmd: c7200 set_mac_addr RA ca03.e3e3.0000 
+Nov 10 13:18:03.613 HYPERVISOR: exec_cmd: vm set_nvram RA 512 
+Nov 10 13:18:03.614 HYPERVISOR: exec_cmd: vm set_ram RA 512 
+Nov 10 13:18:03.615 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:03.615 HYPERVISOR: exec_cmd: vm slot_remove_binding RA 0 0 
+Nov 10 13:18:03.616 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:03.616 HYPERVISOR: exec_cmd: vm slot_add_binding RA 0 0 C7200-IO-2FE 
+Nov 10 13:18:03.617 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:03.618 HYPERVISOR: exec_cmd: vm slot_add_binding RA 1 0 PA-2FE-TX 
+Nov 10 13:18:03.619 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:03.619 HYPERVISOR: exec_cmd: vm slot_add_binding RA 2 0 PA-2FE-TX 
+Nov 10 13:18:03.620 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:03.620 HYPERVISOR: exec_cmd: vm slot_add_binding RA 3 0 PA-2FE-TX 
+Nov 10 13:18:04.931 HYPERVISOR: exec_cmd: nio create_udp udp-170a9af2-b058-4b92-bfea-5b543ef00746 10006 127.0.0.1 10007 
+Nov 10 13:18:05.152 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RA 1 0 udp-170a9af2-b058-4b92-bfea-5b543ef00746 
+Nov 10 13:18:05.154 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:05.395 HYPERVISOR: exec_cmd: nio create_udp udp-3091ed35-3ca8-4445-b943-42a5b0fc6157 10010 127.0.0.1 10011 
+Nov 10 13:18:05.399 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RA 1 1 udp-3091ed35-3ca8-4445-b943-42a5b0fc6157 
+Nov 10 13:18:05.400 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:08.103 HYPERVISOR: exec_cmd: nio create_udp udp-21aaf44c-d80c-41cd-a937-1ae0d4fcce3e 10050 127.0.0.1 10051 
+Nov 10 13:18:08.108 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RA 0 1 udp-21aaf44c-d80c-41cd-a937-1ae0d4fcce3e 
+Nov 10 13:18:08.108 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:18:08.327 HYPERVISOR: exec_cmd: nio create_udp udp-32a96d8d-c51a-4a19-b123-619adce4b08a 10054 127.0.0.1 10055 
+Nov 10 13:18:08.330 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RA 0 0 udp-32a96d8d-c51a-4a19-b123-619adce4b08a 
+Nov 10 13:18:08.331 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:20:09.730 HYPERVISOR: exec_cmd: vm set_ghost_status RA 2 
+Nov 10 13:20:09.732 HYPERVISOR: exec_cmd: vm set_ghost_file RA /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.bin-512.ghost 
+Nov 10 13:20:09.733 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:20:09.735 HYPERVISOR: exec_cmd: vm set_config RA configs/i3_startup-config.cfg configs/i3_private-config.cfg 
+Nov 10 13:20:09.735 HYPERVISOR: exec_cmd: vm start RA 
+Nov 10 13:20:40.119 HYPERVISOR: exec_cmd: vm extract_config RA 
+Nov 10 13:21:10.121 HYPERVISOR: exec_cmd: vm extract_config RA 
+Nov 10 13:23:23.675 HYPERVISOR: exec_cmd: vm set_ios RA /home/andre/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.bin 
+Nov 10 13:23:23.940 HYPERVISOR: exec_cmd: vm set_ios RA /home/andre/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.bin 
+Nov 10 13:23:30.237 HYPERVISOR: exec_cmd: vm set_ios RA /home/andre/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.bin 
+Nov 10 13:23:30.468 HYPERVISOR: exec_cmd: vm set_ios RA /home/andre/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.bin 
+Nov 10 13:24:35.825 HYPERVISOR: exec_cmd: vm get_status RA 
+Nov 10 13:24:35.826 HYPERVISOR: exec_cmd: vm stop RA 
+Nov 10 13:24:36.011 VM: VM RA shutdown.
+Nov 10 13:24:36.014 HYPERVISOR: exec_cmd: vm extract_config RA 

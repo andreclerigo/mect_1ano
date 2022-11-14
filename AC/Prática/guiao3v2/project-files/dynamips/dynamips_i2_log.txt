@@ -1,0 +1,50 @@
+Nov 10 13:18:03.517 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Nov 10 13:18:03.517 HYPERVISOR: Started on IP = localhost, TCP port = 37103.
+Nov 10 13:18:03.523 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 10 13:18:03.523 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips 
+Nov 10 13:18:03.523 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips
+Nov 10 13:18:03.524 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips/d12b59b5-51dd-4948-8433-52b13179fc10 
+Nov 10 13:18:03.524 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips/d12b59b5-51dd-4948-8433-52b13179fc10
+Nov 10 13:18:03.524 HYPERVISOR: exec_cmd: vm create R2 2 c7200 
+Nov 10 13:18:03.524 VM: VM R2 created.
+Nov 10 13:18:03.525 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5001 
+Nov 10 13:18:03.526 HYPERVISOR: exec_cmd: c7200 get_mac_addr R2 
+Nov 10 13:18:03.526 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:18:03.526 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-FE 
+Nov 10 13:18:03.528 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Nov 10 13:18:03.528 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:18:03.529 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x6318e57c 
+Nov 10 13:18:03.530 HYPERVISOR: exec_cmd: vm set_ios R2 /home/andre/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.bin 
+Nov 10 13:18:03.531 HYPERVISOR: exec_cmd: c7200 set_mac_addr R2 ca02.e3d2.0000 
+Nov 10 13:18:03.532 HYPERVISOR: exec_cmd: vm set_nvram R2 512 
+Nov 10 13:18:03.532 HYPERVISOR: exec_cmd: vm set_ram R2 512 
+Nov 10 13:18:03.533 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:18:03.533 HYPERVISOR: exec_cmd: vm slot_remove_binding R2 0 0 
+Nov 10 13:18:03.534 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:18:03.534 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-2FE 
+Nov 10 13:18:03.535 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:18:03.536 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 PA-2FE-TX 
+Nov 10 13:18:03.536 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:18:03.537 HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 PA-2FE-TX 
+Nov 10 13:18:03.537 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:18:03.538 HYPERVISOR: exec_cmd: vm slot_add_binding R2 3 0 PA-2FE-TX 
+Nov 10 13:18:05.694 HYPERVISOR: exec_cmd: nio create_udp udp-c0624a56-9bc2-4ff4-99b8-7bf98560f2f2 10014 127.0.0.1 10015 
+Nov 10 13:18:05.909 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-c0624a56-9bc2-4ff4-99b8-7bf98560f2f2 
+Nov 10 13:18:05.911 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:18:06.141 HYPERVISOR: exec_cmd: nio create_udp udp-32e08f20-6014-4f6e-bac6-c1f2d8aad4c4 10018 127.0.0.1 10019 
+Nov 10 13:18:06.145 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 1 udp-32e08f20-6014-4f6e-bac6-c1f2d8aad4c4 
+Nov 10 13:18:06.146 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:18:07.442 HYPERVISOR: exec_cmd: nio create_udp udp-c4603ddb-b743-45e7-9f75-7a7f99d9b056 10038 127.0.0.1 10039 
+Nov 10 13:18:07.445 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 1 0 udp-c4603ddb-b743-45e7-9f75-7a7f99d9b056 
+Nov 10 13:18:07.445 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:20:09.727 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Nov 10 13:20:09.729 HYPERVISOR: exec_cmd: vm set_ghost_file R2 /home/andre/github/mect_1ano/AC/Prática/guiao3/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.bin-512.ghost 
+Nov 10 13:20:09.730 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:20:09.732 HYPERVISOR: exec_cmd: vm set_config R2 configs/i2_startup-config.cfg configs/i2_private-config.cfg 
+Nov 10 13:20:09.733 HYPERVISOR: exec_cmd: vm start R2 
+Nov 10 13:20:40.119 HYPERVISOR: exec_cmd: vm extract_config R2 
+Nov 10 13:21:10.119 HYPERVISOR: exec_cmd: vm extract_config R2 
+Nov 10 13:24:35.824 HYPERVISOR: exec_cmd: vm get_status R2 
+Nov 10 13:24:35.826 HYPERVISOR: exec_cmd: vm stop R2 
+Nov 10 13:24:36.006 VM: VM R2 shutdown.
+Nov 10 13:24:36.007 HYPERVISOR: exec_cmd: vm extract_config R2 
