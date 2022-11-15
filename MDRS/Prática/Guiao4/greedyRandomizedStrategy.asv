@@ -1,0 +1,32 @@
+function [sol, load] = greedyRandomizedStrategy(nNodes, Links, T, sP, limit)
+    nFlows= size(T,1);
+    nLinks= size(Links,1);
+    % random order of flows 
+    randFlows = randperm(nFlows);
+    sol = zeros(1, nFlows);
+
+    % iterate through each flow
+    for i = 1 : length(randFlows)
+        x_best = 0;
+        f_best = inf;
+        iter = min(nSP(randFlows(i)), limit);
+
+        % test every path "possible" in a certain load
+        for n = 1 : iter
+            % array with the length of path length
+            sol(randFlows(i)) = n;
+            % calculate loads
+            Loads = calculateLinkLoads(nNodes, Links, T, sP, sol);
+            load = max(max(Loads(:, 3:4)));
+            
+            % check if the current load is better then bestLoad
+            if load < bestLoad
+                % change index of path
+                x_best = n;
+                f_best = load;
+            end
+        end
+        sol(i) = x_best;
+    end
+    load = best;
+end

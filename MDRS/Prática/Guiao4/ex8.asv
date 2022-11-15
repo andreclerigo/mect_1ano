@@ -221,7 +221,7 @@ somador= 0;
 while toc(t) < timeLimit
     sol= zeros(1,nFlows);
     for f= 1:nFlows
-        sol(f)= min(nSP(f));
+        sol(f)= randi(nSP(f));
     end
     Loads= calculateLinkLoads(nNodes,Links,T,sP,sol);
     load= max(max(Loads(:,3:4)));
