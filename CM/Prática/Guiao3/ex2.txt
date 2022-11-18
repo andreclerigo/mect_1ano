@@ -1,0 +1,15 @@
+nrf(Network Repo Functions) -> componente chave, repositorio que contem todas as funções da rede
+AMF -> Access Mobilitie function (aka sabe onde o terminal esta + merdas)
+UDR(Unified Data Repo) -> user description (Subsciption/Policy/AppData...)
+UDM(Unified Data Management) -> responsavel por gerar credenciais, usa data presente no UDR
+AUSF(Authentication Server Function) -> recebe pedidos do AMF e interaeg com UDM para obter vectores de autenticação
+NSSF -> network slicing selection function (usado por AMF para ajudar a selecionar a network slice)
+PCM (Policy Control Function) -> usa informação na UDR e gera politicas para SMF/AMF
+UPF (User Plane Function) -> Access net to data net 
+SMF (Session Management Function) -> liga UDM e PCF à UDF
+-----------------------------------------------------------------------------
+2.7
+NRF -> UDR -> UDM -> AUSF -> NSSF -> AMF -> PCF -> UPF -> SMF
+
+
+2.8) Identificar IPs do Wireshark com as referencias dos anexos e ver a ordem do processo de comunicacao
