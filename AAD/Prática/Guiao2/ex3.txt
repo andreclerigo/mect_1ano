@@ -1,0 +1,15 @@
+3.1) speedup = 1 / (0,2 + 0,8/N)
+
+3.2) speedup = 1 / (0,2 + 0,005 * 7 + 0,8/8) = 2,99
+
+3.3) speedup = 1 / (0,2 + 0,005 * 3 + 0,8/8) = 3,17
+
+3.4) N = 2^k
+	 speedup = 1 / (0,2 + 0,005 * k + 0,8/N)  
+
+3.5) N = 2^k
+	 P - % of the original execution time is concurred
+
+	speedup = 1 / ((1 - P) + 0,005 * k + (P/N)) 
+
+	Testando para vários valores vemos que o máximo é para k=7 e o resultado de speedup é 4,15
