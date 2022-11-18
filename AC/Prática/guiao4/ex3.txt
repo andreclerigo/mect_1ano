@@ -1,0 +1,5 @@
+Os pacotes enviados entre PE1 e PE2 usam o protocolo UDP.
+
+A conexão é identificada no VXLAN Header e pelo parametro VXLAN Network ID
+
+Fica limitado porque se tivermos mais VLANs vamos ter mais tuneis e os broadcasts espalhavam-se pelas VLANs todas
