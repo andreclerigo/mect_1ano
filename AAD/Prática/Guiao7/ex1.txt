@@ -1,0 +1,35 @@
+1.1) Adress lines: 23
+	Sendo assim, podemos endreçar 2^23 = 8M unidades de memória, assumindo que tipicamente uma unidade de memória endereça 1Byte. 23 linhas é capaz de armazenar 8M Bytes, para half-word (16bits) armazena 4M Half-Words, para words (32bits) armazena 2M words e para double-words (64bits) armazena 1M double-words
+
+	
+1.2) 23 linhas (em hexadeciamal) vai de 000000 até 7FFFFF. O último quarto do espaço de endereçamento é 600000 até 7FFFFF
+
+Como em Bytes cada unidade armazena 1 Byte:
+600000, 600001, 600002, ...	(Cada valor dentro da range é válido)
+
+Como em half-word duas unidades armazenam 1 half-word:
+600000, 600002, 600004, ... (O último bit deve ter o valor zero)
+
+Como em words, 4 unidades armazenam 1 word:
+600000, 600004, 600008, ... (Os útltmos 2 bits devem ter o valor zero)
+
+Como em double-words, 8 unidades aramazenam 1 double-word:
+600000, 600008, 600010, ... (Os últimos 3 bits devem ter o valor zero)	
+
+
+1.3)Endereços					Verificar últimos 4 bits
+	14902 (dec) = 003A36 (hex)	0110
+	3710 (dec) = 000E7E (hex)	1110
+	5555 (dec) = 0015B3 (hex)	0011
+	764 (dec) = 0002FC	(hex)	1100
+	2760 (dec) = 000AC8 (hex)	1000
+	
+	Vistos que todos os endereços estão entre 000000 e 7FFFFF, todas os endereçamentos podem endereçar 1 Byte.
+	
+	Missaligned para half-words (último bit deve ser 0): 5555 (dec)
+ 	Missaligned para words (últimos 2 bits devem ser 0): 14902 (dec), 3710 (dec), 5555 (dec)
+ 	Missaligned para double-words (últimos 3 bits devem ser 0):14902 (dec), 3710 (dec), 5555 (dec), 764 (dec)
+ 	
+ 	
+1.4) 11899675 (dec) = B5931B (hex), não é possível referenciar 1 byte no sistema de memória porque vai para além do espaço de endereçamento definido.
+

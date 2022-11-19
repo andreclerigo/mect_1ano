@@ -1,0 +1,48 @@
+2.1)
+	SDRAM: 128Mbit
+	8banks of 4096 rows x 1024 columns of 4bits
+				
+					  1024 columns					
+	   <=======================================>	
+	^	| 4bit |     |     |     |     ...    |		}	
+	|	| 4bit |     |     |     |     ...    |		}
+	|	|                                     |		}
+	|	|                                     |		}
+	|	|                                     |		}
+4096|	|                                     |		} 8x
+rows|	|                                     |		}
+	|	|                 ...                 |		}
+	|	|                                     |		}
+	|	|                                     |		}
+	|	|                                     |		}
+	^  <=======================================>
+	
+	4096 rows x 1024 cols x 4-bit data x 8 banks
+	= 2^12 * 2^10 * 2^2 * 2^3
+	= 2^27
+	= 2^7 * 2^20
+	~ 128 Mb
+	
+	Nº de posicoes de memoria distintas = 2^12 * 2^10 * 2^3 = 2^25 bits = 128M/4 = 32M 
+	
+	Precisamos de 15 linhas, 3 para os bancos, 12 para as linhas das quais 10 são usadas para a multiplexagem das colunas.
+
+
+2.2) Se 1 chip armazena 4 bits, para 64-bit data wide memory necessitamos de 64/4 = 16 chips.
+
+
+2.3)
+	4096 rows x 1024 cols x 64-bit data x 8 banks
+	= 2^12 * 2^10 * 2^6 * 2^3
+	= 2^29
+	= 2^9 * 2^20
+	~ 512 Mb
+	~ 256 MB
+	
+	Ou
+	
+	32M posicoes de 4bit * 16 chips = 2^25 * 2^4 = 2^29 posicoes de 4bit
+												 = 2^28 Bytes = 256MB
+
+2.4)
+	
