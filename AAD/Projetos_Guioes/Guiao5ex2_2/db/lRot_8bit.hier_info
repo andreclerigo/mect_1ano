@@ -1,0 +1,879 @@
+|lRot_8bit
+dIn[0] => blk8of2to1mult:blk0.x00
+dIn[0] => blk8of2to1mult:blk0.x11
+dIn[1] => blk8of2to1mult:blk0.x10
+dIn[1] => blk8of2to1mult:blk0.x21
+dIn[2] => blk8of2to1mult:blk0.x20
+dIn[2] => blk8of2to1mult:blk0.x31
+dIn[3] => blk8of2to1mult:blk0.x30
+dIn[3] => blk8of2to1mult:blk0.x41
+dIn[4] => blk8of2to1mult:blk0.x40
+dIn[4] => blk8of2to1mult:blk0.x51
+dIn[5] => blk8of2to1mult:blk0.x50
+dIn[5] => blk8of2to1mult:blk0.x61
+dIn[6] => blk8of2to1mult:blk0.x60
+dIn[6] => blk8of2to1mult:blk0.x71
+dIn[7] => blk8of2to1mult:blk0.x01
+dIn[7] => blk8of2to1mult:blk0.x70
+sel[0] => blk8of2to1mult:blk0.sel
+sel[1] => blk8of2to1mult:blk1.sel
+sel[2] => blk8of2to1mult:blk2.sel
+dOut[0] << blk8of2to1mult:blk2.y0
+dOut[1] << blk8of2to1mult:blk2.y1
+dOut[2] << blk8of2to1mult:blk2.y2
+dOut[3] << blk8of2to1mult:blk2.y3
+dOut[4] << blk8of2to1mult:blk2.y4
+dOut[5] << blk8of2to1mult:blk2.y5
+dOut[6] << blk8of2to1mult:blk2.y6
+dOut[7] << blk8of2to1mult:blk2.y7
+
+
+|lRot_8bit|blk8of2to1mult:blk0
+x00 => mult2to1:mult0.x0
+x01 => mult2to1:mult0.x1
+x10 => mult2to1:mult1.x0
+x11 => mult2to1:mult1.x1
+x20 => mult2to1:mult2.x0
+x21 => mult2to1:mult2.x1
+x30 => mult2to1:mult3.x0
+x31 => mult2to1:mult3.x1
+x40 => mult2to1:mult4.x0
+x41 => mult2to1:mult4.x1
+x50 => mult2to1:mult5.x0
+x51 => mult2to1:mult5.x1
+x60 => mult2to1:mult6.x0
+x61 => mult2to1:mult6.x1
+x70 => mult2to1:mult7.x0
+x71 => mult2to1:mult7.x1
+sel => mult2to1:mult0.s
+sel => mult2to1:mult1.s
+sel => mult2to1:mult2.s
+sel => mult2to1:mult3.s
+sel => mult2to1:mult4.s
+sel => mult2to1:mult5.s
+sel => mult2to1:mult6.s
+sel => mult2to1:mult7.s
+y0 <= mult2to1:mult0.y
+y1 <= mult2to1:mult1.y
+y2 <= mult2to1:mult2.y
+y3 <= mult2to1:mult3.y
+y4 <= mult2to1:mult4.y
+y5 <= mult2to1:mult5.y
+y6 <= mult2to1:mult6.y
+y7 <= mult2to1:mult7.y
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult0
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult0|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult0|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult0|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult0|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult1
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult1|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult1|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult1|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult1|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult2
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult2|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult2|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult2|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult2|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult3
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult3|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult3|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult3|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult3|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult4
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult4|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult4|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult4|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult4|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult5
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult5|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult5|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult5|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult5|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult6
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult6|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult6|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult6|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult6|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult7
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult7|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult7|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult7|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk0|mult2to1:mult7|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1
+x00 => mult2to1:mult0.x0
+x01 => mult2to1:mult0.x1
+x10 => mult2to1:mult1.x0
+x11 => mult2to1:mult1.x1
+x20 => mult2to1:mult2.x0
+x21 => mult2to1:mult2.x1
+x30 => mult2to1:mult3.x0
+x31 => mult2to1:mult3.x1
+x40 => mult2to1:mult4.x0
+x41 => mult2to1:mult4.x1
+x50 => mult2to1:mult5.x0
+x51 => mult2to1:mult5.x1
+x60 => mult2to1:mult6.x0
+x61 => mult2to1:mult6.x1
+x70 => mult2to1:mult7.x0
+x71 => mult2to1:mult7.x1
+sel => mult2to1:mult0.s
+sel => mult2to1:mult1.s
+sel => mult2to1:mult2.s
+sel => mult2to1:mult3.s
+sel => mult2to1:mult4.s
+sel => mult2to1:mult5.s
+sel => mult2to1:mult6.s
+sel => mult2to1:mult7.s
+y0 <= mult2to1:mult0.y
+y1 <= mult2to1:mult1.y
+y2 <= mult2to1:mult2.y
+y3 <= mult2to1:mult3.y
+y4 <= mult2to1:mult4.y
+y5 <= mult2to1:mult5.y
+y6 <= mult2to1:mult6.y
+y7 <= mult2to1:mult7.y
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult0
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult0|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult0|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult0|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult0|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult1
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult1|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult1|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult1|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult1|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult2
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult2|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult2|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult2|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult2|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult3
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult3|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult3|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult3|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult3|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult4
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult4|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult4|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult4|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult4|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult5
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult5|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult5|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult5|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult5|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult6
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult6|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult6|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult6|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult6|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult7
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult7|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult7|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult7|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk1|mult2to1:mult7|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2
+x00 => mult2to1:mult0.x0
+x01 => mult2to1:mult0.x1
+x10 => mult2to1:mult1.x0
+x11 => mult2to1:mult1.x1
+x20 => mult2to1:mult2.x0
+x21 => mult2to1:mult2.x1
+x30 => mult2to1:mult3.x0
+x31 => mult2to1:mult3.x1
+x40 => mult2to1:mult4.x0
+x41 => mult2to1:mult4.x1
+x50 => mult2to1:mult5.x0
+x51 => mult2to1:mult5.x1
+x60 => mult2to1:mult6.x0
+x61 => mult2to1:mult6.x1
+x70 => mult2to1:mult7.x0
+x71 => mult2to1:mult7.x1
+sel => mult2to1:mult0.s
+sel => mult2to1:mult1.s
+sel => mult2to1:mult2.s
+sel => mult2to1:mult3.s
+sel => mult2to1:mult4.s
+sel => mult2to1:mult5.s
+sel => mult2to1:mult6.s
+sel => mult2to1:mult7.s
+y0 <= mult2to1:mult0.y
+y1 <= mult2to1:mult1.y
+y2 <= mult2to1:mult2.y
+y3 <= mult2to1:mult3.y
+y4 <= mult2to1:mult4.y
+y5 <= mult2to1:mult5.y
+y6 <= mult2to1:mult6.y
+y7 <= mult2to1:mult7.y
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult0
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult0|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult0|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult0|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult0|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult1
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult1|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult1|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult1|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult1|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult2
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult2|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult2|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult2|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult2|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult3
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult3|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult3|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult3|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult3|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult4
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult4|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult4|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult4|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult4|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult5
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult5|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult5|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult5|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult5|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult6
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult6|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult6|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult6|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult6|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult7
+x0 => gateAnd2:and0.x0
+x1 => gateAnd2:and1.x0
+s => gateInv:inv0.x
+s => gateAnd2:and1.x1
+y <= gateOr2:or0.y
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult7|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult7|gateAnd2:and0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult7|gateAnd2:and1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lRot_8bit|blk8of2to1mult:blk2|mult2to1:mult7|gateOr2:or0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+

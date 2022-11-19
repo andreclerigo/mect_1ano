@@ -1,0 +1,150 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/andre/github/mect_1ano/AAD/Projetos/Guiao5ex2/simulation/qsim
+Ehard_block
+Z1 w1668814729
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 ^M[R>L941CzW^5^z4gfb52
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z7 DPx9 cycloneiv 20 cycloneiv_components 0 22 A=5Z=j^V:4BYGPNKNFE9o0
+!i122 2
+Z8 d/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex2_2/simulation/qsim
+Z9 8lRot_8bit.vho
+Z10 FlRot_8bit.vho
+l0
+L35 1
+V5mcF]JUg7TS^l0EMa_h4A1
+!s100 Q?IbEnM>aW3cc=hi`GCc71
+Z11 OV;C;2020.1;71
+32
+Z12 !s110 1668814730
+!i10b 1
+Z13 !s108 1668814730.000000
+Z14 !s90 -work|work|lRot_8bit.vho|
+Z15 !s107 lRot_8bit.vho|
+!i113 1
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 5mcF]JUg7TS^l0EMa_h4A1
+!i122 2
+l65
+L51 20
+VMkbPfL8S?h^i>Mg3GSGD`1
+!s100 O>:lWQfHCcIaXgQ<=Tgn10
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 1
+R16
+R17
+Elrot_8bit
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+!i122 2
+R8
+R9
+R10
+l0
+L78 1
+VmS2RzGiM5PiLQdiVX<E8n2
+!s100 IF[eLeha5m;ALKS7n7AVg1
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 1
+R16
+R17
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 9 lrot_8bit 0 22 mS2RzGiM5PiLQdiVX<E8n2
+!i122 2
+l172
+L108 695
+VohTZ3nN_PJDA5=?U^F^913
+!s100 B<Pj>VCLL;8<Bak^i;DF^1
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 1
+R16
+R17
+Elrot_8bit_vhd_vec_tst
+Z18 w1668814728
+R5
+R6
+!i122 3
+R8
+Z19 8lRot_8bit.vwf.vht
+Z20 FlRot_8bit.vwf.vht
+l0
+L32 1
+VJbH:zo8b;k0`675ALkmOO2
+!s100 1Z7@zDNie?9Y2cZ]F;fWZ3
+R11
+32
+R12
+!i10b 1
+R13
+Z21 !s90 -work|work|lRot_8bit.vwf.vht|
+Z22 !s107 lRot_8bit.vwf.vht|
+!i113 1
+R16
+R17
+Alrot_8bit_arch
+R5
+R6
+Z23 DEx4 work 21 lrot_8bit_vhd_vec_tst 0 22 JbH:zo8b;k0`675ALkmOO2
+!i122 3
+l47
+Z24 L34 132
+VJL3klbYm>@<9DCl3?EET=1
+!s100 X0m<?;UnVD3_IZilj^<[Y0
+R11
+32
+R12
+!i10b 1
+R13
+R21
+R22
+!i113 1
+R16
+R17

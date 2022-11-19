@@ -1,0 +1,20 @@
+Fitter Status : Successful - Fri Nov 18 23:34:23 2022
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : flipFlopD
+Top-level Entity Name : flipFlopD
+Family : Cyclone IV GX
+Device : EP4CGX15BF14C6
+Timing Models : Final
+Total logic elements : 7 / 14,400 ( < 1 % )
+    Total combinational functions : 7 / 14,400 ( < 1 % )
+    Dedicated logic registers : 0 / 14,400 ( 0 % )
+Total registers : 0
+Total pins : 6 / 81 ( 7 % )
+Total virtual pins : 0
+Total memory bits : 0 / 552,960 ( 0 % )
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0 / 2 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 2 ( 0 % )
+Total PLLs : 0 / 3 ( 0 % )

@@ -1,0 +1,230 @@
+$comment
+	File created using the following command:
+		vcd file flipFlopD.msim.vcd -direction
+$end
+$date
+	Fri Nov 18 23:35:19 2022
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module flipflopd_vhd_vec_tst $end
+$var wire 1 ! clk $end
+$var wire 1 " D $end
+$var wire 1 # nQ $end
+$var wire 1 $ nRst $end
+$var wire 1 % nSet $end
+$var wire 1 & Q $end
+
+$scope module i1 $end
+$var wire 1 ' gnd $end
+$var wire 1 ( vcc $end
+$var wire 1 ) unknown $end
+$var wire 1 * devoe $end
+$var wire 1 + devclrn $end
+$var wire 1 , devpor $end
+$var wire 1 - ww_devoe $end
+$var wire 1 . ww_devclrn $end
+$var wire 1 / ww_devpor $end
+$var wire 1 0 ww_clk $end
+$var wire 1 1 ww_D $end
+$var wire 1 2 ww_nSet $end
+$var wire 1 3 ww_nRst $end
+$var wire 1 4 ww_Q $end
+$var wire 1 5 ww_nQ $end
+$var wire 1 6 \Q~output_o\ $end
+$var wire 1 7 \nQ~output_o\ $end
+$var wire 1 8 \clk~input_o\ $end
+$var wire 1 9 \nSet~input_o\ $end
+$var wire 1 : \nRst~input_o\ $end
+$var wire 1 ; \sr20|nand0|y~1_combout\ $end
+$var wire 1 < \sr30|nand0|y~1_combout\ $end
+$var wire 1 = \sr30|nand0|y~2_combout\ $end
+$var wire 1 > \D~input_o\ $end
+$var wire 1 ? \sr31|nand0|y~1_combout\ $end
+$var wire 1 @ \sr31|nand1|y~0_combout\ $end
+$var wire 1 A \sr31|nand0|y~2_combout\ $end
+$var wire 1 B \sr31|nand1|y~1_combout\ $end
+$var wire 1 C \sr31|nand0|ALT_INV_y~2_combout\ $end
+$var wire 1 D \sr31|nand1|ALT_INV_y~1_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+x#
+1$
+1%
+x&
+0'
+1(
+x)
+1*
+1+
+1,
+1-
+1.
+1/
+00
+01
+12
+13
+x4
+x5
+x6
+x7
+08
+19
+1:
+0;
+1<
+1=
+0>
+1?
+1@
+xA
+xB
+xC
+xD
+$end
+#10000
+0%
+02
+09
+0<
+0?
+0A
+1C
+1B
+0D
+16
+14
+07
+1&
+05
+0#
+#20000
+1!
+10
+18
+1;
+#30000
+1%
+12
+19
+1?
+#40000
+0!
+00
+08
+0;
+1<
+#60000
+1!
+10
+18
+0=
+0<
+0@
+1A
+0B
+1;
+1=
+1D
+0C
+1@
+06
+17
+04
+15
+0&
+1#
+#70000
+1"
+11
+1>
+#80000
+0!
+00
+08
+0;
+1<
+#100000
+1!
+10
+18
+0=
+0<
+0?
+0A
+1;
+1=
+1C
+1?
+1B
+0D
+16
+14
+07
+1&
+05
+0#
+#120000
+0!
+00
+08
+0;
+1<
+#130000
+0$
+03
+0:
+0<
+0@
+1A
+0B
+1D
+0C
+06
+17
+04
+15
+0&
+1#
+#140000
+1!
+10
+18
+1;
+#150000
+1$
+13
+1:
+1@
+#160000
+0!
+00
+08
+0;
+1<
+#170000
+0"
+01
+0>
+#180000
+1!
+10
+18
+0=
+0<
+0@
+1;
+1=
+1@
+#200000

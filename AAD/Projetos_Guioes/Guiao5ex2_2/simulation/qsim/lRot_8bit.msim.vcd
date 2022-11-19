@@ -1,0 +1,728 @@
+$comment
+	File created using the following command:
+		vcd file lRot_8bit.msim.vcd -direction
+$end
+$date
+	Fri Nov 18 23:38:50 2022
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module lrot_8bit_vhd_vec_tst $end
+$var wire 1 ! dIn [7] $end
+$var wire 1 " dIn [6] $end
+$var wire 1 # dIn [5] $end
+$var wire 1 $ dIn [4] $end
+$var wire 1 % dIn [3] $end
+$var wire 1 & dIn [2] $end
+$var wire 1 ' dIn [1] $end
+$var wire 1 ( dIn [0] $end
+$var wire 1 ) dOut [7] $end
+$var wire 1 * dOut [6] $end
+$var wire 1 + dOut [5] $end
+$var wire 1 , dOut [4] $end
+$var wire 1 - dOut [3] $end
+$var wire 1 . dOut [2] $end
+$var wire 1 / dOut [1] $end
+$var wire 1 0 dOut [0] $end
+$var wire 1 1 sel [2] $end
+$var wire 1 2 sel [1] $end
+$var wire 1 3 sel [0] $end
+
+$scope module i1 $end
+$var wire 1 4 gnd $end
+$var wire 1 5 vcc $end
+$var wire 1 6 unknown $end
+$var wire 1 7 devoe $end
+$var wire 1 8 devclrn $end
+$var wire 1 9 devpor $end
+$var wire 1 : ww_devoe $end
+$var wire 1 ; ww_devclrn $end
+$var wire 1 < ww_devpor $end
+$var wire 1 = ww_dIn [7] $end
+$var wire 1 > ww_dIn [6] $end
+$var wire 1 ? ww_dIn [5] $end
+$var wire 1 @ ww_dIn [4] $end
+$var wire 1 A ww_dIn [3] $end
+$var wire 1 B ww_dIn [2] $end
+$var wire 1 C ww_dIn [1] $end
+$var wire 1 D ww_dIn [0] $end
+$var wire 1 E ww_sel [2] $end
+$var wire 1 F ww_sel [1] $end
+$var wire 1 G ww_sel [0] $end
+$var wire 1 H ww_dOut [7] $end
+$var wire 1 I ww_dOut [6] $end
+$var wire 1 J ww_dOut [5] $end
+$var wire 1 K ww_dOut [4] $end
+$var wire 1 L ww_dOut [3] $end
+$var wire 1 M ww_dOut [2] $end
+$var wire 1 N ww_dOut [1] $end
+$var wire 1 O ww_dOut [0] $end
+$var wire 1 P \dOut[0]~output_o\ $end
+$var wire 1 Q \dOut[1]~output_o\ $end
+$var wire 1 R \dOut[2]~output_o\ $end
+$var wire 1 S \dOut[3]~output_o\ $end
+$var wire 1 T \dOut[4]~output_o\ $end
+$var wire 1 U \dOut[5]~output_o\ $end
+$var wire 1 V \dOut[6]~output_o\ $end
+$var wire 1 W \dOut[7]~output_o\ $end
+$var wire 1 X \dIn[5]~input_o\ $end
+$var wire 1 Y \dIn[7]~input_o\ $end
+$var wire 1 Z \sel[1]~input_o\ $end
+$var wire 1 [ \blk1|mult7|or0|y~0_combout\ $end
+$var wire 1 \ \dIn[6]~input_o\ $end
+$var wire 1 ] \dIn[0]~input_o\ $end
+$var wire 1 ^ \blk1|mult0|or0|y~0_combout\ $end
+$var wire 1 _ \sel[0]~input_o\ $end
+$var wire 1 ` \blk1|mult0|or0|y~1_combout\ $end
+$var wire 1 a \sel[2]~input_o\ $end
+$var wire 1 b \dIn[1]~input_o\ $end
+$var wire 1 c \dIn[3]~input_o\ $end
+$var wire 1 d \blk1|mult4|or0|y~0_combout\ $end
+$var wire 1 e \dIn[4]~input_o\ $end
+$var wire 1 f \dIn[2]~input_o\ $end
+$var wire 1 g \blk1|mult4|or0|y~1_combout\ $end
+$var wire 1 h \blk1|mult4|or0|y~2_combout\ $end
+$var wire 1 i \blk2|mult0|or0|y~0_combout\ $end
+$var wire 1 j \blk1|mult5|or0|y~0_combout\ $end
+$var wire 1 k \blk1|mult5|or0|y~1_combout\ $end
+$var wire 1 l \blk1|mult2|or0|y~0_combout\ $end
+$var wire 1 m \blk1|mult1|or0|y~0_combout\ $end
+$var wire 1 n \blk2|mult1|or0|y~0_combout\ $end
+$var wire 1 o \blk1|mult2|or0|y~1_combout\ $end
+$var wire 1 p \blk1|mult2|or0|y~2_combout\ $end
+$var wire 1 q \blk1|mult6|or0|y~0_combout\ $end
+$var wire 1 r \blk1|mult6|or0|y~1_combout\ $end
+$var wire 1 s \blk2|mult2|or0|y~0_combout\ $end
+$var wire 1 t \blk1|mult3|or0|y~0_combout\ $end
+$var wire 1 u \blk1|mult7|or0|y~1_combout\ $end
+$var wire 1 v \blk2|mult3|or0|y~0_combout\ $end
+$var wire 1 w \blk2|mult4|or0|y~0_combout\ $end
+$var wire 1 x \blk2|mult5|or0|y~0_combout\ $end
+$var wire 1 y \blk2|mult6|or0|y~0_combout\ $end
+$var wire 1 z \blk2|mult7|or0|y~0_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+04
+15
+x6
+17
+18
+19
+1:
+1;
+1<
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+0v
+0w
+0x
+0y
+0z
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+01
+02
+03
+0)
+0*
+0+
+0,
+0-
+0.
+0/
+00
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+0O
+$end
+#10000
+1!
+1"
+1$
+1'
+1C
+1@
+1>
+1=
+1Y
+1\
+1e
+1b
+1g
+1q
+1[
+1l
+1m
+1r
+1u
+1h
+1w
+1z
+1y
+1n
+1Q
+1V
+1W
+1T
+1N
+1I
+1H
+1K
+1/
+1,
+1*
+1)
+#140000
+13
+1G
+1_
+1`
+0h
+1k
+0m
+1p
+0r
+1s
+0y
+0n
+1x
+1i
+0w
+0T
+1P
+1U
+0Q
+0V
+1R
+0K
+1O
+1J
+0N
+0I
+1M
+10
+0/
+1.
+0,
+1+
+0*
+#240000
+03
+12
+0G
+1F
+1Z
+0_
+0`
+1h
+0k
+1m
+0p
+1r
+0[
+1^
+1d
+0g
+0h
+1t
+1`
+0u
+0s
+1y
+1n
+0x
+0i
+1w
+1v
+0z
+1i
+0w
+1T
+0P
+0U
+1Q
+1V
+0R
+1K
+0O
+0J
+1N
+1I
+0M
+0T
+1P
+0W
+1S
+00
+1/
+0.
+1,
+0+
+1*
+0K
+1O
+0H
+1L
+10
+1-
+0,
+0)
+#340000
+13
+1G
+1_
+0`
+1h
+1p
+0r
+0t
+1u
+0v
+1z
+1s
+0y
+0i
+1w
+1T
+0P
+0V
+1R
+1W
+0S
+1K
+0O
+0I
+1M
+1H
+0L
+00
+1.
+0-
+1,
+0*
+1)
+#430000
+03
+02
+11
+0G
+0F
+1E
+1a
+0Z
+0_
+1`
+0h
+0p
+1r
+1t
+0u
+1[
+0^
+0d
+1g
+1i
+0n
+0s
+1v
+0w
+1x
+1y
+0z
+1h
+0t
+0`
+1u
+0v
+1z
+1s
+0y
+0i
+1w
+1v
+0z
+1i
+0w
+0W
+1V
+1U
+0T
+1S
+0R
+0Q
+1P
+0H
+1I
+1J
+0K
+1L
+0M
+0N
+1O
+1T
+0P
+0V
+1R
+1W
+0S
+10
+0/
+0.
+1-
+0,
+1+
+1*
+0)
+1K
+0O
+0I
+1M
+1H
+0L
+0T
+1P
+0W
+1S
+00
+1.
+0-
+1,
+0*
+1)
+0K
+1O
+0H
+1L
+10
+1-
+0,
+0)
+#530000
+13
+1G
+1_
+1`
+0h
+1k
+0m
+1p
+0r
+0s
+1y
+1n
+0x
+0i
+1w
+1T
+0P
+0U
+1Q
+1V
+0R
+1K
+0O
+0J
+1N
+1I
+0M
+00
+1/
+0.
+1,
+0+
+1*
+#630000
+03
+12
+0G
+1F
+1Z
+0_
+0`
+1h
+0k
+1m
+0p
+1r
+0[
+1^
+1d
+0g
+0h
+1t
+1`
+0u
+1s
+0y
+0n
+1x
+1i
+0w
+0v
+1z
+0i
+1w
+0T
+1P
+1U
+0Q
+0V
+1R
+0K
+1O
+1J
+0N
+0I
+1M
+1T
+0P
+1W
+0S
+10
+0/
+1.
+0,
+1+
+0*
+1K
+0O
+1H
+0L
+00
+0-
+1,
+1)
+#720000
+13
+1G
+1_
+0`
+1h
+1p
+0r
+0t
+1u
+1v
+0z
+0s
+1y
+1i
+0w
+0T
+1P
+1V
+0R
+0W
+1S
+0K
+1O
+1I
+0M
+0H
+1L
+10
+0.
+1-
+0,
+1*
+0)
+#850000
+03
+02
+01
+0G
+0F
+0E
+0a
+0Z
+0_
+1`
+0h
+0p
+1r
+1t
+0u
+1[
+0^
+0d
+1g
+0i
+1n
+1s
+0v
+1w
+0x
+0y
+1z
+1h
+0t
+0`
+1u
+1v
+0z
+0s
+1y
+1i
+0w
+0v
+1z
+0i
+1w
+1W
+0V
+0U
+1T
+0S
+1R
+1Q
+0P
+1H
+0I
+0J
+1K
+0L
+1M
+1N
+0O
+0T
+1P
+1V
+0R
+0W
+1S
+00
+1/
+1.
+0-
+1,
+0+
+0*
+1)
+0K
+1O
+1I
+0M
+0H
+1L
+1T
+0P
+1W
+0S
+10
+0.
+1-
+0,
+1*
+0)
+1K
+0O
+1H
+0L
+00
+0-
+1,
+1)
+#950000
+0!
+0"
+0$
+0'
+0C
+0@
+0>
+0=
+0Y
+0\
+0e
+0b
+0g
+0q
+0[
+0l
+0m
+0r
+0u
+0h
+0w
+0z
+0y
+0n
+0Q
+0V
+0W
+0T
+0N
+0I
+0H
+0K
+0/
+0,
+0*
+0)
+#1000000

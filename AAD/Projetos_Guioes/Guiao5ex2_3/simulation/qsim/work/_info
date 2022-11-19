@@ -1,0 +1,150 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex2_3/simulation/qsim
+Ehard_block
+Z1 w1668815911
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 ^M[R>L941CzW^5^z4gfb52
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z7 DPx9 cycloneiv 20 cycloneiv_components 0 22 A=5Z=j^V:4BYGPNKNFE9o0
+!i122 2
+R0
+Z8 8rot_8bit.vho
+Z9 Frot_8bit.vho
+l0
+L35 1
+V5mcF]JUg7TS^l0EMa_h4A1
+!s100 Q?IbEnM>aW3cc=hi`GCc71
+Z10 OV;C;2020.1;71
+32
+Z11 !s110 1668815912
+!i10b 1
+Z12 !s108 1668815912.000000
+Z13 !s90 -work|work|rot_8bit.vho|
+Z14 !s107 rot_8bit.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 5mcF]JUg7TS^l0EMa_h4A1
+!i122 2
+l65
+L51 20
+VMkbPfL8S?h^i>Mg3GSGD`1
+!s100 O>:lWQfHCcIaXgQ<=Tgn10
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Erot_8bit
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+!i122 2
+R0
+R8
+R9
+l0
+L78 1
+V7gLk^dekb>@O72HQ4b<oF1
+!s100 7E][^z^`hkG;Hl:DUbmJ52
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 8 rot_8bit 0 22 7gLk^dekb>@O72HQ4b<oF1
+!i122 2
+l178
+L110 744
+VK6PHT`7mCY_]BG[Q5=z1:3
+!s100 f==>i?6?XJ`F?SQRjQ6Ea3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Erot_8bit_vhd_vec_tst
+Z17 w1668815910
+R5
+R6
+!i122 3
+R0
+Z18 8rot_8bit.vwf.vht
+Z19 Frot_8bit.vwf.vht
+l0
+L32 1
+Vf=MKnhYmB`;ND`Ybefe9R3
+!s100 G:iGo0?734]5i4f`BM47P0
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 -work|work|rot_8bit.vwf.vht|
+Z21 !s107 rot_8bit.vwf.vht|
+!i113 1
+R15
+R16
+Arot_8bit_arch
+R5
+R6
+Z22 DEx4 work 20 rot_8bit_vhd_vec_tst 0 22 f=MKnhYmB`;ND`Ybefe9R3
+!i122 3
+l49
+Z23 L34 137
+VcY3aR^zg[K[AiF3i0ol^?1
+!s100 ^JD8PjcfRf]LLS8UHYY8P2
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 1
+R15
+R16

@@ -1,0 +1,127 @@
+|flipFlopD
+clk => gateNand2:nand20.x0
+clk => latchSR2:sr20.nSet
+clk => gateNand3:nand30.x0
+clk => latchSR3:sr30.nRst0
+D => gateInv:inv1.x
+D => gateNand3:nand31.x1
+nSet => gateNand4:nand40.x0
+nSet => gateNand3:nand32.x0
+nSet => latchSR3:sr31.nSet0
+nRst => gateNand4:nand40.x1
+nRst => gateNand3:nand31.x0
+nRst => latchSR3:sr31.nRst0
+Q << latchSR3:sr31.Q
+nQ << latchSR3:sr31.nQ
+
+
+|flipFlopD|gateNand2:nand20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|latchSR2:sr20
+nSet => gateNand2:nand0.x0
+nRst => gateNand2:nand1.x0
+Q <= gateNand2:nand0.y
+nQ <= gateNand2:nand1.y
+
+
+|flipFlopD|latchSR2:sr20|gateNand2:nand0
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|latchSR2:sr20|gateNand2:nand1
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|gateNand4:nand40
+x0 => y.IN0
+x1 => y.IN1
+x2 => y.IN1
+x3 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|gateInv:inv0
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|gateNand3:nand30
+x0 => y.IN0
+x1 => y.IN1
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|latchSR3:sr30
+nSet0 => gateNand3:nand0.x0
+nSet1 => gateNand3:nand0.x1
+nRst0 => gateNand3:nand1.x0
+nRst1 => gateNand3:nand1.x1
+Q <= gateNand3:nand0.y
+nQ <= gateNand3:nand1.y
+
+
+|flipFlopD|latchSR3:sr30|gateNand3:nand0
+x0 => y.IN0
+x1 => y.IN1
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|latchSR3:sr30|gateNand3:nand1
+x0 => y.IN0
+x1 => y.IN1
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|gateInv:inv1
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|gateNand3:nand31
+x0 => y.IN0
+x1 => y.IN1
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|gateNand3:nand32
+x0 => y.IN0
+x1 => y.IN1
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|latchSR3:sr31
+nSet0 => gateNand3:nand0.x0
+nSet1 => gateNand3:nand0.x1
+nRst0 => gateNand3:nand1.x0
+nRst1 => gateNand3:nand1.x1
+Q <= gateNand3:nand0.y
+nQ <= gateNand3:nand1.y
+
+
+|flipFlopD|latchSR3:sr31|gateNand3:nand0
+x0 => y.IN0
+x1 => y.IN1
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipFlopD|latchSR3:sr31|gateNand3:nand1
+x0 => y.IN0
+x1 => y.IN1
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
