@@ -1,0 +1,12 @@
+vm_mmap_open_file: unable to open file 'c7200_i1_nvram' (No such file or directory)
+vm_mmap_open_file: unable to open file 'c7200_i1_nvram' (No such file or directory)
+Cisco Router Simulation Platform (version 0.2.22-amd64/Linux stable)
+Copyright (c) 2005-2011 Christophe Fillot.
+Build date: May 24 2022 12:00:00
+
+Log file: writing to dynamips_i20_log.txt
+Hypervisor TCP control server started (IP localhost port 50253).
+Hypervisor: closing control sockets.
+Hypervisor: closing remote client connections.
+Shutdown in progress...
+Shutdown completed.
