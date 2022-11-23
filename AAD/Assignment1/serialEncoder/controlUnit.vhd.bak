@@ -1,0 +1,38 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+LIBRARY logic;
+USE logic.all;
+
+ENTITY controlUnit IS
+  PORT (nGRst, clk: in std_logic;
+        add: in std_logic_vector (5 downto 0);
+        nRst, nSetO, clkO: out std_logic);
+END controlUnit;
+
+ARCHITECTURE structure OF controlUnit IS
+  SIGNAL cLines: STD_LOGIC_VECTOR (2 DOWNTO 0);
+  SIGNAL iNRst, iNSetO: STD_LOGIC;
+  COMPONENT contMem
+    PORT (add:  IN STD_LOGIC_VECTOR (5 DOWNTO 0);
+          dOut: OUT STD_LOGIC_VECTOR (2 DOWNTO 0));
+  END COMPONENT;
+  
+  COMPONENT gateNand2
+    PORT (x1, x2: IN STD_LOGIC;
+          y:      OUT STD_LOGIC);
+  END COMPONENT;
+  
+  COMPONENT gateNor2
+    PORT (x1, x2: IN STD_LOGIC;
+          y:      OUT STD_LOGIC);
+  END COMPONENT;
+  
+BEGIN
+  cMem: contMem   PORT MAP (add, cLines);
+  nad1: gateNand2 PORT MAP (nGRst, cLines(2), iNRst);
+  nad2: gateNand2 PORT MAP (clk, iNRst, nRst);
+  nad3: gateNand2 PORT MAP (nGRst, cLines(1), iNSetO);
+  nad4: gateNand2 PORT MAP (clk, iNSetO, nSetO);
+  nord: gateNor2  PORT MAP (clk, cLines(0), clkO);
+END structure;

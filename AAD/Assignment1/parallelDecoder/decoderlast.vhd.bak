@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+library logic;
+use logic.all;
+
+ENTITY decoderlast IS
+	PORT (C0, C1, C2, C3: in std_logic;
+			B: out std_logic;
+			V: out std_logic);
+END decoder1bit;
+
+ARCHITECTURE structure OF decoderlast IS
+
+	COMPONENT AND_2
+		PORT (A, B : in std_logic;
+				Y : out std_logic);
+	END COMPONENT;
+	
+	COMPONENT OR_3
+		PORT (A, B, C : in std_logic;
+				Y : out std_logic);
+	END COMPONENT;
+	
+	COMPONENT XOR_2
+		PORT (A, B : in std_logic;
+				Y : out std_logic);
+	END COMPONENT;
+	
+	SIGNAL  : std_logic;
+	
+BEGIN
+	
+END structure;

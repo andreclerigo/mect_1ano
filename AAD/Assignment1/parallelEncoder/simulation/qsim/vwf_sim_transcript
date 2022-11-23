@@ -1,0 +1,70 @@
+Determining the location of the ModelSim executable...
+
+Using: /home/andre/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off parallelEncoder -c parallelEncoder --vector_source="/home/andre/github/AAD/parallelEncoder/parallelEncoder.vwf" --testbench_file="/home/andre/github/AAD/parallelEncoder/simulation/qsim/parallelEncoder.vwf.vht"
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sat Nov  5 21:55:39 2022Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off parallelEncoder -c parallelEncoder --vector_source=/home/andre/github/AAD/parallelEncoder/parallelEncoder.vwf --testbench_file=/home/andre/github/AAD/parallelEncoder/simulation/qsim/parallelEncoder.vwf.vhtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/andre/github/AAD/parallelEncoder/simulation/qsim/" parallelEncoder -c parallelEncoder
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sat Nov  5 21:55:42 2022Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/andre/github/AAD/parallelEncoder/simulation/qsim/ parallelEncoder -c parallelEncoderWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file parallelEncoder.vho in folder "/home/andre/github/AAD/parallelEncoder/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 663 megabytes    Info: Processing ended: Sat Nov  5 21:55:43 2022    Info: Elapsed time: 00:00:01    Info: Total CPU time (on all processors): 00:00:01
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+/home/andre/github/AAD/parallelEncoder/simulation/qsim/parallelEncoder.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+/home/andre/intelFPGA_lite/20.1/modelsim_ase/linuxaloem//vsim -c -do parallelEncoder.do
+
+Reading pref.tcl
+# 2020.1
+# do parallelEncoder.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:55:45 on Nov 05,2022# vcom -work work parallelEncoder.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneiv_atom_pack# -- Loading package cycloneiv_components# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block# -- Compiling entity parallelEncoder# -- Compiling architecture structure of parallelEncoder
+# End time: 21:55:45 on Nov 05,2022, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:55:45 on Nov 05,2022# vcom -work work parallelEncoder.vwf.vht # -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity parallelEncoder_vhd_vec_tst# -- Compiling architecture parallelEncoder_arch of parallelEncoder_vhd_vec_tst
+# End time: 21:55:45 on Nov 05,2022, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# vsim -c -t 1ps -L cycloneiv -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.parallelEncoder_vhd_vec_tst # Start time: 21:55:45 on Nov 05,2022# Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.parallelencoder_vhd_vec_tst(parallelencoder_arch)# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading cycloneiv.cycloneiv_atom_pack(body)# Loading cycloneiv.cycloneiv_components# Loading work.parallelencoder(structure)# Loading work.hard_block(structure)# Loading ieee.std_logic_arith(body)# Loading cycloneiv.cycloneiv_io_obuf(arch)# Loading cycloneiv.cycloneiv_io_ibuf(arch)# Loading cycloneiv.cycloneiv_lcell_comb(vital_lcell_comb)
+# after#33
+# End time: 21:55:46 on Nov 05,2022, Elapsed time: 0:00:01# Errors: 0, Warnings: 0
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading /home/andre/github/AAD/parallelEncoder/parallelEncoder.vwf...
+
+Reading /home/andre/github/AAD/parallelEncoder/simulation/qsim/parallelEncoder.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to /home/andre/github/AAD/parallelEncoder/simulation/qsim/parallelEncoder_20221105215546.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+library logic;
+use logic.all;
+
+
+ENTITY CLOGIC IS
+	PORT (Y: in std_logic_vector(7 downto 0)
+			
+
+-- c11 = y0 xor y1
+-- c12 = y2 xor y3
+-- c13 = y4 xor y5
+-- c14 = y6 xor y7
+
+-- c21 = y0 xor y2
+-- c22 = y1 xor y3
+-- c23 = y4 xor y6
+-- c24 = y5 xor y7
+
+-- c31 = y0 xor y4
+-- c32 = y1 xor y5
+-- c33 = y2 xor y6
+-- c34 = y3 xor y7
