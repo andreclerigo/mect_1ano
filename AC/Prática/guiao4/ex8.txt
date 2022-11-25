@@ -1,0 +1,5 @@
+Quando os terminais pingam as gateways, os routers vão partilhar as MAC addresses aprendidads por BGP UPDATE, ficando com elas nas duas tabelas com um tempo limite, após esse tempo a entry da tabela é retiradas.
+
+Os ARPs são feitos por broadcast para toda a rede.
+
+Os datos transportados entre redes são feitos encapsulados por VXLAN
