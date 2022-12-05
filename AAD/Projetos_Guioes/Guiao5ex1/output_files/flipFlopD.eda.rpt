@@ -1,5 +1,5 @@
 EDA Netlist Writer report for flipFlopD
-Fri Nov 18 23:35:18 2022
+Sun Nov 27 23:13:55 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Nov 18 23:35:18 2022 ;
+; EDA Netlist Writer Status ; Successful - Sun Nov 27 23:13:55 2022 ;
 ; Revision Name             ; flipFlopD                             ;
 ; Top-level Entity Name     ; flipFlopD                             ;
 ; Family                    ; Cyclone IV GX                         ;
@@ -95,12 +95,12 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Nov 18 23:35:18 2022
+    Info: Processing started: Sun Nov 27 23:13:55 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex1/simulation/qsim/ flipFlopD -c flipFlopD
 Info (204019): Generated file flipFlopD.vho in folder "/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex1/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 663 megabytes
-    Info: Processing ended: Fri Nov 18 23:35:18 2022
+    Info: Peak virtual memory: 661 megabytes
+    Info: Processing ended: Sun Nov 27 23:13:55 2022
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

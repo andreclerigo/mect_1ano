@@ -1,5 +1,5 @@
 Fitter report for flipFlopD
-Fri Nov 18 23:34:23 2022
+Sun Nov 27 23:11:46 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Nov 18 23:34:23 2022       ;
+; Fitter Status                      ; Successful - Sun Nov 27 23:11:46 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; flipFlopD                                   ;
 ; Top-level Entity Name              ; flipFlopD                                   ;
@@ -899,7 +899,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.01 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -907,10 +907,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file /home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex1/output_files/flipFlopD.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 1021 megabytes
-    Info: Processing ended: Fri Nov 18 23:34:23 2022
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 1019 megabytes
+    Info: Processing ended: Sun Nov 27 23:11:46 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +----------------------------+

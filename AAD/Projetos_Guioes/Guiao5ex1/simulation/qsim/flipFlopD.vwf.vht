@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/18/2022 23:35:17"
+-- Generated on "11/27/2022 23:13:54"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          flipFlopD
 -- 

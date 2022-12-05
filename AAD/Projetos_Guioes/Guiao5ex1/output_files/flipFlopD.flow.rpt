@@ -1,5 +1,5 @@
 Flow report for flipFlopD
-Fri Nov 18 23:35:18 2022
+Sun Nov 27 23:13:55 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Nov 18 23:35:18 2022       ;
+; Flow Status                        ; Successful - Sun Nov 27 23:13:55 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; flipFlopD                                   ;
 ; Top-level Entity Name              ; flipFlopD                                   ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/18/2022 23:34:12 ;
+; Start date & time ; 11/27/2022 23:11:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; flipFlopD           ;
 +-------------------+---------------------+
@@ -80,7 +80,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 176629553432296.166881445211194        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 75750739494450.166959069721334         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -101,14 +101,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 481 MB              ; 00:00:16                           ;
-; Fitter               ; 00:00:04     ; 1.0                     ; 1021 MB             ; 00:00:04                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 413 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 437 MB              ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 663 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 663 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 663 MB              ; 00:00:00                           ;
-; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:22                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 482 MB              ; 00:00:14                           ;
+; Fitter               ; 00:00:03     ; 1.0                     ; 1019 MB             ; 00:00:03                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 410 MB              ; 00:00:00                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 432 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 661 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 658 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 661 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 658 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 661 MB              ; 00:00:00                           ;
+; Total                ; 00:00:11     ; --                      ; --                  ; 00:00:18                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -124,6 +126,8 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 ; EDA Netlist Writer   ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 ; EDA Netlist Writer   ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; laptop           ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -135,6 +139,8 @@ quartus_fit --read_settings_files=off --write_settings_files=off flipFlopD -c fl
 quartus_asm --read_settings_files=off --write_settings_files=off flipFlopD -c flipFlopD
 quartus_sta flipFlopD -c flipFlopD
 quartus_eda --read_settings_files=off --write_settings_files=off flipFlopD -c flipFlopD
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off flipFlopD -c flipFlopD --vector_source=/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex1/flipFlopD.vwf --testbench_file=/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex1/simulation/qsim/flipFlopD.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex1/simulation/qsim/ flipFlopD -c flipFlopD
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off flipFlopD -c flipFlopD --vector_source=/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex1/flipFlopD.vwf --testbench_file=/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex1/simulation/qsim/flipFlopD.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/andre/github/mect_1ano/AAD/Projetos_Guioes/Guiao5ex1/simulation/qsim/ flipFlopD -c flipFlopD
 

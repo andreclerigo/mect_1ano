@@ -1,0 +1,2 @@
+A vantagem de ter BGP Spine-Leaf é que ao adicionar routers, basta configurar vizinhança com o(s) route reflectors para haver conetividade total. Com um full BGP mesh era necessário configurar todas as vizinhanças possíveis.
+
