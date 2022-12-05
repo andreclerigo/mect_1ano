@@ -638,7 +638,7 @@
         "nodes": [
             {
                 "compute_id": "local",
-                "console": 5003,
+                "console": 5000,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -667,7 +667,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5005,
+                "console": 5016,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -696,7 +696,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5007,
+                "console": 5018,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -725,7 +725,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5009,
+                "console": 5020,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -754,7 +754,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5011,
+                "console": 5022,
                 "console_auto_start": false,
                 "console_type": "none",
                 "custom_adapters": [],
@@ -837,7 +837,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5012,
+                "console": 5023,
                 "console_auto_start": false,
                 "console_type": "none",
                 "custom_adapters": [],
@@ -920,7 +920,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5006,
+                "console": 5024,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -950,8 +950,8 @@
                     "cpu_throttling": 0,
                     "cpus": 1,
                     "create_config_disk": false,
-                    "hda_disk_image": "/mnt/data/VyOS_1.4_latest.qcow2",
-                    "hda_disk_image_md5sum": "0c5270d77e5b44bcc020b4e5c96e9f43",
+                    "hda_disk_image": "/home/andre/QEMU/VyOS_1.4_latest.qcow2",
+                    "hda_disk_image_md5sum": "6f5598122a5902a57023df07e581160c",
                     "hda_disk_interface": "ide",
                     "hdb_disk_image": "",
                     "hdb_disk_image_md5sum": null,
@@ -988,7 +988,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5014,
+                "console": 5026,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -1018,8 +1018,8 @@
                     "cpu_throttling": 0,
                     "cpus": 1,
                     "create_config_disk": false,
-                    "hda_disk_image": "/mnt/data/VyOS_1.4_latest.qcow2",
-                    "hda_disk_image_md5sum": "0c5270d77e5b44bcc020b4e5c96e9f43",
+                    "hda_disk_image": "/home/andre/QEMU/VyOS_1.4_latest.qcow2",
+                    "hda_disk_image_md5sum": "6f5598122a5902a57023df07e581160c",
                     "hda_disk_interface": "ide",
                     "hdb_disk_image": "",
                     "hdb_disk_image_md5sum": null,
@@ -1056,7 +1056,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5013,
+                "console": 5028,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -1084,7 +1084,7 @@
                     "dynamips_id": 1,
                     "exec_area": 64,
                     "idlemax": 500,
-                    "idlepc": "0x6318e57c",
+                    "idlepc": "0x631936fc",
                     "idlesleep": 30,
                     "image": "c7200-advipservicesk9-mz.152-4.S5.bin",
                     "image_md5sum": "c07432e186715bbb6d2db20786517d91",
@@ -1125,7 +1125,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5015,
+                "console": 5031,
                 "console_auto_start": false,
                 "console_type": "none",
                 "custom_adapters": [],
@@ -1205,7 +1205,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5016,
+                "console": 5032,
                 "console_auto_start": false,
                 "console_type": "none",
                 "custom_adapters": [],
@@ -1285,7 +1285,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5017,
+                "console": 5033,
                 "console_auto_start": false,
                 "console_type": "none",
                 "custom_adapters": [],
@@ -1365,7 +1365,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5018,
+                "console": 5034,
                 "console_auto_start": false,
                 "console_type": "none",
                 "custom_adapters": [],
@@ -1445,7 +1445,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5019,
+                "console": 5035,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -1475,8 +1475,8 @@
                     "cpu_throttling": 0,
                     "cpus": 1,
                     "create_config_disk": false,
-                    "hda_disk_image": "/mnt/data/VyOS_1.4_latest.qcow2",
-                    "hda_disk_image_md5sum": "0c5270d77e5b44bcc020b4e5c96e9f43",
+                    "hda_disk_image": "/home/andre/QEMU/VyOS_1.4_latest.qcow2",
+                    "hda_disk_image_md5sum": "6f5598122a5902a57023df07e581160c",
                     "hda_disk_interface": "ide",
                     "hdb_disk_image": "",
                     "hdb_disk_image_md5sum": null,
@@ -1513,7 +1513,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5021,
+                "console": 5037,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -1542,7 +1542,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5023,
+                "console": 5039,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
