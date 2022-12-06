@@ -121,3 +121,11 @@ To check results listen to the audio file or do a reverse of reverse.wav and see
 ```bash
 ./lossy_decoder lossy_encoded_sample lossy_decoded_sample.wav
 ```
+
+# Authors
+[André Clérigo](https://github.com/andreclerigo), 98485   
+[João Amaral](https://github.com/jp-amaral), 98373  
+[Pedro Rocha](https://github.com/PedroRocha9), 98256  
+
+# Grade
+20
