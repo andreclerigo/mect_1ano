@@ -43,6 +43,3 @@ rows|	|                                     |		}
 	
 	32M posicoes de 4bit * 16 chips = 2^25 * 2^4 = 2^29 posicoes de 4bit
 												 = 2^28 Bytes = 256MB
-
-2.4)
-	
