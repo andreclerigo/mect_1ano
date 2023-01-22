@@ -1,0 +1,35 @@
+dps:
+    switch-1:
+        dp_id: 0x1
+        timeout: 7201
+        arp_neighbor_timeout: 3600
+        interfaces:
+            1:
+                native_vlan: 100
+            2:
+                native_vlan: 100
+            3:
+                native_vlan: 100
+            4:
+                native_vlan: 200
+            5:
+                native_vlan: 200
+vlans:
+    100:
+        faucet_vips: ["10.100.0.254/24"]
+    200:
+        faucet_vips: ["10.200.0.254/24"]
+routers:
+    router-1:
+        vlans: [100, 200]
+acls:
+	1:
+		- rule:
+			dl_type: 0x800
+			nw_proto: 6
+			tcp_dst: 8080
+			actions:
+			allow: 0
+		- rule:
+			actions:
+			allow: 1

@@ -1,0 +1,13 @@
+version: "3"
+services:
+  onos6633:
+    image: onosproject/onos:2.7.0
+    hostname: onos6633
+    container_name: onos6633
+    ports:
+      - "8182:8182" # HTTP API/ webapp
+      - "8102:8102" # SSH ONOS CLI
+      - "6633:6653" # OVS  controller port
+      - "5001:5001" # Java remote debug
+    environment:
+      - ONOS_APPS=gui2,drivers,optical-model,openflow-base,openflow,proxyarp,lldpprovider,hostprovider,fwd

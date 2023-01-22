@@ -1,0 +1,75 @@
+dps:
+  s1:
+   description: s1
+   dp_id: 0x0000000000000001
+   interfaces:
+      1:
+          description: Connection s1 to h11
+          native_vlan: 10
+      2:  
+          description: Connection s1 to h21
+          native_vlan: 20
+      3:
+          description: Connection s1 to h24
+          native_vlan: 20
+      4:
+          description: Connection s1 to s3
+          tagged_vlans: [10, 30]
+      5:
+          description: Connection s1 to s2
+          tagged_vlans: [10, 20, 30]
+
+  s2:
+    description: s2
+    dp_id: 0x0000000000000002
+    interfaces:
+       1:
+         description: Connection s2 to h12
+         native_vlan: 10
+       2:
+         description: Connection s2 to h22
+         native_vlan: 20
+       3:
+         description: Connection s2 to h32
+         native_vlan: 30
+       4:
+         description: Connection s2 to s3
+         native_vlan: 20
+       5:
+         description: Connection s2 to s1
+         tagged_vlans: [10, 20, 30]
+
+  s3:
+    description: s3
+    dp_id: 0x0000000000000003
+    interfaces:
+      1:
+        description: Connection s3 to h13
+        native_vlan: 10
+      2:
+        description: Connection s3 to h23
+        native_vlan: 20
+      3:
+        description: Connection s3 to h31
+        native_vlan: 30
+      4:
+        description: Connection s3 to s1
+        tagged_vlans: [10, 30]
+      5:
+        description: Connection s3 to s2
+        native_vlan: 20
+
+vlans:
+  10:
+    name: VLAN10
+    faucet_vips: ["10.10.0.254/24"]
+  20:
+    name: VLAN20
+    faucet_vips: ["10.20.0.254/24"]
+  30:
+    name: VLAN30
+    faucet_vips: ["10.30.0.254/24"]
+
+routers:
+  router-1:
+    vlans: [10, 20, 30]

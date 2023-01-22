@@ -1,0 +1,46 @@
+acls:
+  block-ping:
+    - rule:
+      dl_type: 0x800      # IPv4
+      ip_proto: 1         # ICMP
+      actions:
+        allow: False
+        mirror: 5
+    - rule:
+      actions:
+        allow: True
+
+# Blocking ip from malicious IP
+  block-ip:
+    - rule:
+      dl_type: 0x800
+      ipv4_src: 10.20.0.0/24
+      actions:
+        allow: False
+        mirror: 5
+    - rule:
+      actions:
+        allow: True
+
+# Prioritize traffic of an IP (QoS)
+# priority-traffic:
+#   - rule:
+#     nw_src: 1.2.3.4
+#     actions:
+#       priority: 100
+# block-p2p:
+#   - rule:
+#     dl_type: 0x800
+#     ip_proto: 6
+#     tp_dst: [6881, 6889]
+#     actions:
+#       allow: False
+#    - rule:
+#      dl_type: 0x800
+#      ip_proto: 17
+#      tp_dst: [4662]
+#      actions:
+#        allow: False
+#     - rule:
+#       actions:
+#         allow: True
