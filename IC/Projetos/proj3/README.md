@@ -63,5 +63,12 @@ In order to assess the quality of the lossy compressed video sequences in terms 
 ```bash
 ./video_cmp <original input file> <reconstructed input file>
 ```
-
 <br>
+
+# Authors
+[André Clérigo](https://github.com/andreclerigo), 98485   
+[João Amaral](https://github.com/jp-amaral), 98373  
+[Pedro Rocha](https://github.com/PedroRocha9), 98256  
+
+# Grade
+18,4
