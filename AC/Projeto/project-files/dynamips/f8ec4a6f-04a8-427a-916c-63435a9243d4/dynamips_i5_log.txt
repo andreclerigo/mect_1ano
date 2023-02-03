@@ -1,0 +1,24 @@
+Dec 10 18:15:45.503 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Dec 10 18:15:45.503 HYPERVISOR: Started on IP = localhost, TCP port = 49535.
+Dec 10 18:15:45.513 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 10 18:15:45.513 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Projeto/project-files/dynamips 
+Dec 10 18:15:45.513 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Projeto/project-files/dynamips
+Dec 10 18:15:45.513 HYPERVISOR: exec_cmd: ethsw create ClientZ2 
+Dec 10 18:15:46.926 HYPERVISOR: exec_cmd: nio create_udp udp-d7267a65-f647-4b46-bebb-b89c85f769b4 10025 127.0.0.1 10024 
+Dec 10 18:15:46.926 HYPERVISOR: exec_cmd: ethsw add_nio ClientZ2 udp-d7267a65-f647-4b46-bebb-b89c85f769b4 
+Dec 10 18:15:46.930 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-d7267a65-f647-4b46-bebb-b89c85f769b4 1 
+Dec 10 18:17:26.359 HYPERVISOR: exec_cmd: nio create_udp udp-73b58bb1-b020-410e-b941-ede8a43614e7 10086 127.0.0.1 10087 
+Dec 10 18:17:26.359 HYPERVISOR: exec_cmd: ethsw add_nio ClientZ2 udp-73b58bb1-b020-410e-b941-ede8a43614e7 
+Dec 10 18:17:26.378 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-73b58bb1-b020-410e-b941-ede8a43614e7 1 
+Dec 10 18:18:12.534 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-d7267a65-f647-4b46-bebb-b89c85f769b4 1 
+Dec 10 18:18:12.535 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-73b58bb1-b020-410e-b941-ede8a43614e7 1 
+Dec 10 18:18:12.582 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-d7267a65-f647-4b46-bebb-b89c85f769b4 1 
+Dec 10 18:18:12.582 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-73b58bb1-b020-410e-b941-ede8a43614e7 1 
+Dec 10 21:00:35.655 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-d7267a65-f647-4b46-bebb-b89c85f769b4 1 
+Dec 10 21:00:35.663 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-73b58bb1-b020-410e-b941-ede8a43614e7 1 
+Dec 10 21:00:35.716 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-d7267a65-f647-4b46-bebb-b89c85f769b4 1 
+Dec 10 21:00:35.716 HYPERVISOR: exec_cmd: ethsw set_access_port ClientZ2 udp-73b58bb1-b020-410e-b941-ede8a43614e7 1 
+Dec 10 22:33:46.218 HYPERVISOR: exec_cmd: ethsw delete ClientZ2 
+Dec 10 22:33:46.242 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 10 22:33:46.252 HYPERVISOR: Stopped.
+Dec 10 22:33:46.252 GENERAL: reset done.

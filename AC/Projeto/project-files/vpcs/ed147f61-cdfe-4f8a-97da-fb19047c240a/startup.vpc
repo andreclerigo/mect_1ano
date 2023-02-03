@@ -1,0 +1,2 @@
+set pcname Y1-VLAN20
+ip 10.1.1.1 24

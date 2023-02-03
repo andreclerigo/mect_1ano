@@ -638,7 +638,7 @@
         "nodes": [
             {
                 "compute_id": "local",
-                "console": 5000,
+                "console": 5003,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -977,6 +977,7 @@
                     "qemu_path": "/bin/qemu-system-x86_64",
                     "ram": 512,
                     "replicate_network_connection_state": true,
+                    "tpm": false,
                     "usage": ""
                 },
                 "symbol": ":/symbols/qemu_guest.svg",
@@ -1045,6 +1046,7 @@
                     "qemu_path": "/bin/qemu-system-x86_64",
                     "ram": 512,
                     "replicate_network_connection_state": true,
+                    "tpm": false,
                     "usage": ""
                 },
                 "symbol": ":/symbols/qemu_guest.svg",
@@ -1502,6 +1504,7 @@
                     "qemu_path": "/bin/qemu-system-x86_64",
                     "ram": 512,
                     "replicate_network_connection_state": true,
+                    "tpm": false,
                     "usage": ""
                 },
                 "symbol": ":/symbols/qemu_guest.svg",
@@ -1573,6 +1576,6 @@
     },
     "type": "topology",
     "variables": null,
-    "version": "2.2.35.1",
+    "version": "2.2.37",
     "zoom": 100
 }

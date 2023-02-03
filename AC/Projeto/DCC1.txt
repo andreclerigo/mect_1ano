@@ -1,0 +1,178 @@
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+!
+! Last configuration change at 23:41:14 UTC Thu Dec 29 2022
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname DCC1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+ip cef
+!
+ip vrf VPN-1
+ rd 43100:1
+ route-target export 43100:1
+ route-target import 43100:1
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.0.1.4 255.255.255.255
+ ip ospf 1 area 0
+!
+interface FastEthernet0/0
+ ip address 10.0.0.34 255.255.255.248
+ ip ospf 1 area 0
+ speed auto
+ duplex auto
+ mpls ip
+!
+interface FastEthernet0/1
+ ip vrf forwarding VPN-1
+ ip address 10.0.1.2 255.255.255.0
+ speed auto
+ duplex auto
+!
+interface FastEthernet1/0
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+interface FastEthernet1/1
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+interface FastEthernet2/0
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+interface FastEthernet2/1
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+interface FastEthernet3/0
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+interface FastEthernet3/1
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+router ospf 1
+!
+router bgp 43100
+ bgp router-id 10.0.1.4
+ bgp log-neighbor-changes
+ neighbor 10.0.1.6 remote-as 43100
+ neighbor 10.0.1.6 update-source Loopback0
+ neighbor 10.0.1.10 remote-as 43100
+ neighbor 10.0.1.10 update-source Loopback0
+ !
+ address-family vpnv4
+  neighbor 10.0.1.6 activate
+  neighbor 10.0.1.6 send-community both
+  neighbor 10.0.1.10 activate
+  neighbor 10.0.1.10 send-community both
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN-1
+  redistribute connected
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+

@@ -1,0 +1,29 @@
+Dec 10 18:15:45.536 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Dec 10 18:15:45.536 HYPERVISOR: Started on IP = localhost, TCP port = 52519.
+Dec 10 18:15:45.545 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 10 18:15:45.545 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Projeto/project-files/dynamips 
+Dec 10 18:15:45.545 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Projeto/project-files/dynamips
+Dec 10 18:15:45.545 HYPERVISOR: exec_cmd: ethsw create ClientX2 
+Dec 10 18:15:47.615 HYPERVISOR: exec_cmd: nio create_udp udp-4f782711-cd51-444f-9b77-1c2da63ac5e8 10057 127.0.0.1 10056 
+Dec 10 18:15:47.615 HYPERVISOR: exec_cmd: ethsw add_nio ClientX2 udp-4f782711-cd51-444f-9b77-1c2da63ac5e8 
+Dec 10 18:15:47.627 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-4f782711-cd51-444f-9b77-1c2da63ac5e8 1 
+Dec 10 18:17:37.072 HYPERVISOR: exec_cmd: nio create_udp udp-944ec9c8-eb51-49b9-bccb-c734a135f060 10090 127.0.0.1 10091 
+Dec 10 18:17:37.073 HYPERVISOR: exec_cmd: ethsw add_nio ClientX2 udp-944ec9c8-eb51-49b9-bccb-c734a135f060 
+Dec 10 18:17:37.089 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-944ec9c8-eb51-49b9-bccb-c734a135f060 1 
+Dec 10 18:19:18.038 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-4f782711-cd51-444f-9b77-1c2da63ac5e8 1 
+Dec 10 18:19:18.039 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-944ec9c8-eb51-49b9-bccb-c734a135f060 1 
+Dec 10 18:19:18.085 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-4f782711-cd51-444f-9b77-1c2da63ac5e8 1 
+Dec 10 18:19:18.085 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-944ec9c8-eb51-49b9-bccb-c734a135f060 1 
+Dec 10 21:00:31.370 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-4f782711-cd51-444f-9b77-1c2da63ac5e8 1 
+Dec 10 21:00:31.377 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-944ec9c8-eb51-49b9-bccb-c734a135f060 1 
+Dec 10 21:00:31.430 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-4f782711-cd51-444f-9b77-1c2da63ac5e8 1 
+Dec 10 21:00:31.430 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-944ec9c8-eb51-49b9-bccb-c734a135f060 1 
+Dec 10 21:25:43.314 HYPERVISOR: exec_cmd: ethsw remove_nio ClientX2 udp-4f782711-cd51-444f-9b77-1c2da63ac5e8 
+Dec 10 21:25:43.333 HYPERVISOR: exec_cmd: nio delete udp-4f782711-cd51-444f-9b77-1c2da63ac5e8 
+Dec 10 21:26:25.803 HYPERVISOR: exec_cmd: nio create_udp udp-17804e8e-2ff0-4fd7-8cc4-7540338122b6 10054 127.0.0.1 10055 
+Dec 10 21:26:25.803 HYPERVISOR: exec_cmd: ethsw add_nio ClientX2 udp-17804e8e-2ff0-4fd7-8cc4-7540338122b6 
+Dec 10 21:26:25.816 HYPERVISOR: exec_cmd: ethsw set_access_port ClientX2 udp-17804e8e-2ff0-4fd7-8cc4-7540338122b6 1 
+Dec 10 22:33:46.219 HYPERVISOR: exec_cmd: ethsw delete ClientX2 
+Dec 10 22:33:46.246 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 10 22:33:46.254 HYPERVISOR: Stopped.
+Dec 10 22:33:46.254 GENERAL: reset done.

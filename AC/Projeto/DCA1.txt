@@ -1,0 +1,122 @@
+interfaces {
+    bridge br110 {
+        address 10.2.3.4/22
+        description x3
+        member {
+            interface eth1 {
+            }
+            interface vxlan10 {
+            }
+        }
+    }
+    dummy dum0 {
+        address 10.0.1.9/32
+    }
+    ethernet eth0 {
+        address 10.0.0.66/29
+        hw-id 0c:74:c9:fe:00:00
+    }
+    ethernet eth1 {
+        hw-id 0c:74:c9:fe:00:01
+    }
+    ethernet eth2 {
+        hw-id 0c:74:c9:fe:00:02
+    }
+    ethernet eth3 {
+        hw-id 0c:74:c9:fe:00:03
+    }
+    ethernet eth4 {
+        hw-id 0c:74:c9:fe:00:04
+    }
+    ethernet eth5 {
+        hw-id 0c:74:c9:fe:00:05
+    }
+    loopback lo {
+    }
+    vxlan vxlan10 {
+        mtu 1500
+        source-address 10.0.1.9
+        vni 10
+    }
+}
+protocols {
+    bgp {
+        address-family {
+            l2vpn-evpn {
+                advertise-all-vni
+            }
+        }
+        neighbor 10.0.1.1 {
+            peer-group evpn
+        }
+        parameters {
+            router-id 10.0.1.9
+        }
+        peer-group evpn {
+            address-family {
+                l2vpn-evpn {
+                    nexthop-self {
+                    }
+                }
+            }
+            remote-as 43100
+            update-source dum0
+        }
+        system-as 43100
+    }
+    ospf {
+        area 0 {
+            network 10.0.0.64/29
+            network 10.0.1.9/32
+        }
+    }
+}
+system {
+    config-management {
+        commit-revisions 100
+    }
+    conntrack {
+        modules {
+            ftp
+            h323
+            nfs
+            pptp
+            sip
+            sqlnet
+            tftp
+        }
+    }
+    console {
+        device ttyS0 {
+            speed 115200
+        }
+    }
+    host-name vyos
+    login {
+        user vyos {
+            authentication {
+                encrypted-password ****************
+                plaintext-password ****************
+            }
+        }
+    }
+    ntp {
+        server time1.vyos.net {
+        }
+        server time2.vyos.net {
+        }
+        server time3.vyos.net {
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level info
+            }
+            facility protocols {
+                level debug
+            }
+        }
+    }
+}
+

@@ -1,0 +1,35 @@
+Dec 10 18:15:45.519 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Dec 10 18:15:45.519 HYPERVISOR: Started on IP = localhost, TCP port = 46581.
+Dec 10 18:15:45.529 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 10 18:15:45.529 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/AC/Projeto/project-files/dynamips 
+Dec 10 18:15:45.529 GENERAL: working_dir=/home/andre/github/mect_1ano/AC/Projeto/project-files/dynamips
+Dec 10 18:15:45.529 HYPERVISOR: exec_cmd: ethsw create ClientY2 
+Dec 10 18:15:47.548 HYPERVISOR: exec_cmd: nio create_udp udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 10055 127.0.0.1 10054 
+Dec 10 18:15:47.548 HYPERVISOR: exec_cmd: ethsw add_nio ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 
+Dec 10 18:15:47.568 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 1 
+Dec 10 18:17:31.221 HYPERVISOR: exec_cmd: nio create_udp udp-70a5ac56-e212-470d-bb84-8e611ed09b01 10088 127.0.0.1 10089 
+Dec 10 18:17:31.222 HYPERVISOR: exec_cmd: ethsw add_nio ClientY2 udp-70a5ac56-e212-470d-bb84-8e611ed09b01 
+Dec 10 18:17:31.231 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-70a5ac56-e212-470d-bb84-8e611ed09b01 1 
+Dec 10 18:18:02.660 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 1 
+Dec 10 18:18:02.661 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-70a5ac56-e212-470d-bb84-8e611ed09b01 1 
+Dec 10 18:18:02.707 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 1 
+Dec 10 18:18:02.707 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-70a5ac56-e212-470d-bb84-8e611ed09b01 1 
+Dec 10 21:00:15.306 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 1 
+Dec 10 21:00:15.314 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-70a5ac56-e212-470d-bb84-8e611ed09b01 1 
+Dec 10 21:00:17.126 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 1 
+Dec 10 21:00:17.126 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-70a5ac56-e212-470d-bb84-8e611ed09b01 1 
+Dec 10 21:00:18.150 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 1 
+Dec 10 21:00:18.150 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-70a5ac56-e212-470d-bb84-8e611ed09b01 1 
+Dec 10 21:00:32.679 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 1 
+Dec 10 21:00:32.679 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-70a5ac56-e212-470d-bb84-8e611ed09b01 1 
+Dec 10 21:00:32.733 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 1 
+Dec 10 21:00:32.733 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-70a5ac56-e212-470d-bb84-8e611ed09b01 1 
+Dec 10 21:25:45.674 HYPERVISOR: exec_cmd: ethsw remove_nio ClientY2 udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 
+Dec 10 21:25:45.680 HYPERVISOR: exec_cmd: nio delete udp-4354e072-e3d5-4d6d-b3cb-4acff6e31465 
+Dec 10 21:26:28.875 HYPERVISOR: exec_cmd: nio create_udp udp-2bed8c8e-eafb-419c-96cb-8aec4ed5247c 10057 127.0.0.1 10056 
+Dec 10 21:26:28.875 HYPERVISOR: exec_cmd: ethsw add_nio ClientY2 udp-2bed8c8e-eafb-419c-96cb-8aec4ed5247c 
+Dec 10 21:26:28.884 HYPERVISOR: exec_cmd: ethsw set_access_port ClientY2 udp-2bed8c8e-eafb-419c-96cb-8aec4ed5247c 1 
+Dec 10 22:33:46.218 HYPERVISOR: exec_cmd: ethsw delete ClientY2 
+Dec 10 22:33:46.242 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 10 22:33:46.256 HYPERVISOR: Stopped.
+Dec 10 22:33:46.256 GENERAL: reset done.
