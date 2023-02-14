@@ -52,7 +52,7 @@
             },
             {
                 "filters": {},
-                "link_id": "31bfcd76-f019-4601-93d8-39c38b11b6bb",
+                "link_id": "f8f54165-6904-4680-a858-1333c9bd469f",
                 "link_style": {},
                 "nodes": [
                     {
@@ -62,9 +62,9 @@
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "e0",
                             "x": 72,
-                            "y": 28
+                            "y": 31
                         },
-                        "node_id": "82f08354-e5fa-4463-9d6f-eb46cbd0e44f",
+                        "node_id": "0bb2e189-9588-4ed5-bad1-706c5520e9ab",
                         "port_number": 0
                     },
                     {
@@ -74,7 +74,7 @@
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/0",
                             "x": -6,
-                            "y": 22
+                            "y": 20
                         },
                         "node_id": "5abb8972-a886-410b-85e7-f95d46b4f7dc",
                         "port_number": 0
@@ -86,7 +86,7 @@
         "nodes": [
             {
                 "compute_id": "local",
-                "console": 5000,
+                "console": 5022,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -155,7 +155,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5001,
+                "console": 5023,
                 "console_auto_start": false,
                 "console_type": "none",
                 "custom_adapters": [],
@@ -250,7 +250,7 @@
                 },
                 "locked": false,
                 "name": "ubuntu-1",
-                "node_id": "82f08354-e5fa-4463-9d6f-eb46cbd0e44f",
+                "node_id": "0bb2e189-9588-4ed5-bad1-706c5520e9ab",
                 "node_type": "qemu",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
@@ -284,7 +284,7 @@
                     "kernel_image_md5sum": null,
                     "legacy_networking": false,
                     "linked_clone": true,
-                    "mac_address": "0c:f0:83:54:00:00",
+                    "mac_address": "0c:b2:e1:89:00:00",
                     "on_close": "power_off",
                     "options": "",
                     "platform": "x86_64",
@@ -296,10 +296,10 @@
                     "usage": ""
                 },
                 "symbol": ":/symbols/qemu_guest.svg",
-                "template_id": "60b91e61-8780-4963-b456-57fa63f5ade5",
+                "template_id": "56cc7c0c-5e1d-4bf7-85d4-1c298107445a",
                 "width": 65,
-                "x": -104,
-                "y": 32,
+                "x": -105,
+                "y": 25,
                 "z": 1
             }
         ]
