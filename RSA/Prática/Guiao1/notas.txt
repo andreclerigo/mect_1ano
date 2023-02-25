@@ -1,0 +1,11 @@
+2.2) 172.20.0.1/16
+
+3.3) As OBUs nesta simulação nãoo se movem
+
+4.3) Entre ~28 segundos
+
+5.6) Demorou +- o mesmo tempo provavelmente porque a diferença de tamanho é insignificante num ambiente simulado que depende do processador e não da comunicação por meios sem fios (como seria na situação real)
+
+6.2) Todos os nós conectaram-se instantaneamente porque todos eles conectividade com a RSU, por isso, conectam logo, se nem todos tivessem tinham que falar uns com os outros primeiro
+
+
