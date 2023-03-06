@@ -1,0 +1,1 @@
+The packets are encapsulated on 802.1Q Virtual LAN Header with the corresponding ID

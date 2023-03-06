@@ -1,0 +1,1 @@
+There is a lack of conectivity because the ISP Router only has 1 static router for R2 and the destination ip must be in the 100.0.0.0/29 range, since VPCs are in the 10.0.0.0/16, there is no connectivity
