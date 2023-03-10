@@ -8,4 +8,6 @@
 
 6.2) Todos os nós conectaram-se instantaneamente porque todos eles conectividade com a RSU, por isso, conectam logo, se nem todos tivessem tinham que falar uns com os outros primeiro
 
+8.2) O IPFS é bastante mais rápido que o BitTorrent
 
+8.3) O IPFS é mais rapido que o BitTorrent e usando o IPFS todas as OBUs conseguem transferir rapidamente, com o BitTorrent há OBUs que acabam por não conseguir transferir tudo
