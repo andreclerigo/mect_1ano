@@ -3,4 +3,5 @@
 AAD/Projetos_Guioes/** linguist-vendored
 AAD/Assignment1/** linguist-vendored
 SD/Prática/genclass_doc/** linguist-vendored
-SD/Prática/examples/** linguist-vendored
+SD/Prática/examples/threadBasics/** linguist-vendored
+SD/Prática/examples/threadSynchronization/** linguist-vendored
