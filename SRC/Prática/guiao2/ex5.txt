@@ -1,0 +1,1 @@
+O proposito do EAP e TLSv1 são para autenticar o suplicante, o RADIUS é uma autenticação também mas que é independente protocolarmente do EAP. Neste caso está a trabalhar complementarmente ao EAP, porque o Autenticador autenticou usando o EAP e ele vai traduzir essa autenticação para RADIUS que é o que o servidor suporta

@@ -1,0 +1,1 @@
+A vantagem é que se tivesse num ponto central poderiamos ver os logs de tentativas de entradas maliciosas
