@@ -1,0 +1,1 @@
+The lack of connectivity is due to the lack of synchronization between the firewalls with NAT
