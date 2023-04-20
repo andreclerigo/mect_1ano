@@ -278,7 +278,7 @@
         "nodes": [
             {
                 "compute_id": "local",
-                "console": 5000,
+                "console": 5001,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -307,7 +307,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5002,
+                "console": 5015,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -336,7 +336,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5006,
+                "console": 5021,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -405,7 +405,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5007,
+                "console": 5023,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -474,7 +474,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5008,
+                "console": 5025,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -543,7 +543,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5010,
+                "console": 5028,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -612,7 +612,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5014,
+                "console": 5030,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -681,7 +681,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5011,
+                "console": 5032,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
