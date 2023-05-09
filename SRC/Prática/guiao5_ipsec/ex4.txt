@@ -1,0 +1,1 @@
+Todo o trafego trocado entre o Server 2 está protegido (tem Authentication Header porque via pelo Tunel), com a comunicação com o Server 1 só os replys é que passam no Tunel e por isso só esse é que está protegido

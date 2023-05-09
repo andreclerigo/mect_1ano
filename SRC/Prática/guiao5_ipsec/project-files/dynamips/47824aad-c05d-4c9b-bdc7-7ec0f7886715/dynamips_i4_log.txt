@@ -1,0 +1,22 @@
+May 04 21:26:04.109 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+May 04 21:26:04.109 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59567.
+May 04 21:26:04.118 HYPERVISOR: exec_cmd: hypervisor version 
+May 04 21:26:04.118 HYPERVISOR: exec_cmd: hypervisor working_dir /home/andre/github/mect_1ano/SRC/Prática/guiao5_ipsec/project-files/dynamips 
+May 04 21:26:04.118 GENERAL: working_dir=/home/andre/github/mect_1ano/SRC/Prática/guiao5_ipsec/project-files/dynamips
+May 04 21:26:04.118 HYPERVISOR: exec_cmd: ethsw create Switch1 
+May 04 21:26:04.553 HYPERVISOR: exec_cmd: nio create_udp udp-57134d72-ad26-4f7b-804b-3b7ce66d805b 10007 127.0.0.1 10006 
+May 04 21:26:04.553 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-57134d72-ad26-4f7b-804b-3b7ce66d805b 
+May 04 21:26:04.571 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-57134d72-ad26-4f7b-804b-3b7ce66d805b 1 
+May 04 21:26:04.602 HYPERVISOR: exec_cmd: nio create_udp udp-9fd13986-10ab-4310-99af-11b7f459cda5 10010 127.0.0.1 10011 
+May 04 21:26:04.602 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-9fd13986-10ab-4310-99af-11b7f459cda5 
+May 04 21:26:04.611 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-9fd13986-10ab-4310-99af-11b7f459cda5 1 
+May 04 21:26:04.925 HYPERVISOR: exec_cmd: nio create_udp udp-c37cd146-8b70-4dfb-8fb2-ec1eeae56069 10018 127.0.0.1 10019 
+May 04 21:26:04.925 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-c37cd146-8b70-4dfb-8fb2-ec1eeae56069 
+May 04 21:26:04.933 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-c37cd146-8b70-4dfb-8fb2-ec1eeae56069 1 
+May 04 21:42:51.799 HYPERVISOR: exec_cmd: nio bind_filter udp-c37cd146-8b70-4dfb-8fb2-ec1eeae56069 2 capture 
+May 04 21:42:51.799 HYPERVISOR: exec_cmd: nio setup_filter udp-c37cd146-8b70-4dfb-8fb2-ec1eeae56069 2 en10mb /home/andre/github/mect_1ano/SRC/Prática/guiao5_ipsec/project-files/captures/Switch1_Ethernet2_to_R1_FastEthernet00.pcap 
+May 04 21:43:11.175 HYPERVISOR: exec_cmd: nio unbind_filter udp-c37cd146-8b70-4dfb-8fb2-ec1eeae56069 2 
+May 04 21:52:40.395 HYPERVISOR: exec_cmd: ethsw delete Switch1 
+May 04 21:52:40.453 HYPERVISOR: exec_cmd: hypervisor stop 
+May 04 21:52:40.606 HYPERVISOR: Stopped.
+May 04 21:52:40.606 GENERAL: reset done.
