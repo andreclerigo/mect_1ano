@@ -1,0 +1,10 @@
+Ports range: 22150 - 22159
+Master Thief 	-> -----    --> ws07
+Ord Thief	    -> -----    --> ws08
+
+General Repos	-> 22150    --> ws01
+Control Site	-> 22151    --> ws02
+Concet Site	    -> 22152    --> ws03
+Museum		    -> 22153    --> ws04
+Assault Party1	-> 22154    --> ws05
+Assault Party2  -> 22155    --> ws06
