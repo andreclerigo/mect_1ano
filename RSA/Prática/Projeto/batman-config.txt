@@ -1,0 +1,120 @@
+[Installation]
+sudo apt update
+sudo apt install -y libnl-3-dev libnl-genl-3-dev git build-essential
+git clone https://git.open-mesh.org/batctl.git
+cd batctl
+sudo make install
+sudo apt install -y alfred batmand batctl
+sudo service wpa_supplicant stop
+sudo systemctl mask wpa_supplicant.service 
+sudo systemctl disable dhcpcd.service
+
+[create_batman_interface.sh]
+#!/bin/bash
+if [ -z "$1" ] || [ -z "$2" ]; then
+	echo Not enough input arguments provided
+	echo Please specify interface name and IP/NETMASK
+	echo Example: ./create_batman_interface wlan0 10.1.1.1/24
+
+else
+	sudo systemctl stop dhcpcd.service
+	sudo ip link set $1 down
+	sudo iw $1 set type ibss
+	sudo ifconfig $1 mtu 1500
+	sudo iwconfig $1 channel 11
+	sudo ip link set $1 up
+	sudo iw $1 ibss join adhoctest 2462
+
+	sudo modprobe batman-adv
+	sudo batctl if add $1
+	sudo ip link set up dev $1
+	sudo ip link set up dev bat0
+	sudo ifconfig bat0 $2
+fi
+
+[Static IP for eth0]
+sudo nano /etc/network/interfaces
+auto eth0
+iface eth0 inet static
+address 192.168.2.X
+netmask 255.255.255.0
+
+[Script startup]
+sudo nano /etc/rc.local
+/home/rpi-X/create_batman_interface.sh wlan0 10.1.1.X/24
+sudo chmod +x /etc/rc.local
+sudo reboot
+
+[Debug]
+sudo iw dev
+
+[Pings]
+batctl ping IP
+sudo watch -n 0.1 batctl n
+sudo watch -n 0.1 batctl o
+
+[Connect]
+Change local IP to 192.168.2.10
+ssh rpi-X@192.168.2.X
+[Renew key(?)]
+ssh-keygen -f "/home/andre/.ssh/known_hosts" -R "raspberrypi-X.local"
+
+[MAC-Addresses]
+rpi3 - 7f:51
+rpi2 - 1a:ce
+rpi1 - 1b:0b
+
+[restore_wifi_interface.sh]
+#!/bin/bash
+if [ -z "$1" ]; then
+	echo "Not enough input arguments provided"
+	echo "Please specify interface name"
+	echo "Example: ./restore_wifi_interface wlan0"
+else
+	# Remove interface from BATMAN-adv and disable bat0
+	sudo batctl if del $1
+	sudo ip link set down dev bat0
+	sudo batctl meshif bat0 interface destroy
+
+	# Stop the IBSS mode on the Wi-Fi interface
+	sudo ip link set $1 down
+	sudo iw $1 set type managed
+	sudo ip link set $1 up
+
+	sudo systemctl start dhcpcd.service
+	sleep 5
+	sudo wpa_cli -i wlan0 reconfigure
+	sleep 60
+	sudo ip route add default via 192.168.1.1 dev wlan0 metric 100
+
+	# Add Google DNS servers to /etc/resolv.conf
+	echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
+	echo "nameserver 8.8.4.4" | sudo tee -a /etc/resolv.conf > /dev/null
+fi
+
+chmod +x restore_wifi_interface.sh 
+sudo ./restore_wifi_interface.sh wlan0
+
+[iptables.sh]
+#!/bin/bash
+
+hostgwint="$1"
+apint="$2"
+
+if [ -z "$hostgwint" ] || [ -z "$apint" ]; then
+  echo "Usage: $0 <hostgwint> <apint>"
+  exit 1
+fi
+
+iptables -t nat -A POSTROUTING -o $hostgwint -j MASQUERADE
+iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i $apint -o $hostgwint -j ACCEPT
+
+chmod +x iptables.sh
+sudo ./iptables.sh wlo1 enxf8e43b21b027
+sudo ./iptables.sh eth0 bat0
+
+sudo batctl gw_mode client
+sudo batctl gw_mode server
+
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf

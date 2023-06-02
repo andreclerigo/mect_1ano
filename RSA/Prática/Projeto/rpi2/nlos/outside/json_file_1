@@ -1,0 +1,9 @@
+{
+  "RTT_MIN": "2.002",
+  "RTT_AVG": "2.085",
+  "RTT_MAX": "2.136",
+  "RTT_MDEV": "0.052",
+  "JITTER": "0.275",
+  "THROUGHPUT": "57.3",
+  "PDR": "100"
+}

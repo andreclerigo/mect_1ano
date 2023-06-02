@@ -1,0 +1,7 @@
+andre@laptop in ~/.../ASE-Rover/webapp on main*
+$ ls -ld /var/lib/mongodb
+drwxr-xr-x 4 logstash mongodb 12288 mai 17 11:48 /var/lib/mongodb
+andre@laptop in ~/.../ASE-Rover/webapp on main*
+$ sudo chown -R mongodb:mongodb /var/lib/mongodb
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+
