@@ -1,0 +1,8 @@
+menu "DHT11 Configuration"
+
+    config DHT11_PIN
+        int "DHT11 GPIO PIN"
+        default 4
+        help
+            The GPIO pin that the DHT11 sensor is connected to.
+endmenu

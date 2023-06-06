@@ -1,0 +1,13 @@
+menu "SSD1306 Configuration"
+    config SSD1306_SCL_PIN
+        int "SSD1306 SCL GPIO PIN"
+        default 33
+        help
+            The GPIO pin that the SS1306 SCL is connected to.
+
+    config SSD1306_SDA_PIN
+        int "SSD1306 SDA GPIO PIN"
+        default 32
+        help
+            The GPIO pin that the SS1306 SDA is connected to.
+endmenu

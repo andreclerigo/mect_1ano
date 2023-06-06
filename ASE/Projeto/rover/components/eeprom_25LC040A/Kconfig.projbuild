@@ -1,0 +1,31 @@
+menu "EEPROM Configuration"
+    config EEPROM_CS_PIN
+        int "EEPROM Chip Select GPIO PIN"
+        default 5
+        help
+            The GPIO pin that the EEPROM chip select is connected to.
+    
+    config EEPROM_SCK_PIN
+        int "EEPROM Clock GPIO PIN"
+        default 18
+        help
+            The GPIO pin that the EEPROM clock is connected to.
+
+    config EEPROM_MOSI_PIN
+        int "EEPROM MOSI GPIO PIN"
+        default 23
+        help
+            The GPIO pin that the EEPROM MOSI is connected to.
+    
+    config EEPROM_MISO_PIN
+        int "EEPROM MISO GPIO PIN"
+        default 19
+        help
+            The GPIO pin that the EEPROM MISO is connected to.
+    
+    config EEPROM_CLK_SPEED_HZ
+        int "EEPROM Clock Speed (Hz)"
+        default 1000000
+        help
+            The clock speed of the EEPROM in Hz.
+endmenu

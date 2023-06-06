@@ -1,0 +1,22 @@
+menu "WiFi Configuration"
+
+    config WIFI_SSID
+        string "WiFi SSID"
+        # default "OpenLab"
+        default "devolo-983"
+        help
+            SSID (network name) for the device to connect to.
+
+    config WIFI_PASS
+        string "WiFi Password"
+        # default "open.LAB"
+        default "FUAVIMCRSULJVNMR"
+        help
+            WiFi password for the network that the device will to use.
+
+    config SERVER_IP_ADDR
+        string "Server IP address"
+        default "192.168.1.120"
+        help
+            IP address of the server to connect to and send the sensor data.
+endmenu

@@ -1,0 +1,8 @@
+menu "MQ5 Configuration"
+
+    config MQ5_PIN
+        int "MQ5 GPIO PIN"
+        default 6
+        help
+            The GPIO pin that the MQ5 sensor is connected to.
+endmenu

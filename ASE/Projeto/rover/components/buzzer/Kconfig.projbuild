@@ -1,0 +1,7 @@
+menu "Buzzer Configuration"
+    config BUZZER_PIN
+        int "Buzzer GPIO PIN"
+        default 16
+        help
+            The GPIO pin that the buzzer is connected to.
+endmenu
