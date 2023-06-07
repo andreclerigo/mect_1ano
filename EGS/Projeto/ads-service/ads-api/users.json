@@ -1,0 +1,26 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "type": "A",
+            "name": "Pingo Doce",
+            "email": "pingodoce@example.com",
+            "password": "password123"
+        },
+        {
+            "id": 2,
+            "type": "A",
+            "name": "Auchan",
+            "email": "auchan@example.com",
+            "password": "password456"
+        },
+        {
+            "id": 3,
+            "type": "C",
+            "name": "Mixit",
+            "email": "mixit@example.com",
+            "password": "mixit123"
+        }
+    ]
+  }
+  

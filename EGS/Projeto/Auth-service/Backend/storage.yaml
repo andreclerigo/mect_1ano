@@ -1,0 +1,64 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: authsqlite-pv
+  labels:
+    type: local
+  namespace: '98372'
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data"
+  
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: authsqlite-pvc
+  namespace: '98372'
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-backend
+  namespace: '98372'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-backend
+  template:
+    metadata:
+      labels:
+        app: auth-backend
+    spec:
+      containers:
+      - name: auth-backend
+        image: registry.deti:5000/98372/auth-backend:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5019
+        volumeMounts:
+        - mountPath: "/app/API/database.db"
+          name: authsqlite-pv
+      volumes:
+      - name: authsqlite-pv
+        persistentVolumeClaim:
+          claimName: authsqlite-pvc
+      dnsConfig:
+        options:
+        - name: ndots
+          value: "1"

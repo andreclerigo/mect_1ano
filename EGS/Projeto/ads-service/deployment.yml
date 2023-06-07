@@ -1,0 +1,120 @@
+#Ads API deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ads-api
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ads-api
+  template:
+    metadata:
+      labels:
+        app: ads-api
+    spec:
+      containers:
+        - name: ads-api
+          image: registry.deti:5000/egs-mixit/ads-api:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8010
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "1"
+
+#Ads API service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ads-api
+  namespace: egs-mixit
+spec:
+  selector:
+    app: ads-api
+  ports:
+    - protocol: TCP
+      port: 8010
+      targetPort: 8010
+
+---
+#Ads Platform deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ads-platform
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ads-platform
+  template:
+    metadata:
+      labels:
+        app: ads-platform
+    spec:
+      containers:
+        - name: ads-platform
+          image: registry.deti:5000/egs-mixit/ads-platform:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8090
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "1"
+
+#Ads Platform service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ads-platform
+  namespace: egs-mixit
+spec:
+  selector:
+    app: ads-platform
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8090
+
+# Traefik deployment
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app
+  namespace: egs-mixit
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    traefik.ingress.kubernetes.io/redirect-permanent: "true"
+spec:
+  rules:
+  - host: ads-platform-mixit.deti
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ads-platform
+            port: 
+              number: 80
+  - host: ads-api-mixit.deti
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ads-api
+            port: 
+              number: 8010

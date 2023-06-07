@@ -1,0 +1,527 @@
+# RabbitMQ deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+        - name: rabbitmq
+          image: rabbitmq:3-management
+          ports:
+            - containerPort: 5672
+            - containerPort: 15672
+# RabbitMQ service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+  namespace: egs-mixit
+spec:
+  ports:
+    - name: default
+      port: 5672
+      targetPort: 5672
+    - name: management
+      port: 15672
+      targetPort: 15672
+  selector:
+    app: rabbitmq
+
+
+# Redis deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:latest
+          ports:
+            - containerPort: 6379
+# Redis service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  namespace: egs-mixit
+spec:
+  ports:
+    - port: 6379
+      targetPort: 6379
+  selector:
+    app: redis
+
+
+# MongoDB deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - image: bitnami/mongodb:latest
+        name: mongodb
+        volumeMounts:
+        - mountPath: /data/db
+          name: mongodb
+      restartPolicy: Always
+      volumes:
+      - name: mongodb
+        persistentVolumeClaim:
+          claimName: mongodb-data-pvc
+# MongoDB service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  namespace: egs-mixit
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+  selector:
+    app: mongodb
+
+
+# OpenSearch deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opensearch
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opensearch
+  template:
+    metadata:
+      labels:
+        app: opensearch
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+      - name: opensearch
+        image: opensearchproject/opensearch:2.4.0
+        env:
+        - name: OPENSEARCH_JAVA_OPTS
+          value: "-Xms1g -Xmx1g"
+        - name: bootstrap.memory_lock
+          value: "true"
+        - name: discovery.type
+          value: "single-node"
+        - name: action.auto_create_index
+          value: "false"
+        - name: plugins.security.ssl.http.enabled
+          value: "false"
+        - name: plugins.security.disabled
+          value: "true"
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "1"
+        volumeMounts:
+        - name: opensearch
+          mountPath: /usr/share/opensearch/data
+      restartPolicy: Always
+      volumes:
+      - name: opensearch
+        persistentVolumeClaim:
+          claimName: os-data
+# Opensearch service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: opensearch
+  namespace: egs-mixit
+spec:
+  selector:
+    app: opensearch
+  ports:
+    - protocol: TCP
+      port: 9200
+      targetPort: 9200
+
+
+# Graylog deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graylog
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graylog
+  template:
+    metadata:
+      labels:
+        app: graylog
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+        fsGroup: 0
+      initContainers:
+        - name: cleanup
+          image: alpine:latest
+          command: ["/bin/sh", "-c", "rm /usr/share/graylog/data/journal/.lock; rm -r /usr/share/graylog/data/journal/lost+found"]
+          volumeMounts:
+            - name: graylog-data-volume
+              mountPath: /usr/share/graylog/data/data
+            - name: graylog-journal-volume
+              mountPath: /usr/share/graylog/data/journal
+      containers:
+      - name: graylog
+        image: graylog/graylog:5.0.7        
+        env:
+        - name: GRAYLOG_NODE_ID_FILE
+          value: "/usr/share/graylog/data/config/node-id"
+        - name: GRAYLOG_PASSWORD_SECRET
+          # valueFrom:
+          #   secretKeyRef:
+          #     name: graylog
+          #     key: password_secret
+          value: 8dUUKboVfbIhr6kWDItvv6qM2Xh407rk6RQQEEWlSyYsJFEfRBiNBZ9sa8GoHnuQFbNYwitp5zVZUGh61AzaogbtCs4dSFvG
+        - name: GRAYLOG_ROOT_PASSWORD_SHA2
+          # valueFrom:
+          #   secretKeyRef:
+          #     name: graylog
+          #     key: root_password_sha2
+          value: "1afec35dd4984f93dc926ef96c37957c580314d6e4dea8b7e079e4c83405fc79"
+        - name: GRAYLOG_HTTP_BIND_ADDRESS
+          value: "0.0.0.0:9000"
+        - name: GRAYLOG_HTTP_EXTERNAL_URI
+          value: "http://localhost:9000/"
+        - name: GRAYLOG_ELASTICSEARCH_HOSTS
+          value: "http://opensearch:9200"
+        - name: GRAYLOG_MONGODB_URI
+          value: "mongodb://mongodb:27017/graylog"
+        ports:
+        - containerPort: 5044
+        - containerPort: 5140
+        - containerPort: 5555
+        - containerPort: 9000
+        - containerPort: 12201
+        - containerPort: 13301
+        - containerPort: 13302
+        volumeMounts:
+        - name: graylog-data-volume
+          mountPath: /usr/share/graylog/data/data
+        - name: graylog-journal-volume
+          mountPath: /usr/share/graylog/data/journal
+      restartPolicy: Always
+      volumes:
+      - name: graylog-data-volume
+        persistentVolumeClaim:
+          claimName: graylog-data
+      - name: graylog-journal-volume
+        persistentVolumeClaim:
+          claimName: graylog-journal
+# Graylog service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: graylog
+  namespace: egs-mixit
+spec:
+  selector:
+    app: graylog
+  ports:
+    - name: beats
+      protocol: TCP
+      port: 5044
+      targetPort: 5044
+    - name: syslog-udp
+      protocol: UDP
+      port: 5140
+      targetPort: 5140
+    - name: syslog-tcp
+      protocol: TCP
+      port: 5140
+      targetPort: 5140
+    - name: raw-tcp
+      protocol: TCP
+      port: 5555
+      targetPort: 5555
+    - name: raw-udp
+      protocol: UDP
+      port: 5555
+      targetPort: 5555
+    - name: api
+      protocol: TCP
+      port: 9000
+      targetPort: 9000
+    - name: gelf-tcp
+      protocol: TCP
+      port: 12201
+      targetPort: 12201
+    - name: gelf-udp
+      protocol: UDP
+      port: 12201
+      targetPort: 12201
+    - name: forwarder-data
+      protocol: TCP
+      port: 13301
+      targetPort: 13301
+    - name: forwarder-config
+      protocol: TCP
+      port: 13302
+      targetPort: 13302
+
+
+# Prometheus deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      securityContext:
+        fsGroup: 65534  # <- This is the 'nobody' user in Prometheus Docker image
+      containers:
+      - name: prometheus
+        image: prom/prometheus:latest
+        args:
+          - '--config.file=/etc/prometheus/prometheus.yml'
+          - '--storage.tsdb.path=/prometheus'
+        ports:
+        - containerPort: 9090
+        volumeMounts:
+        - name: prometheus-data
+          mountPath: /prometheus
+        - name: prometheus-config
+          mountPath: /etc/prometheus/prometheus.yml
+          subPath: prometheus.yml
+      volumes:
+      - name: prometheus-data
+        emptyDir: {}  # This creates an empty directory that is erased when the Pod is removed
+      - name: prometheus-config
+        configMap:
+          name: prometheus-config
+# Prometheus config map
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: egs-mixit
+data:
+  prometheus.yml: |
+    scrape_configs:
+      - job_name: prometheus
+        static_configs:
+          - targets: ['localhost:9090']
+      - job_name: app
+        metrics_path: /metrics
+        static_configs:
+          - targets: ['app:80']
+# Prometheus service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  namespace: egs-mixit
+spec:
+  selector:
+    app: prometheus
+  ports:
+  - protocol: TCP
+    port: 9090
+    targetPort: 9090
+
+
+# Grafana deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:latest
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: grafana-data
+          mountPath: /var/lib/grafana
+        - name: grafana-provisioning-datasources
+          mountPath: /etc/grafana/provisioning/datasources/prometheus.yaml
+          subPath: prometheus.yaml
+      volumes:
+      - name: grafana-data
+        emptyDir: {}  # This creates an empty directory that is erased when the Pod is removed
+      - name: grafana-provisioning-datasources
+        configMap:
+          name: grafana-provisioning-datasources
+# Grafana config map
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-provisioning-datasources
+  namespace: egs-mixit
+data:
+  prometheus.yaml: |
+    apiVersion: 1
+
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        access: proxy
+        orgId: 1
+        url: http://prometheus:9090
+        basicAuth: false
+# Grafana service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: egs-mixit
+spec:
+  selector:
+    app: grafana
+  ports:
+  - protocol: TCP
+    port: 3002
+    targetPort: 3000
+
+
+# App deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  namespace: egs-mixit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - name: app
+          image: registry.deti:5000/egs-mixit/mixit-api:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+          command: ["npm", "run", "dev"]
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "1"
+# App service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+  namespace: egs-mixit
+spec:
+  ports:
+    - port: 80
+      targetPort: 3000
+  selector:
+    app: app
+
+
+# Traefik deployment
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app
+  namespace: egs-mixit
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    traefik.ingress.kubernetes.io/redirect-permanent: "true"
+spec:
+  rules:
+  - host: app-egs-mixit.deti
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app
+            port: 
+              number: 80

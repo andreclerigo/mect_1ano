@@ -1,0 +1,58 @@
+# MongoDB data
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-data-pvc
+  namespace: egs-mixit
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 1Gi
+
+# Opensearch data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: os-data
+  namespace: egs-mixit
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 20Mi
+
+# Graylog data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: graylog-data
+  namespace: egs-mixit
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 20Mi
+
+# Graylog journal
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: graylog-journal
+  namespace: egs-mixit
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 10Gi

@@ -1,0 +1,73 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+#kind: ReplicaSet
+metadata:
+  name: auth-backend
+  namespace: '98372'
+spec:
+  selector:
+    matchLabels:
+      app: auth-backend
+  template:
+    metadata:
+      labels:
+        app: auth-backend
+    spec:
+      containers:
+      - name: auth-backend
+        image: registry.deti:5000/98372/auth-backend:v1
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "10m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5019
+      dnsConfig:
+        options:
+        - name: ndots
+          value: "1"  
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-backend
+  namespace: '98372'
+spec:
+  selector:
+    app: auth-backend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5019
+
+
+# Configure Traefik
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: auth-backend
+  namespace: '98372'
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    traefik.ingress.kubernetes.io/redirect-permanent: "true"
+spec:
+  rules:
+  - host: mixit-egs.duckdns.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: auth-backend
+            port: 
+              number: 80

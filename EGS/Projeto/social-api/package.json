@@ -1,0 +1,34 @@
+{
+  "name": "social-api",
+  "version": "1.0.0",
+  "description": "API used for MIXIT to retrieve information about the users, content, etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "André Clérigo",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "bull": "^4.10.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.2.0",
+    "prom-client": "^14.2.0",
+    "redis": "^4.6.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2",
+    "twitter-api-v2": "^1.14.2",
+    "winston": "^3.8.2",
+    "winston-gelf": "^1.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}

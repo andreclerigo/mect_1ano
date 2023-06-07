@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  ads_api:
+    image: ads-api:latest
+    container_name: ads_api
+    ports:
+      - "8010:8010"
+
+  ads_ui:
+    image: ads-ui:latest
+    container_name: ads_ui
+    ports:
+      - "8090:80"
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ad Code</title>
+</head>
+<body>
+  <h1>Advertisement</h1>
+
+  <div id="prompt">
+    <input type="text" id="location" placeholder="Location">
+    <input type="text" id="publisher_id" placeholder="Publisher ID">
+    <input type="text" id="age" placeholder="Age Range">
+    <button id="fetch-ads" onclick="fetchAds()">Fetch Ads</button>
+  <div id="ad-container"
+        style="width: 50%; height: 50%;"></div
+  ></div>
+
+  <script>
+    //function to fetch 
+
+    function fetchAds() {
+
+        //fetch the ads from the API
+        var location = document.getElementById('location').value;
+        var publisher_id = document.getElementById('publisher_id').value;
+        var age = document.getElementById('age').value;
+
+        var url_extra = '';
+        if (location != '') {
+            url_extra += '&location=' + location;
+        }
+        if (publisher_id != '') {
+            url_extra += '&publisher_id=' + publisher_id;
+        }
+        if (age != '') {
+            url_extra += '&age_range=' + age;
+        }
+
+        fetch('http://localhost:5000/v1/ads?' + url_extra, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            
+        },
+        })
+        .then(response => response.text())
+        .then(adCode => {
+        const adContainer = document.getElementById('ad-container');
+            //get the value of the "ads" key and console.log it
+            var ad = JSON.parse(adCode);
+            var ads = ad.ads;
+            console.log(ads)
+            
+            //loop through the array of ads
+            for (var i = 0; i < ads.length; i++) {
+                //create a div element
+                var div = document.createElement('div');
+                //set the div's innerHTML to the ad code
+                div.innerHTML = ads[i];
+                //append the div to the ad container
+                adContainer.appendChild(div);
+            }
+            
+        })
+        .catch(error => {
+        console.error(error);
+        });
+
+    }
+  </script>
+</body>
+</html>

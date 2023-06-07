@@ -1,0 +1,318 @@
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - uuid
+        - name
+        - username
+        - external_information
+      properties:
+        uuid:
+          type: string
+          description: Unique identifier of this user. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.
+          example: 123456789123456789
+        name:
+          type: string
+          description: Name displayed on user's profile in mixit
+          example: André Clérigo
+        username:
+          type: string
+          description: The mixit handler of this user which is also unique.
+          example: mrmaster
+        created_at:
+          type: string
+          description: Creation time of this account. To return this field, add user.fields=created_at in the request's query parameter.
+          example: 2019-05-14T16:41:48.000Z
+        location:
+          type: string
+          description: The location specified in the user's registration. As this is a user input, it may not indicate a valid location. To return this field, add user.fields=location in the request's query parameter.
+          example: Portugal
+        public_metrics:
+          type: object
+          description: Contains details about activity for this user. To return this field, add user.fields=public_metrics in the request's query parameter.
+          properties:
+            followers_count:
+              type:	number
+              description: Number of users who follow this user.
+              example: 144
+            following_count:
+              type: number
+              description: Number of users this user is following.
+              example: 125
+        external_information:
+          type: object
+          description: Contains details the user's identification on other platforms. To return this field, add user.fields=external_information in the request's query parameter.
+          properties:
+            id:
+              type: string
+              description: The ID of the user on twitter.
+              example: 1128339639209811969
+            twitter_name:
+              type: string
+              description: The friendly name of this user, as shown on their profile.
+              example: Andre
+            twitter_username:
+              type: string
+              description: The Twitter handle (screen name) of this user.
+              example: mrmaster__
+
+    TwitterUser:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Unique identifier of this user. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.
+                example: 1128339639209811969
+              name:
+                type: string
+                description: The friendly name of this user, as shown on their profile.
+                example: André Clérigo
+              username:
+                type: string
+                descripion: The Twitter handle (screen name) of this user.
+                example: mrmaster__
+              profile_image_url:
+                type: string
+                description: The Twitter's image profile url
+                example: https://pbs.twimg.com/profile_images/1586701254474043394/lM2FGOL6_normal.jpg
+        next_token:
+          type: string
+          description: Pagination token for the next page of results.
+          example: 49IA8JT6H4NHEZZZ
+
+    Post:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Unique identifier of the tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.
+                example: 1598729618432806913
+              text:
+                type: string
+                description: The text content of tweet itself.
+                example: Este é o meu primeiro tweet
+              conversation_id:
+                type: string
+                description: The ID of the conversation this tweet is part of.
+                example: 1598729618432806913
+              created_at:
+                type: string
+                description: Creation timestamp of this tweet.
+                example: 2021-08-27T15:00:00.000Z
+              public_metrics:
+                type: object
+                properties:
+                  retweet_count:
+                    type: number
+                    description: Number of times this Tweet has been retweeted.
+                    example: 0
+                  reply_count:
+                    type: number
+                    description: Number of times this Tweet has been replied to.
+                    example: 0
+                  like_count:
+                    type: number
+                    description: Number of times this Tweet has been liked.
+                    example: 0
+                  quote_count:
+                    type: number
+                    description: Number of times this Tweet has been quoted.
+                    example: 0
+              author_info:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: The friendly name of this user, as shown on their profile.
+                    example: André Clérigo
+                  username:
+                    type: string
+                    description: The Twitter handle (screen name) of this user.
+                    example: mrmaster__
+                  profile_image_url:
+                    type: string
+                    description: The Twitter's image profile url
+                    example: https://pbs.twimg.com/profile_images/1586701254474043394/lM2FGOL6_normal.jpg
+              photo_urls:
+                type: array
+                description: The photo urls of the tweet.
+                items:
+                  type: string
+                  example: https://pbs.twimg.com/media/EtZ2Z7tXMAA5Z5_.jpg
+              referenced_tweet:
+                $ref: '#/components/schemas/OriginalPost'
+
+    OriginalPost:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Unique identifier of the tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.
+                example: 1598729618432806913
+              text:
+                type: string
+                description: The text content of tweet itself.
+                example: Este é o meu primeiro tweet
+              conversation_id:
+                type: string
+                description: The ID of the conversation this tweet is part of.
+                example: 1598729618432806913
+              created_at:
+                type: string
+                description: Creation timestamp of this tweet.
+                example: 2021-08-27T15:00:00.000Z
+              public_metrics:
+                type: object
+                properties:
+                  retweet_count:
+                    type: number
+                    description: Number of times this Tweet has been retweeted.
+                    example: 0
+                  reply_count:
+                    type: number
+                    description: Number of times this Tweet has been replied to.
+                    example: 0
+                  like_count:
+                    type: number
+                    description: Number of times this Tweet has been liked.
+                    example: 0
+                  quote_count:
+                    type: number
+                    description: Number of times this Tweet has been quoted.
+                    example: 0
+              author_info:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: The friendly name of this user, as shown on their profile.
+                    example: André Clérigo
+                  username:
+                    type: string
+                    description: The Twitter handle (screen name) of this user.
+                    example: mrmaster__
+                  profile_image_url:
+                    type: string
+                    description: The Twitter's image profile url
+                    example: https://pbs.twimg.com/profile_images/1586701254474043394/lM2FGOL6_normal.jpg
+              photo_urls:
+                type: array
+                description: The photo urls of the tweet.
+                items:
+                  type: string
+                  example: https://pbs.twimg.com/media/EtZ2Z7tXMAA5Z5_.jpg
+                  
+    ErrorInvalid:
+      type: object
+      properties:
+        errors:
+          type: object
+          properties:
+            parameters:
+              type: object
+              properties:
+                param:
+                  type: array
+                  description: The name of the parameter that is invalid.
+                  items:
+                    type: string
+                    decription: The value of the parameter that is invalid.
+                    example: "abc"
+                message:
+                  type: string
+                  description: A description of the error.
+                  example: The 'uuid' query parameter value [abc] is not valid 
+        title:
+          type: string
+          description: The title of the error.
+          example: "Invalid request"
+        detail:
+          type: string
+          description: A description with more details of the error.
+          example: "One or more parameters to your request were invalid."
+
+    ErrorNotFound:
+      type: object
+      properties:
+        errors:
+          type: object
+          properties:
+            parameters:
+              type: object
+              properties:
+                value:
+                  type: array
+                  description: The name of the parameter that is not found.
+                  items:
+                    type: string
+                    decription: The value of the parameter that is not found.
+                    example: "12345678912345678"
+        title:
+          type: string
+          description: The title of the error.
+          example: "Not Found Error"
+        detail:
+          type: string
+          description: A description with more details of the error.
+          example: "Could not find user with uuid: [12345678912345678]."
+        parameter:
+          type: string
+          description: The name of the parameter that caused the error.
+          example: "uuid"
+        resource_type:
+          type: string
+          description: The type of resource that was not found.
+          example: "user"
+
+    ErrorDuplicateResource:
+      type: object
+      properties:
+        errors:
+          type: object
+          properties:
+            parameters:
+              type: object
+              properties:
+                value:
+                  type: array
+                  items:
+                    type: string
+                    decription: The value of the resource identifier.
+                    example: "123456789123456789"
+        title:
+          type: string
+          description: The title of the error.
+          example: "Resource Already Exists Error"
+        detail:
+          type: string
+          description: A description with more details of the error.
+          example: "User with uuid: [12345678912345678] already registerd in the platform."
+        parameter:
+          type: string
+          description: The name of the parameter that caused the error.
+          example: "uuid"
+        resource_type:
+          type: string
+          description: The type of resource that is duplicate.
+          example: "user"
+tags:
+  - name: Users
+    description: User information
+  - name: Posts
+    description: Post

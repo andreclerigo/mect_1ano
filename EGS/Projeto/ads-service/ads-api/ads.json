@@ -1,0 +1,47 @@
+{
+    "ads": [
+      {
+        "id": 1,
+        "type": "image",
+        "description": "Pingo Doce for the youth",
+        "pricing_model": "cost-per-click",
+        "target_audience": {
+          "age_range": "youth",
+          "location": "Portugal"
+        },
+        "ad_creative": "https://play-lh.googleusercontent.com/-KY7h2o5K2v9RgHpT_AGus3CfkE9FqEyGpxqGhLApkjt1RR_7m83pHM8tA2nWnYXNUnb",
+        "impressions": 0,
+        "clicks": 23,
+        "user": 1
+      },
+      {
+        "id": 2,
+        "type": "video",
+        "description": "Ping doce for the adults",
+        "pricing_model": "cost-per-impression",
+        "target_audience": {
+          "age_range": "adults",
+          "location": "France"
+        },
+        "ad_creative": "https://example.com/video1.mp4",
+        "impressions": 1000,
+        "clicks": 0,
+        "user": 1
+      },
+      {
+        "id": 3,
+        "type": "image",
+        "description": "Auchan for the seniors",
+        "pricing_model": "cost-per-click",
+        "target_audience": {
+          "age_range": "seniors",
+          "location": "Portugal"
+        },
+        "ad_creative": "https://www.marshopping.com/matosinhos/-/media/images/b2c/portugal/matosinhos/images-stores/auchan/auchan_logo_2019.ashx?h=282&iar=0&mw=650&w=410&hash=6080628DA88F979CC8A18AFD71469B76",
+        "impressions": 0,
+        "clicks": 10,
+        "user": 2
+      }
+    ]
+  }
+  
