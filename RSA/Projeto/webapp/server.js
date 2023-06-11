@@ -50,7 +50,7 @@ app.post('/batman', (req, res) => {
 
 app.get('/batman', async (req, res) => {
   try {
-    let data = await collection.find({}).sort({timestamp: -1}).toArray();
+    let data = await collection.find({}).sort({timestamp: -1}).limit(30).toArray();
     // console.log(data);
     res.status(200).send(data);
   } catch (error) {
