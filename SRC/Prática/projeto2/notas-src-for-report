@@ -1,0 +1,70 @@
+# different IPs (that there's in one and the other), number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, uploaded bytes to internet, downloaded bytes to internet,
+
+
+1- Arranjar maneira de explicar estes server attacks (o que são?) C&C
+Server IPs:
+192.168.101.234 (78056 fluxos, sejam ele src ou d	st IP nesse fluxo)
+192.168.101.239 (76585 ...)
+192.168.101.224 (52409 ...)
+192.168.101.228 (52107 ...)
+(o próximo tem apenas 11162 fluxos, que é valor normal)
+
+Server IPs on test:
+192.168.101.228 (143635 ...) -- is a Server! (x3 do fluxo normal)
+192.168.101.224 (140721 ...) -- is a Server! (x3 do fluxo normal)
+192.168.101.42  ( 83568 ...) -- not a Server!!! (x13 do fluxo normal)
+192.168.101.239 ( 82849 ...) Chill
+192.168.101.234 ( 82522 ...) Chill
+192.168.101.60  ( 50991 ...) -- not a Server!!! (x17 do fluxo normal)
+192.168.101.41  ( 49802 ...) -- not a Server!!! (x6 do fluxo normal)
+Outros IPs abaixo disto aumentaram o tráfego para o dobro ou triplo mas dentro de valores normais (diria eu)
+
+Analyze properly the timeline_server_attackers.
+There's a DNS attack (flows to servers using UDP port 53).
+Comms with outside IPs using TCP 443 (HTTPS) 
+Server IPs attacked (probably DNS servers) -> 192.168.101.228
+					   -> 192.168.101.224
+
+					   C&C over DNS 
+------------------------------------------------------------------------					   
+
+Botnet suspect IPs (new internal comms)
+192.168.101.11
+192.168.101.110
+192.168.101.14
+192.168.101.34  (Graph for this one) --> He's sending packets to the Servers 239 and 234 (DDoS? Idk, maybe just exploring ports). Definitely a bot (visible in the graph
+
+The same IPs have appeared making connections to the outside
+
+
+------------------------------------------------------------------------
+Data Exfiltration
+src_ip           dst_ip  counts    up_bytes dst_cc  \
+51   192.168.101.151  142.250.184.139      41  6753960147     US   
+250  192.168.101.209     13.107.42.56      32  6529512410     US   
+
+                                dst_org  
+51                       AS15169 GOOGLE  
+250  AS8068 MICROSOFT-CORP-MSN-AS-BLOCK  
+
+
+------------------------------------------------------------------------
+Countries weird traffic
+Countries with increase of communication to the exterior: 
+   dst_cc  counts_x    up_bytes_x  down_bytes_x  up_bytes_mean_x  \
+13     CN     151.0  1.745724e+06  1.537661e+07     11561.086093   
+31     KR     129.0  1.539955e+06  1.279441e+07     11937.635659   
+46     RU       0.0  0.000000e+00  0.000000e+00         0.000000   
+57     US  315788.0  3.629995e+09  3.748396e+10     11495.036917   
+
+    down_bytes_mean_x  counts_y   up_bytes_y  down_bytes_y  up_bytes_mean_y  \
+13      101831.854305       859      9930936      84746574     11561.043073   
+31       99181.457364       206      2334695      20255753     11333.470874   
+46           0.000000      1209     13540775     115179480     11199.979322   
+57      118699.748844    343024  17456633657   40655670510     50890.414831   
+
+    down_bytes_mean_y  
+13       98657.245634  
+31       98328.898058  
+46       95268.387097  
+57      118521.358593  

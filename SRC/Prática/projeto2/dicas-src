@@ -1,0 +1,85 @@
+Change this on the script: LOAD THE DATA JUST ONCE!!
+
+Quantas sessoes de TCP foram geradas "por minuto", aka sessoes de tcp pequeninas 
+
+Source address do flux (destino do 1º pacote ipv4)
+Estes fluxos têm upload e download 
+Source --> quem iniciou a comunicação
+Destinantion --> quem foi contactado pela primeira vez
+Distinguimos a direção pelo upload e download
+
+
+!!--> Add graphs for traffic by country (source and destination)
+
+Detetar anomalias (como fizemos: medias, variancias, histogramas)
+Coisas estranhas no ficheiro test e as possiveis causas (genericas) --> pode ter várias causas (olhar para o destino, protocolo utilizado, portos, etc)
+
+Possiveis anomalias ver se são botnet, exfiltração de dados e remote C&C of devices
+
+Regras discriminadas para detetar determinados tipos de anomalias
+
+Com uma tabela, máquinas que fazem parte de uma botnet, estão a fazer exfiltração ou estão a ser controladas remotamente, de acordo com as regras definidas anteriormente
+
+1º analise estatistica e com gráficos
+2º mais detalhado com regras (tráfego acima de X ou Y, sendo esta regra absoluta ou mais especifica para utilizadores) --> podem existir falsos positivos (justificavel com o valor de threshold) (probably mais de 30%???)
+
+Quantidade de dados: quem gera mais dados, quem gera mais ligaçẽos, mais uploads, downloads, paises contactados, IPs contactados (procurar padrões nisto) --> regras têm que ter uma logica ligada às possiveis causas e anomalias
+
+Número de anomalias: ~10-12 máquinas com problemas
+
+No teste dizer máquinas em concreto (ip) --> é anomala e está a fazer tipo X de exfiltração
+
+Não anomalos: servidores dentro da empresa (DNS, outros serviços por UDP/TCP)
+
+----------------CHAT-GPT-----------------
+
+Here is a suggestion on how to approach each task:
+
+1. Non-anomalous behavior analysis and description (4 points):
+You can start by loading the data from dataX.parquet using pandas. You will have to analyze the 'typical' behavior of the network. Some key metrics to observe might include the average number of bytes uploaded and downloaded by each IP, the most commonly used ports and protocols, the average number of connections made per IP, the distribution of internal and external connections, and so on. It might be helpful to visualize these distributions to better understand the typical behavior.
+
+2. Anomalous behavior detection, description, and possible causes (4 points):
+Load the data from testX.parquet. You will need to detect anomalous behaviors in this data based on the 'typical' behavior defined earlier. Any significant deviation from the typical behavior might be considered anomalous. This can include unusually high or low upload/download volumes, unusually high connection counts, unusual ports or protocols, etc. You should describe any anomalous behavior you detect and suggest possible causes, such as botnet activity, data exfiltration, or C&C activity.
+
+3. SIEM rules (4 points):
+Based on your understanding of the typical and anomalous behavior, you can define SIEM rules to alert on potential security incidents. For example, a rule might be to alert when a device uploads/downloads more than X standard deviations from its typical volume, or when a device connects to an unusually high number of different IPs, etc. You should define your rules to catch the types of anomalous behavior you've observed, while trying to minimize the number of false positives.
+
+4. SIEM rules test and identification of the devices with anomalous behaviors (4 points):
+You should test your rules against the testX.parquet dataset. Any devices that trigger an alert are potentially compromised. You should try to identify any common characteristics among these devices, such as the specific types of anomalous behavior they exhibit.
+
+5. Written report; structure and content (4 points):
+Write a report summarizing your work. The report should include an introduction, methodology, results, and conclusion. The introduction should describe the problem and your overall approach. The methodology section should detail the specific methods you used for each task. The results section should present your findings from each task, including any visualizations or statistics. The conclusion should summarize the key findings and suggest future work.
+
+
+-----------------Info-2-----------------
+
+For the detection of anomalous behavior, we can leverage some statistical methods to identify outliers in the data. Here is an example approach that uses the Interquartile Range (IQR) method to detect outliers, which are considered as anomalous in this context:
+
+The script identifies and prints out any flows that have an unusually high or low number of bytes uploaded or downloaded, which can be a sign of anomalous behavior.
+
+The IQR method identifies outliers as data points that are a certain distance from the quartiles of the data, typically 1.5 times the IQR. This method assumes that normal behavior is represented by the bulk of the data (the interquartile range) and that anomalies are the rare values that fall outside this range.
+
+This method can be effective at detecting anomalous behavior, but it also has some limitations. For example, it assumes that the data is unimodal and symmetric, which might not be true in all cases. Also, this method can be sensitive to the chosen thresholds.
+
+Possible causes for the anomalous behavior could be:
+
+- Data exfiltration: If an IP is uploading or downloading significantly more data than usual, it could be sending or receiving data in an unauthorized manner.
+- DDoS attack or botnet activity: If an IP is making an unusually high number of connections, it might be part of a DDoS attack or a botnet.
+- Port scanning: If an IP is connecting to a wide range of ports, it might be scanning for vulnerabilities.
+You can modify this code to detect other types of anomalous behavior based on your understanding of the data and the specific needs of your project. For example, you might look for anomalies in the number of connections made by an IP, the ports or protocols used, etc. It could be also beneficial to use a combination of different anomaly detection techniques.
+
+-----------------------------------------------------------
+
+Variance measures the dispersion of a set of data points around their mean value. A high variance suggests a wide range of values in the data set.
+
+Median is the middle value in a data set. For network traffic, this could indicate 'typical' behaviour in the middle of the range.
+
+Average values (mean) could show 'typical' behaviour by indicating the central tendency of a dataset.
+
+Standard deviation is a measure of the amount of variation or dispersion in a set of values.
+
+We can create a function that calculates these statistical properties for the data and then checks whether a given value is an outlier based on these properties.
+
+In this example, outliers are defined as values that are more than 3 standard deviations away from the mean. You could adjust this multiplier based on your specific needs and the nature of your data. The function returns a boolean series, where True indicates that the corresponding value in the original series is an outlier. This series can then be used to filter the original DataFrame and obtain the rows that correspond to the outliers.
+
+This function should help you to implement the second point of your task, i.e., anomalous behavior detection, description, and possible causes. Keep in mind that you may need to adjust the function and the multiplier value to best suit your specific data and task.
