@@ -9,8 +9,8 @@ Ano: 2022/2023
 #### Arquiteturas de Alto Desempenho (AAD): 15
 
 ## 2º Semestre do 4º Ano
-#### Sistemas Distribuídos (SD) : 
-#### Arquiteturas para Sistemas Embutidos (ASE) : 
-#### Segurança em Redes de Comunicações (SRC) : 
+#### Sistemas Distribuídos (SD) : 16  
+#### Arquiteturas para Sistemas Embutidos (ASE) : 18
+#### Segurança em Redes de Comunicações (SRC) : 17  
 #### Engenharia e Gestão de Serviços (EGS) : 
 #### Redes e Sistemas Autónomos (RSA): 

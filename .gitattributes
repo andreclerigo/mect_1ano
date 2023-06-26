@@ -5,3 +5,6 @@ AAD/Assignment1/** linguist-vendored
 SD/Prática/genclass_doc/** linguist-vendored
 SD/Prática/examples/threadBasics/** linguist-vendored
 SD/Prática/examples/threadSynchronization/** linguist-vendored
+EGS/Projeto/social-api/tests/*.ipynb linguist-vendored
+SRC/Prática/projeto2/scripts/*.ipynb linguist-vendored
+RSA/Projeto/*.ipynb linguist-vendored
