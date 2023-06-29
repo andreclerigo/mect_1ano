@@ -14,3 +14,6 @@ Contém o código fonte para correr na ESP32-CAM.
 
 ## /recover_data
 Contém o código fonte para correr no ESP32 para ler os valores da EEPROM e contém o script Python para gerar os gráficos.
+
+## /analyse_spiffs
+Contém o código fonte para correr no ESP32 para ler os dados guardados no filesystem e contém o script Python para gerar os gráficos e dar download dos dados.
