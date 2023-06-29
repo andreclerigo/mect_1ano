@@ -1,5 +1,8 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
+#include "time.h"
+#include "nvs_flash.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_system.h"
@@ -8,7 +11,7 @@
 #include "esp_timer.h"
 #include "esp_event.h"
 #include "esp_netif.h"
-#include "nvs_flash.h"
+#include "esp_sntp.h"
 #include "esp_http_server.h"
 #include "esp_http_client.h"
 #include "cJSON.h"
@@ -17,6 +20,7 @@
 #include "eeprom_25LC040A.h"
 #include "ssd1306.h"
 #include "buzzer.h"
+#include "spiffs.h"
 
 // Wi-Fi Configuration
 #define WIFI_SSID           CONFIG_WIFI_SSID
@@ -40,6 +44,10 @@
 #define A                   76.9
 #define B                   -2.49
 #define RL                  5500.0
+// SPIFFS Configuration
+#define SPIFFS_TEMP_PATH    "/spiffs/temp.txt"
+#define SPIFFS_HUMID_PATH   "/spiffs/humid.txt"
+#define SPIFFS_GAS_PATH     "/spiffs/gas.txt"
 
 // Function prototypes
 static void setup_pins(void);
@@ -61,6 +69,9 @@ static void http_server_init(void);
 static esp_err_t control_handler(httpd_req_t *req);
 static esp_err_t ping_handler(httpd_req_t *req);
 
+// SNTP functions
+void obtain_time(void);
+
 // Constants and relay pin numbers
 static const char *TAG = "ROVER";
 static uint8_t RELAY_1 = 25;
@@ -75,6 +86,7 @@ spi_host_device_t masterHostId = VSPI_HOST;
 SSD1306_t dev;
 mq5_t mq5;
 
+// Data structure to send to the server
 typedef struct
 {
     float temperature;
@@ -192,8 +204,7 @@ static void http_server_init(void)
         .user_ctx = NULL,
     };
 
-    if (httpd_start(&server, &config) == ESP_OK)
-    {
+    if (httpd_start(&server, &config) == ESP_OK) {
         httpd_register_uri_handler(server, &control_uri);
         httpd_register_uri_handler(server, &ping_uri);
     }
@@ -345,11 +356,40 @@ static void left(void)
     gpio_set_level(RELAY_4, 1);
 }
 
+// Obtain the current time from the NTP server
+void obtain_time(void)
+{
+    ESP_LOGI(TAG, "Initializing SNTP");
+    sntp_setoperatingmode(SNTP_OPMODE_POLL);
+    sntp_setservername(0, "pool.ntp.org");
+    sntp_init();
+
+    time_t now = 0;
+    struct tm timeinfo = { 0 };
+    int retry = 0;
+    const int retry_count = 10;
+    while (sntp_get_sync_status() == SNTP_SYNC_STATUS_RESET && ++retry < retry_count) {
+        ESP_LOGI(TAG, "Waiting for system time to be set... (%d/%d)", retry, retry_count);
+        vTaskDelay(2000 / portTICK_PERIOD_MS);
+    }
+    time(&now);
+    localtime_r(&now, &timeinfo);
+
+    // Print the current time and write it to a file
+    char strftime_buf[64];
+    strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
+    ESP_LOGI(TAG, "The current date/time is: %s", strftime_buf);
+    spiffs_write_file("/spiffs/temp.txt", strftime_buf);
+    spiffs_write_file("/spiffs/humid.txt", strftime_buf);
+    spiffs_write_file("/spiffs/gas.txt", strftime_buf);
+}
+
+// Callback function for the timer that reads the sensor values
 static void sensor_readings_callback(void *arg)
 {
     struct dht11_data_t data;
-    float mq5_value;
-    float temperature;
+    float mq5_value = 0.0f;
+    float temperature = 0.0f;
     data_t *send = malloc(sizeof(data_t));
     esp_err_t ret;
 
@@ -373,33 +413,46 @@ static void sensor_readings_callback(void *arg)
         buzzer_alarm = false;
     }
 
-    ret = eeprom_write_byte(spi_device, eeprom_addr++, data.temperature);
-    ESP_LOGI(TAG, "EEPROM Write Temperature: %d", data.temperature);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to write byte");
-        return;
-    }
-    vTaskDelay(1000 / portTICK_PERIOD_MS);
-    ret = eeprom_write_byte(spi_device, eeprom_addr++, data.humidity);
-    ESP_LOGI(TAG, "EEPROM Write Humidity: %d", data.humidity);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to write byte");
-        return;
-    }
-    vTaskDelay(1000 / portTICK_PERIOD_MS);
-    ret = eeprom_write_byte(spi_device, eeprom_addr++, ((int) mq5_value) / 40);
-    ESP_LOGI(TAG, "EEPROM Write Gas: %d", ((int) mq5_value) / 40);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to write byte");
-        return;
-    }
+    // ret = eeprom_write_byte(spi_device, eeprom_addr++, data.temperature);
+    // ESP_LOGI(TAG, "EEPROM Write Temperature: %d", data.temperature);
+    // if (ret != ESP_OK) {
+    //     ESP_LOGE(TAG, "Failed to write byte");
+    //     return;
+    // }
+    // vTaskDelay(1000 / portTICK_PERIOD_MS);
+    // ret = eeprom_write_byte(spi_device, eeprom_addr++, data.humidity);
+    // ESP_LOGI(TAG, "EEPROM Write Humidity: %d", data.humidity);
+    // if (ret != ESP_OK) {
+    //     ESP_LOGE(TAG, "Failed to write byte");
+    //     return;
+    // }
+    // vTaskDelay(1000 / portTICK_PERIOD_MS);
+    // ret = eeprom_write_byte(spi_device, eeprom_addr++, ((int) mq5_value) / 40);
+    // ESP_LOGI(TAG, "EEPROM Write Gas: %d", ((int) mq5_value) / 40);
+    // if (ret != ESP_OK) {
+    //     ESP_LOGE(TAG, "Failed to write byte");
+    //     return;
+    // }
 
-    ESP_LOGI(TAG, "EEPROM address: %d", eeprom_addr);
+    // ESP_LOGI(TAG, "EEPROM address: %d", eeprom_addr);
 
-    if (eeprom_addr == 512) {
-        eeprom_addr = 0;
-        ESP_LOGI(TAG, "EEPROM address reset");
-    }
+    // if (eeprom_addr == 512) {
+    //     eeprom_addr = 0;
+    //     ESP_LOGI(TAG, "EEPROM address reset");
+    // }
+
+    // Storing the values in SPIFFS
+    char temp_string[20];
+    char gas_string[20];
+    char humid_string[4];
+
+    sprintf(temp_string, "%.1f", temperature);
+    sprintf(humid_string, "%u", data.humidity);
+    sprintf(gas_string, "%f", mq5_value);
+
+    spiffs_write_file(SPIFFS_TEMP_PATH, temp_string);
+    spiffs_write_file(SPIFFS_HUMID_PATH, humid_string);
+    spiffs_write_file(SPIFFS_GAS_PATH, gas_string);
 }
 
 
@@ -421,6 +474,22 @@ void app_main(void)
     
     // Set up rover and GPIOs
     setup_pins();
+
+    esp_vfs_spiffs_conf_t conf = {
+      .base_path = "/spiffs",
+      .partition_label = NULL,
+      .max_files = 5,
+      .format_if_mount_failed = true
+    };
+    
+    // Initialize SPIFFS
+    esp_err_t spiffs_result = spiffs_mount(&conf);
+    if (spiffs_result == ESP_OK) {
+        ESP_LOGI(TAG, "SPIFFS mounted successfully");
+    } else {
+        return;
+    }
+    spiffs_get_info(&conf);
 
     // Initialize SPI device E2PROM 25LC040A
     esp_err_t ret_eeprom = eeprom_init(masterHostId, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, CLK_SPEED_HZ, &spi_device);
@@ -461,6 +530,10 @@ void app_main(void)
     }
     ESP_LOGI(TAG, "Piezo Buzzer stopped successfully");
     
+    // Obtain the current time from the NTP server
+    obtain_time();
+    
+    // Create a timer to read the sensor values every 3 seconds
     const esp_timer_create_args_t readings_timer_args = {
             .callback = &sensor_readings_callback,
             .name = "readings_timer"
@@ -468,7 +541,8 @@ void app_main(void)
     esp_timer_handle_t readings_timer;
     ESP_ERROR_CHECK(esp_timer_create(&readings_timer_args, &readings_timer));
     ESP_ERROR_CHECK(esp_timer_start_periodic(readings_timer, 3000000));
-    
+
+    // Play the buzzer alarm every 100 ms
     int alarm_state = 0;
     while (1) {
         alarm_state = buzzer_play(buzzer_alarm, alarm_state);
@@ -480,7 +554,7 @@ void app_main(void)
     if (free_result == ESP_OK) {
         ESP_LOGI(TAG, "EEPROM device freed succeeded");
     } else {
-        ESP_LOGI(TAG, "EEPROM devied failed free");
+        ESP_LOGE(TAG, "EEPROM devied failed free");
     }
 
     // Free I2C device SSD1306
@@ -488,6 +562,15 @@ void app_main(void)
     if (free_result == ESP_OK) {
         ESP_LOGI(TAG, "SSD1306 device freed succeeded");
     } else {
-        ESP_LOGI(TAG, "SSD1306 devied failed free");
+        ESP_LOGE(TAG, "SSD1306 devied failed free");
+    }
+
+    // Unmount SPIFFS
+    spiffs_result = spiffs_unmount(&conf);
+    if (spiffs_result == ESP_OK) {
+        ESP_LOGI(TAG, "SPIFFS unmounted successfully");
+    } else {
+        ESP_LOGE(TAG, "SPIFFS unmount failed");
+        return;
     }
 }

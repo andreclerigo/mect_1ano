@@ -352,49 +352,6 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
-# WiFi Configuration
-#
-CONFIG_WIFI_SSID="GalaxyM21"
-CONFIG_WIFI_PASS="freeinternet"
-CONFIG_SERVER_IP_ADDR="192.168.248.163"
-# end of WiFi Configuration
-
-#
-# Buzzer Configuration
-#
-CONFIG_BUZZER_PIN=16
-# end of Buzzer Configuration
-
-#
-# DHT11 Configuration
-#
-CONFIG_DHT11_PIN=4
-# end of DHT11 Configuration
-
-#
-# EEPROM Configuration
-#
-CONFIG_EEPROM_CS_PIN=5
-CONFIG_EEPROM_SCK_PIN=18
-CONFIG_EEPROM_MOSI_PIN=23
-CONFIG_EEPROM_MISO_PIN=19
-CONFIG_EEPROM_CLK_SPEED_HZ=1000000
-# end of EEPROM Configuration
-
-#
-# MQ5 Configuration
-#
-CONFIG_MQ5_PIN=6
-# end of MQ5 Configuration
-
-#
-# SSD1306 Configuration
-#
-CONFIG_SSD1306_SCL_PIN=33
-CONFIG_SSD1306_SDA_PIN=32
-# end of SSD1306 Configuration
-
-#
 # Compiler options
 #
 CONFIG_COMPILER_OPTIMIZATION_DEBUG=y
