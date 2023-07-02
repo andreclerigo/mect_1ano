@@ -13,4 +13,4 @@ Ano: 2022/2023
 #### Arquiteturas para Sistemas Embutidos (ASE) : 18
 #### Segurança em Redes de Comunicações (SRC) : 17  
 #### Engenharia e Gestão de Serviços (EGS) : 19
-#### Redes e Sistemas Autónomos (RSA): 
+#### Redes e Sistemas Autónomos (RSA): 19
