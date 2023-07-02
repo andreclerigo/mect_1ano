@@ -17,3 +17,11 @@ Contém o código fonte para correr no ESP32 para ler os valores da EEPROM e con
 
 ## /analyse_spiffs
 Contém o código fonte para correr no ESP32 para ler os dados guardados no filesystem e contém o script Python para gerar os gráficos e dar download dos dados.
+
+
+# Authors
+[André Clérigo](https://github.com/andreclerigo), 98485   
+[Pedro Rocha](https://github.com/PedroRocha9), 98256  
+
+# Grade
+18
