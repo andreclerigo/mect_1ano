@@ -10,7 +10,7 @@ Ano: 2022/2023
 
 ## 2º Semestre do 4º Ano
 #### Sistemas Distribuídos (SD) : 16  
-#### Arquiteturas para Sistemas Embutidos (ASE) : 18
+#### Arquiteturas para Sistemas Embutidos (ASE) : 19
 #### Segurança em Redes de Comunicações (SRC) : 17  
 #### Engenharia e Gestão de Serviços (EGS) : 19
 #### Redes e Sistemas Autónomos (RSA): 19
