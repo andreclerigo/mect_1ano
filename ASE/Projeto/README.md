@@ -24,4 +24,4 @@ Contém o código fonte para correr no ESP32 para ler os dados guardados no file
 [Pedro Rocha](https://github.com/PedroRocha9), 98256  
 
 # Grade
-18
+20
