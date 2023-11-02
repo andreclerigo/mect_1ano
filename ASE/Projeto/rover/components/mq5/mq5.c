@@ -3,6 +3,7 @@
 #include "esp_log.h"
 #include <math.h>
 #include "mq5.h"
+#include "driver/adc.h"
 
 const char *TAG = "MQ5";
 

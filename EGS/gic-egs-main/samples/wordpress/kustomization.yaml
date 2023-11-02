@@ -1,0 +1,9 @@
+secretGenerator:
+- name: mysql-pass
+  namespace: prof
+  literals:
+  - password=verysecret
+
+resources:
+  - mysql.yaml
+  - wordpress.yaml

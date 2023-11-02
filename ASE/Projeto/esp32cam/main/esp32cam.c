@@ -15,7 +15,7 @@
 // Your WiFi credentials
 // #define EXAMPLE_ESP_WIFI_SSID      "devolo-983"
 // #define EXAMPLE_ESP_WIFI_PASS      "FUAVIMCRSULJVNMR"
-#define EXAMPLE_ESP_WIFI_SSID      "GalaxyM21"
+#define EXAMPLE_ESP_WIFI_SSID      "NothingPhone1"
 #define EXAMPLE_ESP_WIFI_PASS      "freeinternet"
 
 #define PART_BOUNDARY "123456789000000000000987654321"
